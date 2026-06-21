@@ -1,0 +1,217 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Logo from "./Logo";
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/industries", label: "Industries" },
+  { href: "/contact", label: "Contact" },
+];
+
+const ease = [0.22, 1, 0.36, 1] as const;
+
+export default function Navbar() {
+  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  return (
+    <motion.header
+      initial={{ y: -24, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease }}
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-editorial ${
+        scrolled ? "py-3" : "py-5"
+      }`}
+    >
+      <div className="container-wide">
+        <div
+          className={`relative flex items-center justify-between rounded-full transition-all duration-500 ease-editorial overflow-hidden ${
+            scrolled
+              ? "h-14 pl-4 pr-3 bg-white/75 backdrop-blur-xl border border-navy/10 shadow-[0_1px_0_rgba(255,255,255,0.8)_inset,0_10px_30px_-12px_rgba(15,19,48,0.18)]"
+              : "h-16 pl-5 pr-3 bg-white/55 backdrop-blur-md border border-white/40 shadow-[0_1px_0_rgba(255,255,255,0.6)_inset,0_8px_24px_-14px_rgba(15,19,48,0.12)]"
+          }`}
+        >
+          {/* Faint orange gradient sheen on the right */}
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-y-0 right-0 w-[55%] opacity-60"
+            style={{
+              background:
+                "linear-gradient(to left, rgba(255,87,34,0.06), rgba(255,87,34,0) 70%)",
+            }}
+          />
+
+          {/* Left: Logo */}
+          <div className="relative flex items-center">
+            <Logo />
+          </div>
+
+          {/* Center: Nav links */}
+          <nav className="relative hidden md:flex items-center gap-1">
+            {links.map((l) => {
+              const active = pathname === l.href;
+              return (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="group relative px-4 py-2 text-[13px] text-navy/70 hover:text-navy transition-colors font-medium"
+                >
+                  <span className="relative z-10 inline-flex items-center gap-1.5">
+                    {active && (
+                      <motion.span
+                        layoutId="nav-dot"
+                        className="block w-1 h-1 rounded-full bg-orange"
+                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      />
+                    )}
+                    {l.label}
+                  </span>
+                  {active && (
+                    <motion.span
+                      layoutId="nav-active"
+                      className="absolute inset-0 -z-0 rounded-full bg-navy/[0.06]"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  {/* Hover hairline */}
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute left-4 right-4 bottom-1 h-px bg-orange scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"
+                  />
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Right: CTA */}
+          <div className="relative hidden md:flex items-center gap-3">
+            <span className="hidden xl:inline-flex text-[10.5px] uppercase tracking-[0.24em] text-navy/45 font-semibold">
+              Est. 2018
+            </span>
+            <span className="hidden xl:block w-px h-5 bg-navy/10" />
+            <Link
+              href="/contact"
+              className="group relative inline-flex h-10 items-center gap-2 rounded-full bg-navy pl-5 pr-2 text-[12.5px] font-medium text-ivory transition-colors hover:bg-blue-deep shadow-[0_8px_22px_-10px_rgba(15,19,48,0.6)]"
+            >
+              <span>Book a call</span>
+              <span className="grid place-items-center w-7 h-7 rounded-full bg-orange text-ivory transition-transform duration-300 group-hover:rotate-[-30deg]">
+                <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+                  <path
+                    d="M2 6h7m0 0L6 3m3 3L6 9"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+            </Link>
+          </div>
+
+          {/* Mobile toggle */}
+          <button
+            className="relative md:hidden h-10 w-10 rounded-full grid place-items-center bg-white/70 border border-navy/10 hover:bg-white transition shadow-[0_1px_0_rgba(255,255,255,0.7)_inset]"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
+            <span className="relative block w-4 h-3">
+              <span
+                className={`absolute left-0 top-0 h-px w-4 bg-navy transition-transform duration-300 ${
+                  open ? "translate-y-[6px] rotate-45" : ""
+                }`}
+              />
+              <span
+                className={`absolute left-0 top-[6px] h-px w-4 bg-navy transition-opacity duration-300 ${
+                  open ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`absolute left-0 bottom-0 h-px w-4 bg-navy transition-transform duration-300 ${
+                  open ? "-translate-y-[6px] -rotate-45" : ""
+                }`}
+              />
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.3, ease }}
+            className="md:hidden container-wide mt-3"
+          >
+            <div className="rounded-3xl border border-navy/10 bg-white/90 backdrop-blur-xl p-3 shadow-[0_20px_40px_-20px_rgba(15,19,48,0.25)]">
+              {links.map((l, i) => (
+                <motion.div
+                  key={l.href}
+                  initial={{ opacity: 0, x: -8 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.05 + i * 0.04, duration: 0.3, ease }}
+                >
+                  <Link
+                    href={l.href}
+                    className={`flex items-center justify-between rounded-2xl px-4 py-3 text-[15px] transition-colors ${
+                      pathname === l.href
+                        ? "bg-navy/[0.06] text-navy font-medium"
+                        : "text-navy/70 hover:bg-navy/[0.04]"
+                    }`}
+                  >
+                    <span className="flex items-center gap-2.5">
+                      <span
+                        className={`block w-1 h-1 rounded-full ${
+                          pathname === l.href ? "bg-orange" : "bg-navy/20"
+                        }`}
+                      />
+                      {l.label}
+                    </span>
+                    <span className="text-[10px] tabular-nums text-navy/35">
+                      0{i + 1}
+                    </span>
+                  </Link>
+                </motion.div>
+              ))}
+              <Link
+                href="/contact"
+                className="mt-2 flex items-center justify-between rounded-2xl bg-navy px-4 py-3.5 text-ivory text-[14px] font-medium"
+              >
+                Book a call
+                <span className="grid place-items-center w-7 h-7 rounded-full bg-orange">
+                  <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+                    <path
+                      d="M2 6h7m0 0L6 3m3 3L6 9"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
+  );
+}
