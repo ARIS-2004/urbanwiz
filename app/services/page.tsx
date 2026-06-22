@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import PageHero from "@/components/PageHero";
+import ServicesHero from "@/components/services/ServicesHero";
 import CTA from "@/components/CTA";
 import { FadeUp, Stagger, StaggerItem } from "@/components/Reveal";
 
@@ -122,40 +122,66 @@ const services: {
 export default function ServicesPage() {
   return (
     <>
-      <PageHero
-        title="Operations,"
-        serif="handled."
-        description="Six interlocking practices designed to be adopted alone or together. Same standards, same accountability, same senior ownership."
-        image="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80"
-        imageAlt=""
-        ctaPrimary={{ label: "Explore our services", href: "#customer-support" }}
-        ctaSecondary={{ label: "Talk to a partner", href: "/contact" }}
-        trustEmphasis="150+ operators"
-        trustLabel="standing by — senior owner on every account."
-      />
+      <ServicesHero />
 
       {/* Service index — quick nav */}
-      <section className="py-8 bg-ivory border-y border-navy/8">
-        <div className="container-content">
+      <section
+        className="relative py-10 lg:py-12 border-y border-navy/8 overflow-hidden"
+        style={{ backgroundColor: "#FAF8F6" }}
+      >
+        {/* Ambient washes */}
+        <div
+          aria-hidden
+          className="absolute -top-20 right-0 w-[360px] h-[360px] rounded-full pointer-events-none opacity-65"
+          style={{
+            background:
+              "radial-gradient(closest-side, rgba(255,87,34,0.08), rgba(255,87,34,0) 70%)",
+          }}
+        />
+        <div
+          aria-hidden
+          className="absolute -bottom-20 left-0 w-[340px] h-[340px] rounded-full pointer-events-none opacity-55"
+          style={{
+            background:
+              "radial-gradient(closest-side, rgba(30,58,186,0.06), rgba(30,58,186,0) 70%)",
+          }}
+        />
+
+        <div className="container-content relative">
           <FadeUp>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="block w-7 h-[2px] bg-orange" />
-              <span className="text-[11px] uppercase tracking-[0.26em] text-orange font-semibold">
-                Jump to
+            <div className="flex items-center justify-between gap-4 mb-5 flex-wrap">
+              <div className="flex items-center gap-3">
+                <span className="block w-7 h-[2px] bg-orange" />
+                <span className="text-[10.5px] uppercase tracking-[0.3em] text-orange font-semibold">
+                  Jump to a service
+                </span>
+              </div>
+              <span className="text-[10.5px] uppercase tracking-[0.22em] text-navy/45 font-semibold tabular-nums">
+                06 practices
               </span>
             </div>
           </FadeUp>
-          <Stagger gap={0.04} className="flex flex-wrap gap-2">
+          <Stagger gap={0.05} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
             {services.map((s) => (
               <StaggerItem key={s.id}>
                 <Link
                   href={`#${s.id}`}
-                  className="inline-flex items-center gap-2 rounded-full bg-white border border-navy/10 px-4 py-2 text-[13px] text-navy hover:border-navy/30 hover:-translate-y-0.5 transition-all duration-300 shadow-[0_1px_2px_rgba(15,19,48,0.04)]"
+                  className="group relative flex flex-col items-start gap-1.5 rounded-xl bg-white border border-navy/10 px-3.5 py-3 hover:border-orange/40 hover:-translate-y-0.5 transition-all duration-500 ease-editorial shadow-[0_1px_2px_rgba(15,19,48,0.03),0_14px_28px_-22px_rgba(15,19,48,0.18)] overflow-hidden"
                 >
-                  <span className="text-[10px] tracking-[0.2em] text-orange font-semibold tabular-nums">
+                  <span
+                    aria-hidden
+                    className="absolute -top-8 -right-8 w-20 h-20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                    style={{
+                      background:
+                        "radial-gradient(closest-side, rgba(255,87,34,0.14), rgba(255,87,34,0) 70%)",
+                    }}
+                  />
+                  <span className="relative text-[10px] tracking-[0.22em] text-orange font-bold tabular-nums">
                     {s.n}
                   </span>
-                  <span className="font-medium">{s.name}</span>
+                  <span className="relative text-[12.5px] text-navy font-bold leading-tight group-hover:text-orange transition-colors">
+                    {s.name}
+                  </span>
                 </Link>
               </StaggerItem>
             ))}
@@ -163,7 +189,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-10 lg:py-12 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="container-content space-y-5 lg:space-y-6">
           {services.map((s, i) => (
             <ServiceBlock key={s.id} s={s} flip={i % 2 === 1} />
@@ -227,79 +253,113 @@ function ServiceBlock({
   return (
     <article
       id={s.id}
-      className="group relative rounded-2xl border border-navy/8 bg-white shadow-[0_1px_2px_rgba(15,19,48,0.03),0_12px_30px_-18px_rgba(15,19,48,0.12)] overflow-hidden scroll-mt-32 transition-all duration-500 ease-editorial hover:shadow-[0_1px_2px_rgba(15,19,48,0.03),0_20px_40px_-22px_rgba(15,19,48,0.18)]"
+      className="group relative rounded-3xl border border-navy/8 bg-white shadow-[0_1px_2px_rgba(15,19,48,0.03),0_18px_40px_-22px_rgba(15,19,48,0.16)] overflow-hidden scroll-mt-32 transition-all duration-500 ease-editorial hover:border-navy/15 hover:-translate-y-1 hover:shadow-[0_1px_2px_rgba(15,19,48,0.03),0_30px_56px_-22px_rgba(15,19,48,0.24)]"
     >
+      {/* Inner top highlight */}
+      <span
+        aria-hidden
+        className="absolute top-0 left-7 right-7 h-px bg-white pointer-events-none z-10"
+      />
+
       <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
         {/* Image side */}
-        <FadeUp className={`lg:col-span-4 order-1 ${flip ? "lg:order-2" : "lg:order-1"}`}>
-          <div className="relative overflow-hidden h-full min-h-[180px] lg:min-h-[260px] bg-navy">
+        <FadeUp className={`lg:col-span-5 order-1 ${flip ? "lg:order-2" : "lg:order-1"}`}>
+          <div className="relative overflow-hidden h-full min-h-[200px] lg:min-h-[300px] bg-navy">
             <Image
               src={s.image}
               alt=""
               fill
-              sizes="(max-width: 1024px) 100vw, 360px"
-              className="object-cover opacity-90 transition-transform duration-[1100ms] ease-editorial group-hover:scale-[1.04]"
+              sizes="(max-width: 1024px) 100vw, 480px"
+              className="object-cover opacity-95 transition-transform duration-[1400ms] ease-editorial group-hover:scale-[1.06]"
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-navy/85 via-navy/55 to-navy/25 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-navy/85 via-navy/45 to-navy/15 pointer-events-none" />
             <div className="absolute inset-0 ring-1 ring-inset ring-white/10 pointer-events-none" />
 
-            {/* Editorial number — top-left */}
-            <div className="absolute top-5 left-5 text-white">
-              <div className="font-display text-[40px] sm:text-[44px] leading-[0.85] tracking-[-0.04em] font-semibold">
-                {s.n}
-              </div>
-              <div className="mt-1 flex items-center gap-1 text-[10px] font-medium tabular-nums">
-                <span className="text-orange">/</span>
-                <span className="text-white/75">06</span>
-              </div>
+            {/* Big editorial watermark number */}
+            <span
+              aria-hidden
+              className="absolute -bottom-6 -right-2 font-display text-[140px] sm:text-[180px] leading-none font-black tracking-[-0.05em] text-ivory pointer-events-none select-none"
+              style={{ opacity: 0.10 }}
+            >
+              {s.n}
+            </span>
+
+            {/* Index pill — top-left */}
+            <div className="absolute top-5 left-5 inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-[0_8px_18px_-6px_rgba(15,19,48,0.30)]">
+              <span className="block w-1.5 h-1.5 rounded-full bg-orange" />
+              <span className="text-[10px] uppercase tracking-[0.22em] text-navy font-bold tabular-nums">
+                {s.n} / 06
+              </span>
+            </div>
+
+            {/* Tag chip — bottom-left */}
+            <div className="absolute bottom-5 left-5">
+              <span className="inline-block rounded-full bg-orange text-ivory text-[9.5px] uppercase tracking-[0.24em] font-bold px-3 py-1.5 shadow-[0_10px_22px_-8px_rgba(255,87,34,0.55)]">
+                {s.tag}
+              </span>
             </div>
           </div>
         </FadeUp>
 
         {/* Content side */}
         <div
-          className={`lg:col-span-8 p-5 lg:p-7 flex flex-col order-2 ${
+          className={`lg:col-span-7 p-6 lg:p-8 flex flex-col order-2 ${
             flip ? "lg:order-1" : "lg:order-2"
           }`}
         >
           <FadeUp>
             <div className="flex items-center gap-2.5">
               <span className="block w-5 h-[2px] bg-orange" />
-              <span className="text-[10px] uppercase tracking-[0.24em] text-orange font-semibold">
-                Service {s.n}
+              <span className="text-[10px] uppercase tracking-[0.28em] text-orange font-bold">
+                Service · {s.n}
               </span>
             </div>
           </FadeUp>
 
           <FadeUp delay={0.05}>
-            <h2 className="mt-2 font-display text-[20px] sm:text-[24px] xl:text-[26px] tracking-[-0.02em] leading-[1.15] text-navy font-semibold">
+            <h2 className="mt-3 font-display text-[24px] sm:text-[28px] xl:text-[32px] tracking-[-0.022em] leading-[1.1] text-navy font-bold">
               {s.name}
             </h2>
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <p className="mt-2 text-[12.5px] leading-[1.55] text-navy/60 max-w-lg">
+            <p className="mt-3 text-[13.5px] leading-[1.65] text-navy/60 max-w-lg">
               {s.lead}
             </p>
           </FadeUp>
 
-          {/* 2x2 feature grid — compact */}
+          {/* 2x2 feature grid */}
           <FadeUp delay={0.12}>
-            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               {s.features.map((f, idx) => (
                 <div
                   key={f.t}
-                  className="rounded-xl bg-white border border-navy/8 px-3 py-2.5 transition-all duration-300 hover:border-navy/15"
+                  className="group/feat relative rounded-xl bg-white border border-navy/8 px-3.5 py-3 transition-all duration-500 ease-editorial hover:border-orange/30 hover:-translate-y-0.5 overflow-hidden"
                 >
-                  <div className="flex items-start gap-2.5">
-                    <div className="shrink-0 grid place-items-center w-7 h-7 rounded-lg bg-orange/10 text-orange">
+                  <span
+                    aria-hidden
+                    className="absolute -top-8 -right-8 w-20 h-20 rounded-full opacity-0 group-hover/feat:opacity-100 transition-opacity duration-500 pointer-events-none"
+                    style={{
+                      background:
+                        "radial-gradient(closest-side, rgba(255,87,34,0.12), rgba(255,87,34,0) 70%)",
+                    }}
+                  />
+                  <div className="relative flex items-start gap-3">
+                    <span
+                      className="shrink-0 grid place-items-center w-8 h-8 rounded-lg text-orange"
+                      style={{
+                        background: "#FFF2EB",
+                        boxShadow:
+                          "0 4px 10px -3px rgba(255,87,34,0.22), inset 0 1px 0 rgba(255,255,255,0.7)",
+                      }}
+                    >
                       <FeatureIcon i={idx} />
-                    </div>
+                    </span>
                     <div className="min-w-0">
-                      <div className="text-[12px] font-semibold text-navy leading-tight">
+                      <div className="text-[12.5px] font-bold text-navy leading-tight">
                         {f.t}
                       </div>
-                      <div className="mt-1 text-[11px] leading-[1.45] text-navy/55">
+                      <div className="mt-1 text-[11px] leading-[1.5] text-navy/55">
                         {f.b}
                       </div>
                     </div>
@@ -311,27 +371,33 @@ function ServiceBlock({
 
           {/* Footer row */}
           <FadeUp delay={0.18}>
-            <div className="mt-4 pt-3 border-t border-navy/8 flex items-center justify-between gap-3 flex-wrap">
+            <div className="mt-5 pt-4 border-t border-navy/8 flex items-center justify-between gap-3 flex-wrap">
               <Link
                 href="/contact"
-                className="group/btn inline-flex h-9 items-center gap-1.5 rounded-full bg-navy px-4 text-[11.5px] font-medium text-white hover:bg-blue-deep transition-colors"
+                className="group/btn inline-flex items-center justify-between gap-3 rounded-full bg-navy text-ivory pl-4 pr-1.5 py-1.5 text-[10.5px] uppercase tracking-[0.22em] font-bold hover:bg-orange transition-colors duration-300"
+                style={{
+                  boxShadow:
+                    "0 12px 24px -10px rgba(15,19,48,0.50), inset 0 1px 0 rgba(255,255,255,0.12)",
+                }}
               >
                 Discuss this service
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 14 14"
-                  fill="none"
-                  className="transition-transform group-hover/btn:translate-x-1"
-                >
-                  <path
-                    d="M2 7h9m0 0L7.5 3.5M11 7l-3.5 3.5"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <span className="grid place-items-center w-7 h-7 rounded-full bg-orange text-ivory transition-all duration-300 group-hover/btn:bg-ivory group-hover/btn:text-orange">
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    className="transition-transform duration-300 group-hover/btn:translate-x-0.5"
+                  >
+                    <path
+                      d="M2 7h9m0 0L7.5 3.5M11 7l-3.5 3.5"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
               </Link>
 
               <div className="flex items-center gap-3">
@@ -341,13 +407,13 @@ function ServiceBlock({
                       key={d.id}
                       className={`block rounded-full transition-all ${
                         d.id === s.id
-                          ? "w-3 h-1 bg-orange"
+                          ? "w-4 h-1 bg-orange"
                           : "w-1 h-1 bg-navy/15"
                       }`}
                     />
                   ))}
                 </div>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-navy/45 font-semibold tabular-nums">
+                <span className="text-[10px] uppercase tracking-[0.22em] text-navy/50 font-bold tabular-nums">
                   {s.n} / 06
                 </span>
               </div>

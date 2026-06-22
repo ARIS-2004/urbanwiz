@@ -28,19 +28,11 @@ const wordFade: Variants = {
 };
 
 export default function Loader() {
-  // Only show the loader on the user's first visit per browser session.
-  // Subsequent client-side navigations and refreshes within the session skip it.
-  const [show, setShow] = useState(false);
+  // Show on every page load/refresh. Client-side route changes between pages
+  // don't remount the root layout, so this only fires on a real page load.
+  const [show, setShow] = useState(true);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    const SEEN_KEY = "uw_loader_seen";
-    if (sessionStorage.getItem(SEEN_KEY)) {
-      setShow(false);
-      return;
-    }
-    setShow(true);
-    sessionStorage.setItem(SEEN_KEY, "1");
     const t = setTimeout(() => setShow(false), DURATION);
     return () => clearTimeout(t);
   }, []);
