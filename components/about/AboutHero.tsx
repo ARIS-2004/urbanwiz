@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -15,8 +16,8 @@ const wordItem: Variants = {
   show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.9, ease } },
 };
 
-export default function ContactHero() {
-  const headlineWords = "Let's build something".split(" ");
+export default function AboutHero() {
+  const headlineWords = "A practice,".split(" ");
 
   return (
     <section className="relative bg-white overflow-hidden pt-14 sm:pt-20 lg:pt-24 pb-14 lg:pb-20">
@@ -87,7 +88,7 @@ export default function ContactHero() {
       />
 
       <div className="container-wide relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left — copy */}
           <div className="lg:col-span-5 xl:col-span-5 relative order-2 lg:order-1">
             {/* Eyebrow */}
@@ -104,11 +105,12 @@ export default function ContactHero() {
                 className="block w-7 h-[2px] bg-orange origin-left"
               />
               <span className="text-[11px] uppercase tracking-[0.3em] text-orange font-semibold">
-                Let&apos;s work together
+                About Urbanwiz
               </span>
             </motion.div>
 
-            <h1 className="relative mt-6 font-display text-[44px] sm:text-[58px] xl:text-[72px] leading-[0.96] tracking-[-0.028em] text-navy font-bold">
+            {/* Headline */}
+            <h1 className="relative mt-6 font-display text-[36px] sm:text-[58px] xl:text-[72px] leading-[0.96] tracking-[-0.028em] text-navy font-bold">
               <motion.span
                 variants={wordContainer}
                 initial="hidden"
@@ -125,14 +127,15 @@ export default function ContactHero() {
                   </motion.span>
                 ))}
               </motion.span>
+              <br />
               <motion.span
                 variants={wordItem}
                 initial="hidden"
                 animate="show"
                 transition={{ delay: 0.5, duration: 0.9, ease }}
-                className="inline-block text-orange mr-[0.22em]"
+                className="inline-block text-navy/55 mr-[0.18em]"
               >
-                great
+                not a
               </motion.span>
               <motion.span
                 variants={wordItem}
@@ -141,7 +144,7 @@ export default function ContactHero() {
                 transition={{ delay: 0.6, duration: 0.9, ease }}
                 className="inline-block text-orange"
               >
-                together.
+                factory.
               </motion.span>
             </h1>
 
@@ -161,13 +164,81 @@ export default function ContactHero() {
                 }}
               />
               <p className="font-display text-[16.5px] sm:text-[17.5px] leading-[1.5] tracking-[-0.005em] text-navy font-bold">
-                Real conversations. Real people.
+                Senior owners. Long relationships.
               </p>
               <p className="mt-2 text-[13.5px] leading-[1.65] text-navy/55">
-                We reply personally — usually within a single business day.
+                Urbanwiz was started in 2017 to give growing companies a calm,
+                careful operations partner — the kind they keep for years.
               </p>
             </motion.div>
 
+            {/* Info cards row */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.85, duration: 0.8, ease }}
+              className="relative mt-7 grid grid-cols-2 gap-3 max-w-md"
+            >
+              {/* Founded */}
+              <div className="group relative rounded-xl bg-white border border-navy/8 px-4 py-3.5 shadow-[0_1px_2px_rgba(15,19,48,0.03),0_18px_36px_-22px_rgba(15,19,48,0.20)] hover:border-navy/15 hover:-translate-y-0.5 transition-all duration-500 ease-editorial">
+                <div className="flex items-start gap-3">
+                  <span
+                    className="relative shrink-0 grid place-items-center w-10 h-10 rounded-full text-orange"
+                    style={{
+                      background: "#FFF2EB",
+                      boxShadow:
+                        "0 5px 12px -4px rgba(255,87,34,0.22), inset 0 1px 0 rgba(255,255,255,0.7)",
+                    }}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                      <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.6" />
+                      <path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                    </svg>
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-[9.5px] uppercase tracking-[0.22em] text-navy/55 font-semibold">
+                      Founded
+                    </div>
+                    <div className="mt-1 font-display text-[18px] text-navy font-bold leading-none tabular-nums">
+                      20<span className="text-orange">17</span>
+                    </div>
+                    <div className="mt-1.5 text-[10.5px] text-navy/50 leading-tight">
+                      Kolkata, India
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Studio location */}
+              <div className="group relative rounded-xl bg-white border border-navy/8 px-4 py-3.5 shadow-[0_1px_2px_rgba(15,19,48,0.03),0_18px_36px_-22px_rgba(15,19,48,0.20)] hover:border-navy/15 hover:-translate-y-0.5 transition-all duration-500 ease-editorial">
+                <div className="flex items-start gap-3">
+                  <span
+                    className="relative shrink-0 grid place-items-center w-10 h-10 rounded-full text-blue-deep"
+                    style={{
+                      background: "rgba(30,58,186,0.08)",
+                      boxShadow:
+                        "0 5px 12px -4px rgba(30,58,186,0.22), inset 0 1px 0 rgba(255,255,255,0.7)",
+                    }}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z" stroke="currentColor" strokeWidth="1.6" />
+                      <circle cx="12" cy="9" r="2.2" stroke="currentColor" strokeWidth="1.6" />
+                    </svg>
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-[9.5px] uppercase tracking-[0.22em] text-navy/55 font-semibold">
+                      Studio
+                    </div>
+                    <div className="mt-1 font-display text-[18px] text-navy font-bold leading-none">
+                      Salt Lake
+                    </div>
+                    <div className="mt-1.5 text-[10.5px] text-navy/50 leading-tight">
+                      Sector V, Kolkata
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
 
             {/* CTAs */}
             <motion.div
@@ -177,7 +248,7 @@ export default function ContactHero() {
               className="relative mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md"
             >
               <a
-                href="#form"
+                href="#story"
                 className="group relative inline-flex items-center justify-between gap-3 rounded-xl bg-navy text-ivory pl-5 pr-2 py-3 overflow-hidden transition-all duration-300 hover:bg-orange"
                 style={{
                   boxShadow:
@@ -185,7 +256,7 @@ export default function ContactHero() {
                 }}
               >
                 <span className="relative text-[11.5px] uppercase tracking-[0.22em] font-bold">
-                  Send an inquiry
+                  Read our story
                 </span>
                 <span className="relative grid place-items-center w-8 h-8 rounded-full bg-ivory/12 group-hover:bg-ivory/25 transition-colors">
                   <svg
@@ -193,10 +264,10 @@ export default function ContactHero() {
                     height="11"
                     viewBox="0 0 14 14"
                     fill="none"
-                    className="transition-transform duration-300 group-hover:translate-x-0.5"
+                    className="transition-transform duration-300 group-hover:translate-y-0.5"
                   >
                     <path
-                      d="M2 7h9m0 0L7.5 3.5M11 7l-3.5 3.5"
+                      d="M7 2v9m0 0L3.5 7.5M7 11l3.5-3.5"
                       stroke="currentColor"
                       strokeWidth="1.8"
                       strokeLinecap="round"
@@ -205,8 +276,8 @@ export default function ContactHero() {
                   </svg>
                 </span>
               </a>
-              <a
-                href="tel:+919051234876"
+              <Link
+                href="/contact"
                 className="group relative inline-flex items-center justify-center gap-2.5 rounded-xl bg-white border border-navy/15 px-4 py-3 transition-all duration-300 hover:border-orange hover:-translate-y-0.5 shadow-[0_1px_2px_rgba(15,19,48,0.03)]"
               >
                 <span className="grid place-items-center w-6 h-6 rounded-full bg-orange/10 text-orange group-hover:bg-orange group-hover:text-ivory transition-colors">
@@ -220,12 +291,12 @@ export default function ContactHero() {
                   </svg>
                 </span>
                 <span className="text-[11.5px] uppercase tracking-[0.22em] font-bold text-navy group-hover:text-orange transition-colors">
-                  Schedule a call
+                  Talk to a partner
                 </span>
-              </a>
+              </Link>
             </motion.div>
 
-            {/* Trusted clients card */}
+            {/* Trust card */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -234,13 +305,13 @@ export default function ContactHero() {
             >
               <div className="flex -space-x-2">
                 {[
-                  { label: "N", bg: "bg-navy", fg: "text-ivory" },
-                  { label: "F", bg: "bg-blue-deep", fg: "text-ivory" },
-                  { label: "K", bg: "bg-navy/75", fg: "text-ivory" },
-                  { label: "M", bg: "bg-navy/55", fg: "text-ivory" },
-                ].map((c) => (
+                  { label: "A", bg: "bg-navy", fg: "text-ivory" },
+                  { label: "A", bg: "bg-blue-deep", fg: "text-ivory" },
+                  { label: "A", bg: "bg-navy/75", fg: "text-ivory" },
+                  { label: "A", bg: "bg-navy/55", fg: "text-ivory" },
+                ].map((c, idx) => (
                   <span
-                    key={c.label}
+                    key={idx}
                     className={`grid place-items-center w-9 h-9 rounded-full ring-2 ring-white font-display text-[11.5px] font-bold tabular-nums ${c.bg} ${c.fg}`}
                   >
                     {c.label}
@@ -262,11 +333,10 @@ export default function ContactHero() {
                   150<span className="text-orange">+</span>
                 </div>
                 <div className="text-[10.5px] uppercase tracking-[0.22em] text-navy/55 font-semibold mt-0.5">
-                  Trusted clients
+                  Trained operators
                 </div>
               </div>
             </motion.div>
-
           </div>
 
           {/* Right — layered visual composition */}
@@ -312,8 +382,8 @@ export default function ContactHero() {
                 className="relative aspect-[3/2] rounded-3xl overflow-hidden border border-navy/10 shadow-[0_2px_4px_rgba(15,19,48,0.03),0_40px_80px_-28px_rgba(15,19,48,0.35)] z-10"
               >
                 <Image
-                  src="/contacthero.png"
-                  alt="Urbanwiz Salt Lake studio"
+                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80"
+                  alt="Urbanwiz operations team at work"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 60vw"
@@ -321,7 +391,7 @@ export default function ContactHero() {
                 />
                 <div
                   aria-hidden
-                  className="absolute inset-0 bg-gradient-to-t from-navy/25 via-transparent to-transparent pointer-events-none"
+                  className="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent pointer-events-none"
                 />
                 <div
                   aria-hidden
@@ -372,4 +442,3 @@ function CornerBrackets() {
     </>
   );
 }
-

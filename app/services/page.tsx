@@ -6,9 +6,9 @@ import CTA from "@/components/CTA";
 import { FadeUp, Stagger, StaggerItem } from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Services — UrbanWizz",
+  title: "Services — Urbanwiz",
   description:
-    "Customer support, finance operations, IT helpdesk, virtual assistance and back office services from UrbanWizz.",
+    "Customer support, finance operations, IT helpdesk, virtual assistance and back office services from Urbanwiz.",
 };
 
 type Feature = { t: string; b: string };
@@ -231,7 +231,7 @@ function ServiceBlock({
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
         {/* Image side */}
-        <FadeUp className={`lg:col-span-4 ${flip ? "lg:order-2" : ""}`}>
+        <FadeUp className={`lg:col-span-4 order-1 ${flip ? "lg:order-2" : "lg:order-1"}`}>
           <div className="relative overflow-hidden h-full min-h-[180px] lg:min-h-[260px] bg-navy">
             <Image
               src={s.image}
@@ -258,8 +258,8 @@ function ServiceBlock({
 
         {/* Content side */}
         <div
-          className={`lg:col-span-8 p-5 lg:p-7 flex flex-col ${
-            flip ? "lg:order-1" : ""
+          className={`lg:col-span-8 p-5 lg:p-7 flex flex-col order-2 ${
+            flip ? "lg:order-1" : "lg:order-2"
           }`}
         >
           <FadeUp>

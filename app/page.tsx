@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
 import Metrics from "@/components/Metrics";
-import TrustStrip from "@/components/TrustStrip";
+import Clients from "@/components/Clients";
 import ServicesGrid from "@/components/ServicesGrid";
 import IndustriesStrip from "@/components/IndustriesStrip";
 import Partner from "@/components/Partner";
@@ -13,7 +13,7 @@ export default function HomePage() {
     <>
       <Hero />
       <Metrics />
-      <TrustStrip />
+      <Clients />
       <ServicesGrid />
       <IndustriesStrip />
       <Partner />

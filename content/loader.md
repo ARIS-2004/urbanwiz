@@ -6,7 +6,7 @@ Background: #0F1330
 
 Animation:
 - A thin orange line draws a path.
-- The UrbanWizz logo slowly fades in.
+- The Urbanwiz logo slowly fades in.
 - A subtle lighthouse beam rotates once.
 - Text appears:
 

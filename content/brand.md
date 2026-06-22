@@ -1,6 +1,6 @@
-# UrbanWizz
+# Urbanwiz
 
-UrbanWizz is a modern business process outsourcing company helping businesses scale with confidence through customer support, operational excellence, finance process outsourcing and IT-enabled services.
+Urbanwiz is a modern business process outsourcing company helping businesses scale with confidence through customer support, operational excellence, finance process outsourcing and IT-enabled services.
 
 ## Brand Personality
 - Professional

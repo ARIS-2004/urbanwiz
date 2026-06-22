@@ -1,6 +1,6 @@
-# UrbanWizz — Premium BPO website
+# Urbanwiz — Premium BPO website
 
-A handcrafted Next.js 15 + TypeScript + Tailwind + Framer Motion site for UrbanWizz, a business process outsourcing partner.
+A handcrafted Next.js 15 + TypeScript + Tailwind + Framer Motion site for Urbanwiz, a business process outsourcing partner.
 
 Design references: Apple, Stripe, Linear, Ramp. Editorial, premium, restrained.
 

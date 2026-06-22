@@ -1,13 +1,12 @@
-@import url("https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=general-sans@400,500,600,700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-satoshi: "Satoshi", system-ui, sans-serif;
-  --font-general-sans: "General Sans", system-ui, sans-serif;
-  --font-instrument: "Instrument Serif", Georgia, serif;
+  /* Primary — Futura (uses real Futura if locally licensed, else Jost as the closest free geometric substitute) */
+  --font-primary: "Futura", "Futura PT", var(--font-futura), system-ui, sans-serif;
+  /* Secondary — Rubik (Light family) */
+  --font-secondary: var(--font-rubik), system-ui, sans-serif;
   --bg: #fafafa;
   --ink: #0f1330;
 }
@@ -17,8 +16,7 @@
 html, body {
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--font-satoshi);
-  font-feature-settings: "ss01", "ss02", "cv11";
+  font-family: var(--font-primary);
 }
 
 html { scroll-behavior: smooth; }
@@ -30,8 +28,9 @@ html { scroll-behavior: smooth; }
   html.has-cursor, html.has-cursor * { cursor: none !important; }
 }
 
-.font-display { font-family: var(--font-general-sans); font-weight: 600; letter-spacing: -0.02em; }
-.font-serif-accent { font-family: var(--font-instrument); font-style: italic; font-weight: 400; }
+.font-display { font-family: var(--font-primary); font-weight: 700; letter-spacing: -0.02em; }
+.font-secondary { font-family: var(--font-secondary); font-weight: 300; }
+.font-serif-accent { font-family: var(--font-secondary); font-weight: 300; }
 
 .container-content {
   width: 100%;

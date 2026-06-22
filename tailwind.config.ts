@@ -19,9 +19,9 @@ const config: Config = {
         "line-dark": "rgba(15,19,48,0.08)",
       },
       fontFamily: {
-        sans: ["var(--font-satoshi)", "system-ui", "sans-serif"],
-        display: ["var(--font-general-sans)", "system-ui", "sans-serif"],
-        serif: ["var(--font-instrument)", "Georgia", "serif"],
+        sans: ["Futura", "Futura PT", "var(--font-futura)", "system-ui", "sans-serif"],
+        display: ["Futura", "Futura PT", "var(--font-futura)", "system-ui", "sans-serif"],
+        secondary: ["var(--font-rubik)", "system-ui", "sans-serif"],
       },
       fontSize: {
         hero: ["clamp(48px, 7vw, 84px)", { lineHeight: "0.98", letterSpacing: "-0.03em" }],

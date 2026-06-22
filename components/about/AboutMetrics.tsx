@@ -32,10 +32,10 @@ const metrics: Metric[] = [
   {
     value: 150,
     suffix: "+",
-    label: "Professionals",
-    sub: "Trained operators",
+    label: "Operators",
+    sub: "Trained, in-house",
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" {...stroke}>
+      <svg width="18" height="18" viewBox="0 0 24 24" {...stroke}>
         <circle cx="9" cy="8" r="3" />
         <circle cx="17" cy="10" r="2.2" />
         <path d="M3 19c.8-3 3.2-5 6-5s5.2 2 6 5" />
@@ -46,49 +46,62 @@ const metrics: Metric[] = [
   {
     value: 8,
     suffix: "+",
-    label: "Years Experience",
+    label: "Years",
     sub: "Building operations",
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" {...stroke}>
+      <svg width="18" height="18" viewBox="0 0 24 24" {...stroke}>
         <path d="M4 7h16v13H4z" />
         <path d="M4 11h16M8 4v6M16 4v6" />
       </svg>
     ),
   },
   {
-    value: 0,
-    display: "24×7",
-    label: "Support",
-    sub: "Around the clock",
+    value: 60,
+    suffix: "+",
+    label: "Clients served",
+    sub: "Across sectors",
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" {...stroke}>
-        <circle cx="12" cy="12" r="9" />
-        <path d="M12 7v5l3.5 2" />
+      <svg width="18" height="18" viewBox="0 0 24 24" {...stroke}>
+        <path d="M3 11l9-7 9 7" />
+        <path d="M5 10v10h14V10" />
+        <path d="M9 20v-6h6v6" />
       </svg>
     ),
   },
   {
-    value: 98,
-    suffix: "%",
-    label: "Client Retention",
-    sub: "Year over year",
+    value: 12,
+    suffix: "+",
+    label: "Countries",
+    sub: "Reached & supported",
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" {...stroke}>
-        <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z" />
-        <path d="M9 12l2 2 4-4" />
+      <svg width="18" height="18" viewBox="0 0 24 24" {...stroke}>
+        <circle cx="12" cy="12" r="9" />
+        <path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" />
+      </svg>
+    ),
+  },
+  {
+    value: 0,
+    display: "6",
+    label: "Languages",
+    sub: "Voice & written",
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" {...stroke}>
+        <path d="M3 5h12M9 3v2M11 5c0 5-3 9-7 11M5 9c1 5 4 9 8 10" />
+        <path d="M14 21l4-10 4 10M15.5 17h5" />
       </svg>
     ),
   },
 ];
 
-export default function Metrics() {
+export default function AboutMetrics() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-15%" });
 
   return (
     <section
       ref={ref}
-      className="relative bg-ivory border-y border-navy/8 overflow-hidden py-7 sm:py-10 lg:py-12"
+      className="relative border-y border-navy/8 overflow-hidden py-10 sm:py-14 lg:py-16 bg-ivory"
     >
       {/* Ambient washes */}
       <div
@@ -108,22 +121,35 @@ export default function Metrics() {
         }}
       />
 
-      {/* Faint diagonal hairline pattern */}
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none opacity-40"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(135deg, rgba(15,19,48,0.025) 0 1px, transparent 1px 22px)",
-          maskImage:
-            "radial-gradient(ellipse at center, black 30%, transparent 80%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse at center, black 30%, transparent 80%)",
-        }}
-      />
-
       <div className="container-content relative">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3.5 lg:gap-4">
+        {/* Header */}
+        <div className="text-center mb-8 sm:mb-10">
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.7, ease }}
+            className="inline-flex items-center gap-3"
+          >
+            <span className="block w-7 h-[2px] bg-orange" />
+            <span className="text-[10.5px] uppercase tracking-[0.3em] text-orange font-semibold">
+              By the numbers
+            </span>
+            <span className="block w-7 h-[2px] bg-orange" />
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 14, filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.9, delay: 0.1, ease }}
+            className="mt-4 font-display text-[26px] sm:text-[34px] xl:text-[40px] tracking-[-0.025em] leading-[1.05] text-navy font-bold"
+          >
+            Eight quiet years of <span className="text-orange">careful work.</span>
+          </motion.h2>
+        </div>
+
+        {/* Metric cards */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3.5 lg:gap-4">
           {metrics.map((m, i) => {
             const isBlue = i % 2 === 1;
             return (
@@ -133,18 +159,15 @@ export default function Metrics() {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{
                   duration: 0.65,
-                  delay: i * 0.08,
+                  delay: i * 0.07,
                   ease,
                 }}
                 className="group relative rounded-xl sm:rounded-2xl bg-white border border-navy/8 p-3 sm:p-5 shadow-[0_1px_2px_rgba(15,19,48,0.03),0_18px_36px_-22px_rgba(15,19,48,0.18)] hover:border-navy/15 hover:-translate-y-1 hover:shadow-[0_1px_2px_rgba(15,19,48,0.03),0_28px_50px_-22px_rgba(15,19,48,0.26)] transition-all duration-500 ease-editorial overflow-hidden"
               >
-                {/* Inner top highlight */}
                 <span
                   aria-hidden
                   className="absolute top-0 left-6 right-6 h-px bg-white pointer-events-none"
                 />
-
-                {/* Corner accent wash on hover */}
                 <span
                   aria-hidden
                   className="absolute -top-10 -right-10 w-32 h-32 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
@@ -155,7 +178,6 @@ export default function Metrics() {
                   }}
                 />
 
-                {/* Icon tile */}
                 <motion.span
                   whileHover={{ rotate: -8, scale: 1.08 }}
                   transition={{ type: "spring", stiffness: 400, damping: 20 }}
@@ -172,8 +194,7 @@ export default function Metrics() {
                   {m.icon}
                 </motion.span>
 
-                {/* Number */}
-                <div className="relative mt-2.5 sm:mt-4 font-display text-[22px] sm:text-[34px] xl:text-[38px] leading-none tracking-[-0.025em] text-navy font-bold">
+                <div className="relative mt-2.5 sm:mt-4 font-display text-[22px] sm:text-[32px] xl:text-[36px] leading-none tracking-[-0.025em] text-navy font-bold">
                   {m.display ? (
                     m.display
                   ) : (
@@ -181,12 +202,11 @@ export default function Metrics() {
                       value={m.value}
                       suffix={m.suffix}
                       inView={inView}
-                      delay={i * 0.08}
+                      delay={i * 0.07}
                     />
                   )}
                 </div>
 
-                {/* Hairline */}
                 <span
                   aria-hidden
                   className={`relative block mt-2 sm:mt-3 w-6 sm:w-8 h-[2px] rounded-full ${
@@ -194,7 +214,6 @@ export default function Metrics() {
                   }`}
                 />
 
-                {/* Label + sub */}
                 <div className="relative mt-2 sm:mt-3">
                   <div className="text-[9px] sm:text-[10.5px] uppercase tracking-[0.18em] sm:tracking-[0.22em] text-navy font-bold leading-tight">
                     {m.label}
@@ -204,7 +223,6 @@ export default function Metrics() {
                   </div>
                 </div>
 
-                {/* Bottom accent hairline that fills on hover */}
                 <span
                   className={`absolute left-0 right-0 bottom-0 h-[2px] transition-colors duration-500 ${
                     isBlue

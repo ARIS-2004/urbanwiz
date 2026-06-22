@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Serif } from "next/font/google";
+import { Jost, Rubik } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,21 +7,29 @@ import Loader from "@/components/Loader";
 import SmoothScroll from "@/components/SmoothScroll";
 import PageTransition from "@/components/PageTransition";
 
-const instrument = Instrument_Serif({
-  weight: "400",
-  style: ["normal", "italic"],
+// Primary — Futura (real Futura if licensed locally, else Jost as the closest free geometric substitute)
+const futura = Jost({
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-  variable: "--font-instrument",
+  variable: "--font-futura",
+  display: "swap",
+});
+
+// Secondary — Rubik (Light family)
+const rubik = Rubik({
+  weight: ["300", "400", "500"],
+  subsets: ["latin"],
+  variable: "--font-rubik",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "UrbanWizz — Operations that move business forward",
+  title: "Urbanwiz — Operations that move business forward",
   description:
-    "UrbanWizz is a business process outsourcing partner delivering customer support, finance operations and IT-enabled services for businesses that value reliability.",
-  metadataBase: new URL("https://urbanwizz.com"),
+    "Urbanwiz is a business process outsourcing partner delivering customer support, finance operations and IT-enabled services for businesses that value reliability.",
+  metadataBase: new URL("https://urbanwiz.com"),
   openGraph: {
-    title: "UrbanWizz — Guiding with strength. Growing with care.",
+    title: "Urbanwiz — Guiding with strength. Growing with care.",
     description:
       "Human-centered outsourcing for businesses that value reliability, operational excellence and lasting partnerships.",
     type: "website",
@@ -30,7 +38,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${instrument.variable}`}>
+    <html lang="en" className={`${futura.variable} ${rubik.variable}`}>
       <body className="bg-ivory text-navy antialiased">
         <Loader />
         <SmoothScroll />
