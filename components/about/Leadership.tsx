@@ -75,6 +75,7 @@ const leaders: Leader[] = [
       "We are Human, before we are Corporate.",
     ],
     socials: [
+      { label: "LinkedIn", href: "#" },
       {
         label: "Instagram",
         href: "https://www.instagram.com/samael_the_light_bringer?igsh=OGg0c3k5anFxaTdz",
@@ -122,6 +123,7 @@ const leaders: Leader[] = [
       "We are Human, before we are Corporate.",
     ],
     socials: [
+      { label: "LinkedIn", href: "#" },
       {
         label: "Instagram",
         href: "https://www.instagram.com/shilanjanghosh?igsh=MTVldGRsdHYxeWhuMQ==",
@@ -175,6 +177,7 @@ const leaders: Leader[] = [
       "We are Human, before we are Corporate.",
     ],
     socials: [
+      { label: "LinkedIn", href: "#" },
       {
         label: "Instagram",
         href: "https://www.instagram.com/vineet_d_devilboy?igsh=MXFsNjQ2b3ZlYXU3aQ==",
@@ -294,46 +297,68 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
 
       {/* ── Identity block ── */}
       <div className="relative mx-7 sm:mx-10 lg:mx-12 rounded-2xl border border-navy/8 bg-navy/[0.015] px-6 sm:px-9 py-7 sm:py-9">
-        <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8">
-          {/* Portrait — grayscale photo over initials fallback */}
-          <div
-            className="relative shrink-0 grid place-items-center w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] rounded-2xl overflow-hidden transition-transform duration-500 ease-editorial group-hover/card:-translate-y-1"
-            style={{
-              backgroundColor: a.monoBg,
-              boxShadow: `0 20px 38px -16px rgba(${a.rgb},0.5), inset 0 1px 0 rgba(255,255,255,0.08)`,
-            }}
-          >
-            {/* initials fallback (behind photo) */}
+        <div className="flex flex-col sm:flex-row sm:items-start gap-7 sm:gap-9">
+          {/* Portrait — photo frame (real headshot drops in over the initials fallback) */}
+          <div className="relative shrink-0 self-start transition-transform duration-500 ease-editorial group-hover/card:-translate-y-1">
+            {/* accent offset plate behind the frame */}
             <span
               aria-hidden
-              className="absolute inset-0 opacity-[0.4]"
-              style={{
-                backgroundImage:
-                  "radial-gradient(rgba(255,255,255,0.10) 1px, transparent 1px)",
-                backgroundSize: "10px 10px",
-              }}
+              className="absolute -left-2 -bottom-2 w-full h-full rounded-[20px]"
+              style={{ background: `rgba(${a.rgb},0.10)` }}
             />
-            <span
-              className="absolute font-display font-black text-[38px] sm:text-[44px] tracking-[-0.04em]"
-              style={{ color: a.monoInk }}
+            <div
+              className="relative grid place-items-center w-[108px] h-[132px] sm:w-[132px] sm:h-[160px] rounded-[20px] overflow-hidden"
+              style={{
+                backgroundColor: a.monoBg,
+                boxShadow: `0 24px 44px -18px rgba(${a.rgb},0.55), inset 0 1px 0 rgba(255,255,255,0.08)`,
+              }}
             >
-              {leader.initials}
-            </span>
-            {/* photo layer — hides itself if missing */}
-            {leader.photo && (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={leader.photo}
-                alt={leader.name}
-                loading="lazy"
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).style.display = "none";
+              {/* initials fallback (behind photo) */}
+              <span
+                aria-hidden
+                className="absolute inset-0 opacity-[0.4]"
+                style={{
+                  backgroundImage:
+                    "radial-gradient(rgba(255,255,255,0.10) 1px, transparent 1px)",
+                  backgroundSize: "10px 10px",
                 }}
-                className="absolute inset-0 w-full h-full object-cover grayscale contrast-[1.05] transition-all duration-500 ease-editorial group-hover/card:grayscale-0"
               />
-            )}
-            {/* subtle inner ring */}
-            <span aria-hidden className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10" />
+              <span
+                className="absolute font-display font-black text-[40px] sm:text-[46px] tracking-[-0.04em]"
+                style={{ color: a.monoInk }}
+              >
+                {leader.initials}
+              </span>
+              {/* photo layer — hides itself if missing */}
+              {leader.photo && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={leader.photo}
+                  alt={leader.name}
+                  loading="lazy"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).style.display = "none";
+                  }}
+                  className="absolute inset-0 w-full h-full object-cover grayscale contrast-[1.05] transition-all duration-500 ease-editorial group-hover/card:grayscale-0"
+                />
+              )}
+              {/* bottom fade for legibility over any photo */}
+              <span
+                aria-hidden
+                className="absolute inset-x-0 bottom-0 h-1/3 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(180deg, transparent, rgba(15,19,48,0.35))",
+                }}
+              />
+              {/* subtle inner ring */}
+              <span aria-hidden className="absolute inset-0 rounded-[20px] ring-1 ring-inset ring-white/10" />
+            </div>
+            {/* floating accent dot */}
+            <span
+              aria-hidden
+              className={`absolute -right-1.5 -top-1.5 w-4 h-4 rounded-full ${a.bar} ring-4 ring-white`}
+            />
           </div>
 
           {/* Name + role + quote */}
