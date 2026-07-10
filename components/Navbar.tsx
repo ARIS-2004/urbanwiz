@@ -68,17 +68,17 @@ export default function Navbar() {
           />
 
           {/* Left: Logo + tagline */}
-          <div className="relative flex items-center gap-4">
+          <div className="relative flex items-center gap-5">
             <Logo />
-            <span aria-hidden className="hidden lg:block w-px h-10 bg-navy/12" />
+            <span aria-hidden className="hidden lg:block w-px h-11 bg-navy/12" />
             <div className="hidden lg:flex flex-col gap-1">
               {["People", "Performance", "Progress"].map((w) => (
                 <span
                   key={w}
-                  className="flex items-center gap-1.5 text-[9.5px] uppercase tracking-[0.26em] text-navy/50 font-bold leading-none"
+                  className="text-[11px] uppercase tracking-[0.24em] text-navy/75 font-bold leading-none"
                 >
-                  <span aria-hidden className="block w-1 h-1 rounded-full bg-orange" />
-                  {w}
+                  <span className="text-orange text-[13px] font-black">{w.charAt(0)}</span>
+                  <span className="text-navy/70">{w.slice(1)}</span>
                 </span>
               ))}
             </div>
