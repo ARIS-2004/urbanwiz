@@ -114,20 +114,32 @@ export default function OriginStory() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.85, ease }}
-          className="relative mx-auto mt-8 max-w-3xl rounded-[28px] overflow-hidden px-10 sm:px-16 py-10 sm:py-11 text-center"
+          className="relative mx-auto mt-8 max-w-3xl rounded-[28px] overflow-hidden px-10 sm:px-16 py-11 sm:py-12 text-center"
           style={{
             background:
-              "radial-gradient(circle at top right, rgba(255,87,34,0.12), transparent 40%), linear-gradient(135deg, #07133d, #0c1d57)",
+              "radial-gradient(circle at top right, rgba(255,87,34,0.14), transparent 42%), linear-gradient(135deg, #07133d, #0c1d57)",
             boxShadow: "0 30px 80px rgba(8,15,45,0.18)",
           }}
         >
+          {/* soft dotted texture */}
           <span
             aria-hidden
-            className="font-display font-black text-[40px] leading-[0.4] text-orange/50 select-none"
-          >
-            &ldquo;
-          </span>
-          <p className="relative mt-4 font-display text-[24px] sm:text-[32px] tracking-[-0.02em] leading-[1.25] text-ivory font-bold">
+            className="absolute inset-0 opacity-[0.4] pointer-events-none"
+            style={{
+              backgroundImage:
+                "radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px)",
+              backgroundSize: "14px 14px",
+            }}
+          />
+          {/* eyebrow */}
+          <div className="relative inline-flex items-center gap-2.5">
+            <span className="block w-6 h-[2px] rounded-full bg-orange/70" />
+            <span className="text-[10px] uppercase tracking-[0.3em] text-ivory/55 font-bold">
+              Our Philosophy
+            </span>
+            <span className="block w-6 h-[2px] rounded-full bg-orange/70" />
+          </div>
+          <p className="relative mt-5 font-display text-[24px] sm:text-[32px] tracking-[-0.02em] leading-[1.25] text-ivory font-bold">
             We are human, before we are{" "}
             <span className="text-orange">Corporate.</span>
           </p>
