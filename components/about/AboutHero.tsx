@@ -108,7 +108,7 @@ export default function AboutHero() {
             >
               <div>
                 <div className="font-display text-[26px] sm:text-[32px] font-bold text-navy tabular-nums leading-none">
-                  2017
+                  2026
                 </div>
                 <div className="mt-1.5 text-[9.5px] uppercase tracking-[0.24em] text-navy/50 font-semibold">
                   Founded in Kolkata
@@ -191,7 +191,7 @@ export default function AboutHero() {
                 <div className="absolute bottom-5 left-5 flex items-center gap-2">
                   <span className="block w-5 h-[1.5px] bg-white" />
                   <span className="text-[9.5px] uppercase tracking-[0.26em] text-white/90 font-bold">
-                    Est. 2017 · Kolkata
+                    Est. 2026 · Kolkata
                   </span>
                 </div>
               </motion.div>

@@ -20,7 +20,7 @@ type Stat = {
 };
 
 const stats: Stat[] = [
-  { value: 8, suffix: "+", label: "Years", sub: "Founded 2017" },
+  { value: 8, suffix: "+", label: "Years", sub: "Founded 2026" },
   { value: 50, suffix: "+", label: "Operators", sub: "Trained, in-house" },
   { value: 25, suffix: "+", label: "Clients served", sub: "Across sectors" },
   { value: 6, suffix: "", label: "Countries", sub: "IN · UK · US · UAE · SG · AU" },

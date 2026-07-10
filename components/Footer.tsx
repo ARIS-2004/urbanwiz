@@ -126,7 +126,7 @@ export default function Footer() {
                   <path d="M12 21c4-4 6-7 6-10a6 6 0 10-12 0c0 3 2 6 6 10z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
                   <circle cx="12" cy="11" r="2.2" stroke="currentColor" strokeWidth="1.8" />
                 </svg>
-                Made in Kolkata, Est. 2017
+                Made in Kolkata, Est. 2026
               </div>
             </div>
 

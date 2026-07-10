@@ -114,7 +114,7 @@ export default function Navbar() {
           {/* Right: CTA */}
           <div className="relative hidden md:flex items-center gap-3.5">
             <span className="hidden xl:inline-flex text-[11px] uppercase tracking-[0.24em] text-navy/45 font-semibold">
-              Est. 2017
+              Est. 2026
             </span>
             <span className="hidden xl:block w-px h-6 bg-navy/10" />
             <Link
