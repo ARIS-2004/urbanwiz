@@ -17,57 +17,56 @@ const steps = [
   {
     n: "01",
     eyebrow: "Step one",
-    title: "Share",
-    body: "Tell us about your business and the operational friction you're feeling.",
+    title: "Listen",
+    body: "Before offering solutions, we listen — to your business, your people, and the friction you're feeling.",
     image:
       "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" {...stroke}>
-        <path d="M21 12a9 9 0 11-3.5-7.1L21 4l-1 3.5A8.96 8.96 0 0121 12z" />
-        <path d="M8 11h8M8 14h5" />
+        <path d="M4 12a8 8 0 0116 0v3" />
+        <path d="M4 15v-3M20 15v-3M6 15h2v5H6zM16 15h2v5h-2z" />
       </svg>
     ),
   },
   {
     n: "02",
     eyebrow: "Step two",
-    title: "Respond",
-    body: "A senior team member reviews your needs and replies personally.",
+    title: "Build",
+    body: "We design operational systems that fit your organisation — never the other way around.",
     image:
       "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" {...stroke}>
-        <rect x="3" y="5" width="18" height="14" rx="2" />
-        <path d="M4 7l8 6 8-6" />
+        <path d="M3 21V10l9-6 9 6v11" />
+        <path d="M9 21v-6h6v6" />
       </svg>
     ),
   },
   {
     n: "03",
     eyebrow: "Step three",
-    title: "Connect",
-    body: "A thirty-minute conversation about goals, scope and solutions.",
+    title: "Support",
+    body: "Our teams become a reliable extension of yours — delivering consistent, high-quality service every day.",
     image:
       "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&q=80",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" {...stroke}>
-        <rect x="3" y="4" width="18" height="17" rx="2" />
-        <path d="M3 9h18M8 2v4M16 2v4" />
+        <path d="M4 13a8 8 0 1116 0v3a2 2 0 01-2 2h-1v-6h3" />
+        <path d="M4 13v3a2 2 0 002 2h1v-6H4" />
       </svg>
     ),
   },
   {
     n: "04",
     eyebrow: "Step four",
-    title: "Launch",
-    body: "Documented playbooks, phased ramp and a smooth onboarding into operations.",
+    title: "Improve",
+    body: "Through continuous feedback, innovation and collaboration, we help your business grow stronger over time.",
     image:
       "https://images.unsplash.com/photo-1568992687947-868a62a9f521?auto=format&fit=crop&w=800&q=80",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" {...stroke}>
-        <path d="M5 19c0-3 2-7 7-12 5 5 7 9 7 12-2 1-4 1-7 1s-5 0-7-1z" />
-        <circle cx="12" cy="10" r="1.6" />
-        <path d="M7 21l-1-3M17 21l1-3" />
+        <path d="M3 17l5-5 4 4 8-9" />
+        <path d="M15 7h5v5" />
       </svg>
     ),
   },
@@ -129,9 +128,8 @@ export default function Process() {
               transition={{ duration: 0.9, delay: 0.1, ease }}
               className="mt-5 font-display text-[36px] sm:text-[46px] xl:text-[54px] tracking-[-0.025em] leading-[0.98] text-navy font-bold"
             >
-              From first note to{" "}
-              <span className="text-orange">live</span>{" "}
-              <span className="text-blue-deep">operations.</span>
+              Listen. <span className="text-orange">Build.</span>{" "}
+              <span className="text-blue-deep">Support. Improve.</span>
             </motion.h2>
           </div>
 

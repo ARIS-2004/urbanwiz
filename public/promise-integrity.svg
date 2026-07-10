@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="pi-bg" x1="24" y1="18" x2="96" y2="104" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1B2255"/>
+      <stop offset="1" stop-color="#0C1030"/>
+    </linearGradient>
+    <linearGradient id="pi-shield" x1="60" y1="40" x2="60" y2="82" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF7A4D"/>
+      <stop offset="1" stop-color="#FF5722"/>
+    </linearGradient>
+    <radialGradient id="pi-shine" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(42 34) rotate(58) scale(46)">
+      <stop stop-color="#fff" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="pi-sh" x="8" y="12" width="104" height="104" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#0F1330" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <g filter="url(#pi-sh)">
+    <rect x="18" y="16" width="84" height="84" rx="26" fill="url(#pi-bg)"/>
+    <rect x="18.75" y="16.75" width="82.5" height="82.5" rx="25.25" stroke="#fff" stroke-opacity="0.10" stroke-width="1.5"/>
+    <rect x="18" y="16" width="84" height="84" rx="26" fill="url(#pi-shine)"/>
+  </g>
+  <!-- shield glyph -->
+  <path d="M60 37 82 45v14c0 13.5-9 22.5-22 27.5C47 78.5 38 69.5 38 56V45l22-8z" fill="url(#pi-shield)"/>
+  <path d="M60 37 82 45v14c0 13.5-9 22.5-22 27.5C47 78.5 38 69.5 38 56V45l22-8z" stroke="#fff" stroke-opacity="0.22" stroke-width="1.5"/>
+  <path d="M51 60.5 57 66.5 70 53" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

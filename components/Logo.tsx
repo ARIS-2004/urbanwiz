@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Logo({
@@ -7,20 +8,23 @@ export default function Logo({
   inverted?: boolean;
   size?: "sm" | "lg";
 }) {
-  const fontSize =
-    size === "lg"
-      ? "text-[28px] sm:text-[32px]"
-      : "text-[20px] sm:text-[22px]";
+  const height = size === "lg" ? 44 : 32;
   return (
     <Link
       href="/"
       aria-label="Urbanwiz home"
-      className="inline-flex items-baseline font-display font-extrabold tracking-[-0.02em] leading-none select-none"
+      className="inline-flex items-center select-none"
     >
-      <span className={`${fontSize} ${inverted ? "text-ivory" : "text-navy"}`}>
-        Urban
-      </span>
-      <span className={`${fontSize} text-orange`}>wiz</span>
+      <Image
+        src="/logo.png"
+        alt="Urbanwiz"
+        width={height * 4}
+        height={height}
+        priority
+        className={`h-14 sm:h-16 w-auto ${
+          size === "lg" ? "!h-20 sm:!h-24" : ""
+        } ${inverted ? "brightness-0 invert" : ""}`}
+      />
     </Link>
   );
 }

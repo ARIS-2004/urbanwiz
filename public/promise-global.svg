@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="pg-bg" x1="24" y1="18" x2="96" y2="104" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1B2255"/>
+      <stop offset="1" stop-color="#0C1030"/>
+    </linearGradient>
+    <linearGradient id="pg-globe" x1="42" y1="40" x2="78" y2="78" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF7A4D"/>
+      <stop offset="1" stop-color="#FF5722"/>
+    </linearGradient>
+    <radialGradient id="pg-shine" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(42 34) rotate(58) scale(46)">
+      <stop stop-color="#fff" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="pg-sh" x="8" y="12" width="104" height="104" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#0F1330" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <g filter="url(#pg-sh)">
+    <rect x="18" y="16" width="84" height="84" rx="26" fill="url(#pg-bg)"/>
+    <rect x="18.75" y="16.75" width="82.5" height="82.5" rx="25.25" stroke="#fff" stroke-opacity="0.10" stroke-width="1.5"/>
+    <rect x="18" y="16" width="84" height="84" rx="26" fill="url(#pg-shine)"/>
+  </g>
+  <!-- globe glyph -->
+  <circle cx="60" cy="59" r="20" stroke="#5568D8" stroke-width="4"/>
+  <path d="M40 59h40" stroke="#5568D8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M60 39c5.4 5.2 8.6 12.3 8.6 20S65.4 73.8 60 79c-5.4-5.2-8.6-12.3-8.6-20S54.6 44.2 60 39z" stroke="url(#pg-globe)" stroke-width="4"/>
+</svg>

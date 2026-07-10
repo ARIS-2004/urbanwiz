@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
-import CTA from "@/components/CTA";
 import AboutHero from "@/components/about/AboutHero";
 import OriginStory from "@/components/about/OriginStory";
 import MissionValues from "@/components/about/MissionValues";
 import Leadership from "@/components/about/Leadership";
-import AboutMetrics from "@/components/about/AboutMetrics";
-import Studio from "@/components/about/Studio";
-import Timeline from "@/components/about/Timeline";
+import ClosingPromise from "@/components/about/ClosingPromise";
 
 export const metadata: Metadata = {
-  title: "About — Urbanwiz",
+  title: "Story of Urbanwiz & The Three Pillars",
   description:
-    "Urbanwiz is a Kolkata-based business process outsourcing partner — built on senior operators, transparent SLAs and long-term relationships.",
+    "We are Human, before we are Corporate.",
 };
 
 export default function AboutPage() {
@@ -20,12 +17,8 @@ export default function AboutPage() {
       <AboutHero />
       <OriginStory />
       <MissionValues />
-      <AboutMetrics />
       <Leadership />
-      <Studio />
-      <Timeline />
-
-      <CTA />
+      <ClosingPromise />
     </>
   );
 }

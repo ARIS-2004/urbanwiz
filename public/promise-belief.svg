@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="pb-bg" x1="24" y1="18" x2="96" y2="104" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1B2255"/>
+      <stop offset="1" stop-color="#0C1030"/>
+    </linearGradient>
+    <linearGradient id="pb-heart" x1="60" y1="42" x2="60" y2="80" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF7A4D"/>
+      <stop offset="1" stop-color="#FF5722"/>
+    </linearGradient>
+    <radialGradient id="pb-shine" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(42 34) rotate(58) scale(46)">
+      <stop stop-color="#fff" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="pb-sh" x="8" y="12" width="104" height="104" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#0F1330" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <g filter="url(#pb-sh)">
+    <rect x="18" y="16" width="84" height="84" rx="26" fill="url(#pb-bg)"/>
+    <rect x="18.75" y="16.75" width="82.5" height="82.5" rx="25.25" stroke="#fff" stroke-opacity="0.10" stroke-width="1.5"/>
+    <rect x="18" y="16" width="84" height="84" rx="26" fill="url(#pb-shine)"/>
+  </g>
+  <!-- heart glyph -->
+  <path d="M60 80s-19-11-19-25c0-6.6 5-11 10.8-11 4.2 0 6.9 2.4 8.2 4.9 1.3-2.5 4-4.9 8.2-4.9C74 44 79 48.4 79 55 79 69 60 80 60 80z" fill="url(#pb-heart)"/>
+  <path d="M60 80s-19-11-19-25c0-6.6 5-11 10.8-11 4.2 0 6.9 2.4 8.2 4.9 1.3-2.5 4-4.9 8.2-4.9C74 44 79 48.4 79 55 79 69 60 80 60 80z" stroke="#fff" stroke-opacity="0.20" stroke-width="1.5"/>
+  <path d="M50 54c0-3.4 2.6-5.6 5.6-5.6" stroke="#fff" stroke-opacity="0.45" stroke-width="3" stroke-linecap="round"/>
+</svg>

@@ -5,213 +5,183 @@ import { motion } from "framer-motion";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 type Milestone = {
-  year: string;
-  shortYear: string;
+  marker: string;
+  kicker: string;
   title: string;
   body: string;
-  accent: "orange" | "blue";
+  accent: "orange" | "blue" | "navy";
+  status: "done" | "current" | "next";
 };
 
 const milestones: Milestone[] = [
   {
-    year: "2017",
-    shortYear: "'17",
-    title: "Founded in Salt Lake",
-    body: "Urbanwiz starts as a small operations practice in Sector V, Kolkata.",
+    marker: "2017",
+    kicker: "Founded",
+    title: "Three founders. One belief.",
+    body: "Subhajit, Shilanjan and Vineet start Urbanwiz at Ecospace Business Park, New Town — with a philosophy before they had a client list.",
     accent: "orange",
+    status: "done",
   },
   {
-    year: "2019",
-    shortYear: "'19",
-    title: "First international account",
-    body: "Crossed into international support work — APAC and EMEA time zones.",
+    marker: "Today",
+    kicker: "Operating",
+    title: "Building the operating standard.",
+    body: "Customer support, data operations, and business process support delivered from a single in-house team in Kolkata.",
     accent: "blue",
+    status: "current",
   },
   {
-    year: "2022",
-    shortYear: "'22",
-    title: "100+ operators",
-    body: "The team grows past one hundred trained operators across practices.",
-    accent: "orange",
-  },
-  {
-    year: "Today",
-    shortYear: "Now",
-    title: "150+ operators · 60+ clients",
-    body: "Still in Kolkata. Still senior owners on every account. Just more of it.",
-    accent: "blue",
+    marker: "Ahead",
+    kicker: "Next chapter",
+    title: "IT, AI, and fintech ecosystem.",
+    body: "Extending the practice into intelligent systems, AI-assisted workflows, and fintech services — always guided by the same belief.",
+    accent: "navy",
+    status: "next",
   },
 ];
+
+const accents = {
+  orange: { text: "text-orange", bg: "bg-orange", ring: "ring-orange/25" },
+  blue: {
+    text: "text-blue-deep",
+    bg: "bg-blue-deep",
+    ring: "ring-blue-deep/25",
+  },
+  navy: { text: "text-navy", bg: "bg-navy", ring: "ring-navy/25" },
+} as const;
 
 export default function Timeline() {
   return (
     <section
-      className="relative overflow-hidden py-14 lg:py-16"
-      style={{ backgroundColor: "#FAF8F6" }}
+      id="timeline"
+      className="relative overflow-hidden py-20 lg:py-28 bg-white"
     >
-      {/* Ambient washes */}
+      {/* Editorial rule */}
       <div
         aria-hidden
-        className="absolute -top-24 right-0 w-[460px] h-[460px] rounded-full pointer-events-none opacity-65"
+        className="absolute inset-x-0 top-0 h-px pointer-events-none"
         style={{
           background:
-            "radial-gradient(closest-side, rgba(255,87,34,0.10), rgba(255,87,34,0) 70%)",
-        }}
-      />
-      <div
-        aria-hidden
-        className="absolute -bottom-24 left-0 w-[440px] h-[440px] rounded-full pointer-events-none opacity-55"
-        style={{
-          background:
-            "radial-gradient(closest-side, rgba(30,58,186,0.08), rgba(30,58,186,0) 70%)",
-        }}
-      />
-
-      {/* Decorative dot grids */}
-      <div
-        aria-hidden
-        className="absolute top-12 left-8 hidden lg:block w-24 h-16 opacity-60 pointer-events-none"
-        style={{
-          backgroundImage:
-            "radial-gradient(rgba(255,87,34,0.42) 1px, transparent 1px)",
-          backgroundSize: "11px 11px",
-          maskImage: "radial-gradient(closest-side, black, transparent 80%)",
-          WebkitMaskImage: "radial-gradient(closest-side, black, transparent 80%)",
+            "linear-gradient(90deg, transparent 0%, rgba(15,19,48,0.10) 50%, transparent 100%)",
         }}
       />
 
       <div className="container-content relative">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-14">
+        {/* Header — same editorial system */}
+        <div className="max-w-3xl mb-14 lg:mb-16">
           <motion.div
-            initial={{ opacity: 0, y: 8 }}
+            initial={{ opacity: 0, y: 6 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.7, ease }}
-            className="inline-flex items-center gap-3"
+            transition={{ duration: 0.6, ease }}
+            className="flex items-center gap-3"
           >
-            <span className="block w-7 h-[2px] bg-orange" />
-            <span className="text-[10.5px] uppercase tracking-[0.3em] text-orange font-semibold">
-              Timeline
+            <span className="block w-6 h-[2px] bg-orange" />
+            <span className="text-[10.5px] uppercase tracking-[0.32em] text-navy/55 font-bold">
+              The path so far
             </span>
-            <span className="block w-7 h-[2px] bg-orange" />
           </motion.div>
 
           <motion.h2
-            initial={{ opacity: 0, y: 14, filter: "blur(6px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.9, delay: 0.1, ease }}
-            className="mt-5 font-display text-[30px] sm:text-[40px] xl:text-[48px] tracking-[-0.025em] leading-[1.02] text-navy font-bold"
+            transition={{ delay: 0.1, duration: 0.85, ease }}
+            className="mt-6 font-display text-[36px] sm:text-[52px] xl:text-[60px] tracking-[-0.03em] leading-[0.98] text-navy font-bold"
           >
-            Eight years.{" "}
-            <span className="text-orange">Four</span>{" "}
-            <span className="text-blue-deep">milestones.</span>
+            One{" "}
+            <span className="text-orange">chapter</span> in,
+            <br />
+            <span className="text-blue-deep">many</span> to come.
           </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.25, duration: 0.85, ease }}
+            className="mt-6 text-[15px] sm:text-[16px] leading-[1.75] text-navy/70 max-w-xl"
+          >
+            A young company, deliberately paced. We&apos;ll update this
+            timeline as we grow — one earned milestone at a time.
+          </motion.p>
         </div>
 
-        {/* Timeline track */}
-        <div className="relative">
-          {/* Connecting hairline — horizontal on desktop */}
-          <motion.span
-            aria-hidden
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 1.2, ease, delay: 0.2 }}
-            className="absolute hidden lg:block left-[6%] right-[6%] top-[36px] h-[2px] origin-left rounded-full"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(255,87,34,0.50), rgba(30,58,186,0.50))",
-            }}
-          />
-          {/* Vertical hairline on mobile */}
+        {/* Vertical timeline — editorial */}
+        <div className="relative max-w-3xl">
+          {/* Central vertical rule */}
           <span
             aria-hidden
-            className="absolute lg:hidden left-[34px] top-2 bottom-2 w-[2px] rounded-full"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(255,87,34,0.40), rgba(30,58,186,0.40))",
-            }}
+            className="absolute left-[13px] top-2 bottom-2 w-px bg-navy/12 pointer-events-none"
           />
 
-          <motion.ol
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.15 }}
-            variants={{
-              hidden: {},
-              show: { transition: { staggerChildren: 0.14, delayChildren: 0.25 } },
-            }}
-            className="relative grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-5"
-          >
-            {milestones.map((m) => {
-              const isBlue = m.accent === "blue";
+          <div className="space-y-12 lg:space-y-14">
+            {milestones.map((m, i) => {
+              const a = accents[m.accent];
               return (
-                <motion.li
-                  key={m.year}
-                  variants={{
-                    hidden: { opacity: 0, y: 22 },
-                    show: { opacity: 1, y: 0, transition: { duration: 0.75, ease } },
-                  }}
-                  className="relative pl-20 lg:pl-0"
+                <motion.article
+                  key={m.marker}
+                  initial={{ opacity: 0, x: 12 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.7, delay: i * 0.08, ease }}
+                  className="relative pl-12 sm:pl-14"
                 >
-                  {/* Year chip */}
-                  <div className="flex items-start lg:flex-col">
-                    <span
-                      className={`absolute left-0 lg:relative grid place-items-center w-[68px] h-[68px] rounded-2xl bg-white ring-1 ring-navy/8 ${
-                        isBlue ? "text-blue-deep" : "text-orange"
-                      }`}
-                      style={{
-                        boxShadow: isBlue
-                          ? "0 16px 30px -10px rgba(30,58,186,0.32), inset 0 1px 0 rgba(255,255,255,0.85), 0 0 0 4px rgba(30,58,186,0.05)"
-                          : "0 16px 30px -10px rgba(255,87,34,0.32), inset 0 1px 0 rgba(255,255,255,0.85), 0 0 0 4px rgba(255,87,34,0.06)",
-                      }}
-                    >
-                      <span className="font-display text-[18px] font-extrabold tracking-tight tabular-nums">
-                        {m.shortYear}
-                      </span>
-                      {/* Pulse dot top-right */}
+                  {/* Node */}
+                  <span
+                    className={`absolute left-0 top-0.5 grid place-items-center w-[27px] h-[27px] rounded-full ring-4 ring-white ${
+                      m.status === "next" ? "bg-white border-2 border-navy/30" : a.bg
+                    }`}
+                  >
+                    {m.status === "current" && (
                       <span
                         aria-hidden
-                        className="absolute -top-1.5 -right-1.5 grid place-items-center w-3 h-3"
+                        className={`absolute inset-0 rounded-full ${a.bg} opacity-40 animate-ping`}
+                      />
+                    )}
+                    {m.status === "done" && (
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        fill="none"
                       >
-                        <span
-                          className={`absolute inline-flex h-full w-full rounded-full ${
-                            isBlue ? "bg-blue-deep/40" : "bg-orange/40"
-                          } animate-ping`}
+                        <path
+                          d="M2.5 6.5l2.5 2.5L9.5 3.5"
+                          stroke="white"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
-                        <span
-                          className={`relative inline-flex w-2 h-2 rounded-full ring-2 ring-white ${
-                            isBlue ? "bg-blue-deep" : "bg-orange"
-                          }`}
-                        />
-                      </span>
+                      </svg>
+                    )}
+                    {m.status === "next" && (
+                      <span className="block w-1.5 h-1.5 rounded-full bg-navy/50" />
+                    )}
+                  </span>
+
+                  {/* Content */}
+                  <div className="flex items-baseline gap-3 flex-wrap">
+                    <span
+                      className={`font-display text-[26px] sm:text-[32px] leading-none tracking-[-0.025em] font-black ${a.text}`}
+                    >
+                      {m.marker}
+                    </span>
+                    <span className="text-[10px] uppercase tracking-[0.28em] text-navy/45 font-bold">
+                      {m.kicker}
                     </span>
                   </div>
-
-                  {/* Card */}
-                  <div className="mt-3 lg:mt-7 lg:pr-3">
-                    <div
-                      className={`text-[10px] uppercase tracking-[0.24em] font-bold ${
-                        isBlue ? "text-blue-deep" : "text-orange"
-                      }`}
-                    >
-                      {m.year}
-                    </div>
-                    <h3 className="mt-1.5 font-display text-[18px] sm:text-[20px] xl:text-[22px] tracking-[-0.02em] text-navy font-bold leading-tight">
-                      {m.title}
-                    </h3>
-                    <p className="mt-2 text-[12.5px] leading-[1.6] text-navy/60 max-w-[260px]">
-                      {m.body}
-                    </p>
-                  </div>
-                </motion.li>
+                  <h3 className="mt-3 font-display text-[19px] sm:text-[22px] xl:text-[24px] tracking-[-0.02em] leading-[1.2] text-navy font-bold">
+                    {m.title}
+                  </h3>
+                  <p className="mt-2 text-[13.5px] leading-[1.7] text-navy/65 max-w-lg">
+                    {m.body}
+                  </p>
+                </motion.article>
               );
             })}
-          </motion.ol>
+          </div>
         </div>
-
       </div>
     </section>
   );

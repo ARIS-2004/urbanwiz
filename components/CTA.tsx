@@ -110,7 +110,7 @@ export default function CTA() {
           >
             <span className="block w-7 h-[2px] bg-orange" />
             <span className="text-[10.5px] uppercase tracking-[0.3em] text-orange font-semibold">
-              Ready when you are
+              People · Process · Progress
             </span>
             <span className="block w-7 h-[2px] bg-orange" />
           </motion.div>
@@ -123,7 +123,7 @@ export default function CTA() {
             variants={wordContainer}
             className="mt-4 font-display text-[26px] sm:text-[34px] xl:text-[40px] leading-[1.05] tracking-[-0.025em] font-bold text-ivory"
           >
-            {["Let's", "build", "something"].map((w) => (
+            {["Ready", "to", "build", "better"].map((w) => (
               <motion.span
                 key={w}
                 variants={wordItem}
@@ -136,7 +136,7 @@ export default function CTA() {
               variants={wordItem}
               className="inline-block text-orange"
             >
-              dependable.
+              operations?
             </motion.span>
           </motion.h2>
 
@@ -148,16 +148,18 @@ export default function CTA() {
             transition={{ delay: 0.4, duration: 0.8, ease }}
             className="mt-3.5 text-[13px] sm:text-[14px] leading-[1.65] text-ivory/65 max-w-lg mx-auto"
           >
-            Real conversations with senior operators. A senior partner replies within one business day.
+            Whether you&apos;re scaling your first team or optimising an
+            established business, Urbanwiz builds efficient operations powered
+            by great people and proven processes.
           </motion.p>
 
-          {/* CTA */}
+          {/* CTAs — primary orange + ghost outline */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 0.55, duration: 0.8, ease }}
-            className="mt-6 flex justify-center"
+            className="mt-7 flex flex-wrap justify-center items-center gap-3"
           >
             <Link
               href="/contact"
@@ -167,7 +169,7 @@ export default function CTA() {
                   "0 16px 32px -12px rgba(255,87,34,0.50), inset 0 1px 0 rgba(255,255,255,0.20)",
               }}
             >
-              Get in touch
+              Schedule a discovery call
               <span className="grid place-items-center w-7 h-7 rounded-full bg-ivory/15 group-hover:bg-orange group-hover:text-ivory transition-colors">
                 <svg
                   width="11"
@@ -185,6 +187,12 @@ export default function CTA() {
                   />
                 </svg>
               </span>
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-ivory/25 text-ivory px-5 py-[10px] text-[11px] uppercase tracking-[0.22em] font-bold transition-colors duration-300 hover:border-orange hover:text-orange"
+            >
+              Request a custom proposal
             </Link>
           </motion.div>
         </div>

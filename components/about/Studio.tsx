@@ -5,53 +5,65 @@ import Link from "next/link";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
+// Google Maps embed for Ecospace Business Park, Action Area II, New Town, Kolkata
 const MAP_EMBED =
-  "https://www.google.com/maps?q=Salt+Lake+Sector+V,+Kolkata&output=embed";
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.4726!2d88.4614!3d22.5763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sEcospace%20Business%20Park!5e0!3m2!1sen!2sin!4v1700000000000";
 const MAP_LINK =
-  "https://www.google.com/maps/place/Salt+Lake+Sector+V,+Kolkata";
+  "https://www.google.com/maps/place/Ecospace+Business+Park,+Action+Area+II,+Newtown,+Kolkata";
 
 export default function Studio() {
   return (
     <section
-      id="studio"
-      className="relative overflow-hidden py-14 lg:py-16 bg-white"
+      id="office"
+      className="relative overflow-hidden py-20 lg:py-28 bg-white"
     >
+      {/* Editorial rule */}
+      <div
+        aria-hidden
+        className="absolute inset-x-0 top-0 h-px pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(90deg, transparent 0%, rgba(15,19,48,0.10) 50%, transparent 100%)",
+        }}
+      />
+
       <div className="container-content relative">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 lg:mb-12">
+        {/* Header — matches OriginStory / Leadership system */}
+        <div className="max-w-3xl mb-14 lg:mb-16">
           <motion.div
-            initial={{ opacity: 0, y: 8 }}
+            initial={{ opacity: 0, y: 6 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.7, ease }}
-            className="inline-flex items-center gap-3"
+            transition={{ duration: 0.6, ease }}
+            className="flex items-center gap-3"
           >
-            <span className="block w-7 h-[2px] bg-orange" />
-            <span className="text-[10.5px] uppercase tracking-[0.3em] text-orange font-semibold">
+            <span className="block w-6 h-[2px] bg-orange" />
+            <span className="text-[10.5px] uppercase tracking-[0.32em] text-navy/55 font-bold">
               Where we work
             </span>
-            <span className="block w-7 h-[2px] bg-orange" />
           </motion.div>
 
           <motion.h2
-            initial={{ opacity: 0, y: 14, filter: "blur(6px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.9, delay: 0.1, ease }}
-            className="mt-5 font-display text-[28px] sm:text-[36px] xl:text-[44px] tracking-[-0.025em] leading-[1.05] text-navy font-bold"
+            transition={{ delay: 0.1, duration: 0.85, ease }}
+            className="mt-6 font-display text-[36px] sm:text-[52px] xl:text-[60px] tracking-[-0.03em] leading-[0.98] text-navy font-bold"
           >
-            Our studio in{" "}
-            <span className="text-orange">Salt Lake.</span>
+            Our office in{" "}
+            <span className="text-orange">Ecospace</span>,
+            <br />
+            <span className="text-blue-deep">New Town</span>.
           </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0, y: 8 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.7, delay: 0.2, ease }}
-            className="mt-4 text-[13.5px] text-navy/55 leading-[1.65] max-w-md mx-auto"
+            transition={{ delay: 0.25, duration: 0.85, ease }}
+            className="mt-6 text-[15px] sm:text-[16px] leading-[1.75] text-navy/70 max-w-xl"
           >
-            Eastern India&apos;s most established outsourcing corridor — the
+            Eastern India&apos;s most established technology corridor — the
             talent pool that quietly powers global operations.
           </motion.p>
         </div>
@@ -80,18 +92,18 @@ export default function Studio() {
               <div className="flex items-center gap-3">
                 <span className="block w-5 h-[2px] bg-orange" />
                 <span className="text-[10px] uppercase tracking-[0.28em] text-orange font-bold">
-                  Studio · Kolkata
+                  Office · Kolkata
                 </span>
               </div>
 
               <h3 className="mt-4 font-display text-[24px] sm:text-[28px] tracking-[-0.02em] text-navy font-bold leading-tight">
-                Salt Lake Sector V
+                Ecospace Business Park
               </h3>
 
               <address className="mt-4 not-italic text-[13.5px] text-navy/70 leading-[1.7]">
-                Plot · Block · Salt Lake Sector V
+                Ecospace Business Park, Action Area II
                 <br />
-                Kolkata 700091
+                New Town, Kolkata 700160
                 <br />
                 West Bengal, India
               </address>
@@ -111,10 +123,10 @@ export default function Studio() {
                     Phone
                   </div>
                   <Link
-                    href="tel:+919051234876"
+                    href="tel:+919038816866"
                     className="mt-1 block text-[12.5px] text-navy font-semibold leading-tight tabular-nums hover:text-orange transition-colors"
                   >
-                    +91 90512 34876
+                    +91 90388 16866
                   </Link>
                 </div>
               </div>
@@ -148,7 +160,7 @@ export default function Studio() {
             <div className="lg:col-span-7 relative order-1 lg:order-2 min-h-[260px] lg:min-h-[400px] bg-navy/5">
               <iframe
                 src={MAP_EMBED}
-                title="Urbanwiz studio location — Salt Lake Sector V, Kolkata"
+                title="Urbanwiz office location — Ecospace Business Park, New Town, Kolkata"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="absolute inset-0 w-full h-full border-0"
@@ -166,7 +178,7 @@ export default function Studio() {
                   </svg>
                 </span>
                 <span className="text-[10px] uppercase tracking-[0.22em] text-navy font-bold">
-                  Salt Lake · Kolkata
+                  Ecospace · New Town, Kolkata
                 </span>
               </span>
             </div>

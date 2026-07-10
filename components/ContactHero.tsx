@@ -206,7 +206,7 @@ export default function ContactHero() {
                 </span>
               </a>
               <a
-                href="tel:+919051234876"
+                href="tel:+919038816866"
                 className="group relative inline-flex items-center justify-center gap-2.5 rounded-xl bg-white border border-navy/15 px-4 py-3 transition-all duration-300 hover:border-orange hover:-translate-y-0.5 shadow-[0_1px_2px_rgba(15,19,48,0.03)]"
               >
                 <span className="grid place-items-center w-6 h-6 rounded-full bg-orange/10 text-orange group-hover:bg-orange group-hover:text-ivory transition-colors">
@@ -313,7 +313,7 @@ export default function ContactHero() {
               >
                 <Image
                   src="/contacthero.png"
-                  alt="Urbanwiz Salt Lake studio"
+                  alt="Urbanwiz Ecospace Business Park office"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 60vw"

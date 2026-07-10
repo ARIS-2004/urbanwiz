@@ -7,8 +7,8 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 const pillars = [
   {
-    title: "Human-Centered Operations",
-    body: "Reliable teams built around your business, not around shift patterns.",
+    title: "Human-Centered Approach",
+    body: "People are at the heart of everything we do — from onboarding to delivery.",
     meta: "People",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
@@ -20,35 +20,56 @@ const pillars = [
     ),
   },
   {
-    title: "Technology-Led Workflows",
-    body: "Efficiency through automation and AI — humans where judgment matters.",
-    meta: "Systems",
+    title: "Tailored Business Solutions",
+    body: "Every engagement is designed around your unique needs — never a template.",
+    meta: "Fit",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <rect x="3" y="4" width="18" height="13" rx="2" stroke="currentColor" strokeWidth="1.6" />
-        <path d="M9 20h6M12 17v3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-        <path d="M7 11l2.5 2.5L13 10l4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M4 4l6 6M14 14l6 6M4 20l6-6M14 10l6-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        <circle cx="12" cy="12" r="2.5" stroke="currentColor" strokeWidth="1.6" />
       </svg>
     ),
   },
   {
-    title: "Long-Term Partnerships",
-    body: "We operate as an extension of your team, measured in years not quarters.",
-    meta: "Tenure",
+    title: "Operational Excellence",
+    body: "Structured processes and clear SLAs that deliver consistent results, day after day.",
+    meta: "Rigour",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path d="M12 21s-7-4.5-7-10a5 5 0 019-3 5 5 0 019 3c0 5.5-7 10-7 10z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+        <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+        <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
   },
   {
-    title: "Scalable Support",
-    body: "From early-stage startups to enterprises serving millions.",
+    title: "Scalable Growth",
+    body: "Flexible support that evolves with your business — from first hire to enterprise volume.",
     meta: "Range",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path d="M3 17l5-5 4 4 8-9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M15 7h5v5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Transparency & Accountability",
+    body: "Open communication and measurable outcomes — reported clearly, on schedule.",
+    meta: "Trust",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" />
+        <path d="M12 7v5l3.5 2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Partnership Beyond Service",
+    body: "Long-lasting relationships built on shared success, not transactional handoffs.",
+    meta: "Tenure",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <path d="M12 21s-7-4.5-7-10a5 5 0 019-3 5 5 0 019 3c0 5.5-7 10-7 10z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
       </svg>
     ),
   },
@@ -96,7 +117,7 @@ export default function Partner() {
         >
           <span className="block w-7 h-[2px] bg-orange" />
           <span className="text-[11px] uppercase tracking-[0.28em] text-orange font-semibold">
-            Why Urbanwiz
+            Why partner with Urbanwiz
           </span>
           <span
             className="hidden sm:block flex-1 max-w-[160px] h-[1.5px] rounded-full"
@@ -115,8 +136,8 @@ export default function Partner() {
             transition={{ duration: 0.9, delay: 0.1, ease }}
             className="lg:col-span-8 font-display text-[38px] sm:text-[50px] xl:text-[60px] tracking-[-0.025em] leading-[0.98] text-navy font-bold"
           >
-            A partner that <span className="text-orange">earns</span> trust
-            quietly.
+            Six reasons companies <span className="text-orange">stay</span>{" "}
+            with us.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -125,9 +146,9 @@ export default function Partner() {
             transition={{ duration: 0.7, delay: 0.2, ease }}
             className="lg:col-span-4 lg:pb-3 text-[14px] leading-[1.7] text-navy/55 max-w-sm lg:ml-auto lg:text-right"
           >
-            We&apos;ve spent years building a calm, careful operations
-            practice — the kind founders return to because the work
-            speaks for itself.
+            The principles that guide every account — from the first
+            conversation through the long, quiet years of running
+            operations alongside your team.
           </motion.p>
         </div>
 
@@ -188,7 +209,7 @@ export default function Partner() {
                   </svg>
                 </span>
                 <span className="text-[10px] uppercase tracking-[0.22em] text-white font-semibold">
-                  Salt Lake · Kolkata
+                  Ecospace · New Town, Kolkata
                 </span>
               </div>
 
@@ -250,7 +271,7 @@ export default function Partner() {
               hidden: {},
               show: { transition: { staggerChildren: 0.08, delayChildren: 0.15 } },
             }}
-            className="lg:col-span-7 grid grid-cols-1 gap-3"
+            className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3"
           >
             {pillars.map((p, i) => (
               <motion.div

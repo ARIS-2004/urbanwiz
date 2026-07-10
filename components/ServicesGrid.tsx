@@ -28,8 +28,8 @@ const stroke = {
 const services: Service[] = [
   {
     n: "01",
-    title: "Customer Support",
-    body: "Voice, email and chat support staffed by trained specialists who learn your product.",
+    title: "Customer Support Services",
+    body: "Deliver exceptional customer experiences through professional, responsive support — voice, email and chat handled by specialists who learn your product.",
     href: "/services#customer-support",
     image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
     dark: true,
@@ -42,39 +42,11 @@ const services: Service[] = [
   },
   {
     n: "02",
-    title: "Finance Operations",
-    body: "Bookkeeping, accounts payables, reconciliations and management reporting at audit standard.",
-    href: "/services#finance",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
-    dark: false,
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" {...stroke}>
-        <path d="M12 4a8 8 0 108 8h-8z" />
-        <path d="M12 4v8h8a8 8 0 00-8-8z" />
-      </svg>
-    ),
-  },
-  {
-    n: "03",
-    title: "Virtual Assistance",
-    body: "Administrative support for founders and growing teams — calendars, research, vendor coordination.",
-    href: "/services#virtual-assistance",
-    image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80",
-    dark: false,
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" {...stroke}>
-        <circle cx="12" cy="8" r="3.5" />
-        <path d="M4 20c1-4 4.5-6 8-6s7 2 8 6" />
-      </svg>
-    ),
-  },
-  {
-    n: "04",
-    title: "Back Office",
-    body: "Data processing, document workflows, order operations and quality assurance at scale.",
-    href: "/services#back-office",
+    title: "Data Operations",
+    body: "Improve efficiency by outsourcing routine administrative and operational tasks — data entry, document processing, and structured workflows managed with discipline.",
+    href: "/services#data-operations",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
-    dark: true,
+    dark: false,
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" {...stroke}>
         <rect x="3" y="7" width="18" height="13" rx="2" />
@@ -84,27 +56,13 @@ const services: Service[] = [
     ),
   },
   {
-    n: "05",
-    title: "IT Helpdesk",
-    body: "Tiered technical support and service desk operations with documented SLAs.",
-    href: "/services#it-helpdesk",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
-    dark: false,
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" {...stroke}>
-        <rect x="3" y="5" width="18" height="12" rx="2" />
-        <path d="M8 21h8M12 17v4" />
-      </svg>
-    ),
-  },
-  {
-    n: "06",
-    title: "Process Automation",
-    body: "Workflow design and lightweight automation that quietly removes repetitive work.",
-    href: "/services#automation",
+    n: "03",
+    title: "Business Process Support",
+    body: "Streamline workflows and optimise processes for better productivity — from operations design to continuous improvement, delivered with senior ownership.",
+    href: "/services#business-process",
     image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1200&q=80",
     dark: true,
-    floatingNote: "Systems that scale. Outcomes that last.",
+    floatingNote: "People. Process. Progress.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" {...stroke}>
         <circle cx="12" cy="12" r="3" />
@@ -168,7 +126,7 @@ export default function ServicesGrid() {
               transition={{ duration: 0.9, delay: 0.1, ease }}
               className="mt-4 font-display text-[40px] sm:text-[52px] xl:text-[60px] tracking-[-0.025em] leading-[0.98] text-navy font-bold"
             >
-              Six practices.
+              Three core practices.
               <br />
               <span className="text-orange">One operating standard.</span>
             </motion.h2>
@@ -181,7 +139,8 @@ export default function ServicesGrid() {
               className="mt-5 max-w-[550px] text-[15px] text-navy/55 leading-[1.7]"
             >
               Adopt one or run them all together. The same senior owners,
-              the same SLAs, the same transparency.
+              the same SLAs, the same transparency — from customer support to
+              data operations and full business process support.
             </motion.p>
           </div>
 
@@ -197,7 +156,7 @@ export default function ServicesGrid() {
                 className="group inline-flex h-12 items-center gap-3 rounded-full px-7 text-[13px] font-medium text-ivory transition-all shadow-[0_20px_40px_-12px_rgba(8,18,59,0.35)] hover:shadow-[0_20px_40px_-8px_rgba(8,18,59,0.45)]"
                 style={{ background: "#08123B" }}
               >
-                Let&apos;s talk
+                Explore our services
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-orange transition-transform group-hover:translate-x-1">
                   <path d="M2 7h9m0 0L7.5 3.5M11 7l-3.5 3.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -206,16 +165,16 @@ export default function ServicesGrid() {
           </div>
         </div>
 
-        {/* Bento — 2×3 grid with 1.2fr / 1fr columns */}
+        {/* 3-card grid */}
         <motion.div
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.1 }}
           variants={{
             hidden: {},
-            show: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
+            show: { transition: { staggerChildren: 0.10, delayChildren: 0.05 } },
           }}
-          className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {services.map((s) => (
             <motion.div

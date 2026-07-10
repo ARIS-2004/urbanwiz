@@ -6,37 +6,34 @@ import Logo from "./Logo";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const cols = [
+const columns = [
   {
     title: "Company",
     links: [
-      { href: "/#partner", label: "About" },
-      { href: "mailto:careers@urbanwiz.com", label: "Careers" },
+      { href: "/about", label: "About Us" },
+      { href: "/about#leadership", label: "Leadership" },
+      { href: "/about#story", label: "Our Story" },
       { href: "/contact", label: "Contact" },
     ],
   },
   {
     title: "Services",
     links: [
-      { href: "/services#customer-support", label: "Customer Support" },
-      { href: "/services#finance", label: "Finance Operations" },
-      { href: "/services#it-helpdesk", label: "IT Helpdesk" },
+      { href: "/services", label: "Customer Support" },
+      { href: "/services", label: "Finance Operations" },
+      { href: "/services", label: "IT Helpdesk" },
+      { href: "/services", label: "Back Office Support" },
     ],
   },
   {
-    title: "About",
+    title: "Explore",
     links: [
-      { href: "/about#story", label: "Origin story" },
-      { href: "/about#leadership", label: "Leadership" },
-      { href: "/about#studio", label: "Studio" },
+      { href: "/", label: "Home" },
+      { href: "/services", label: "Services" },
+      { href: "/about", label: "About" },
+      { href: "/contact", label: "Get in Touch" },
     ],
   },
-];
-
-const emails = [
-  { href: "mailto:hello@urbanwiz.com", label: "hello@urbanwiz.com", tag: "General" },
-  { href: "mailto:partners@urbanwiz.com", label: "partners@urbanwiz.com", tag: "Partners" },
-  { href: "mailto:careers@urbanwiz.com", label: "careers@urbanwiz.com", tag: "Careers" },
 ];
 
 const socials = [
@@ -44,17 +41,8 @@ const socials = [
     name: "LinkedIn",
     href: "#",
     icon: (
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
         <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.55C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.72V1.73C24 .77 23.2 0 22.22 0z" />
-      </svg>
-    ),
-  },
-  {
-    name: "Twitter",
-    href: "#",
-    icon: (
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
       </svg>
     ),
   },
@@ -62,10 +50,19 @@ const socials = [
     name: "Instagram",
     href: "#",
     icon: (
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
         <rect x="3" y="3" width="18" height="18" rx="5" />
         <circle cx="12" cy="12" r="4" />
         <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    name: "Facebook",
+    href: "#",
+    icon: (
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M24 12.073C24 5.446 18.627 0.073 12 0.073S0 5.446 0 12.073C0 18.06 4.388 23.023 10.125 23.927v-8.385H7.078v-3.47h3.047V9.42c0-3.007 1.792-4.669 4.533-4.669 1.313 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.875v2.253h3.328l-.532 3.47h-2.796v8.385C19.612 23.023 24 18.06 24 12.073z" />
       </svg>
     ),
   },
@@ -81,292 +78,208 @@ const reveal = (delay = 0) => ({
 export default function Footer() {
   return (
     <footer
-      className="relative overflow-hidden"
-      style={{ backgroundColor: "#FAF8F6" }}
+      className="relative overflow-hidden pt-2 pb-6"
+      style={{
+        background:
+          "linear-gradient(180deg, #FAFAFA, #F1F2F5)",
+      }}
     >
-      {/* Layered ambient washes */}
-      <motion.div
-        aria-hidden
-        animate={{ opacity: [0.45, 0.75, 0.45], scale: [1, 1.08, 1] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-40 -right-32 w-[640px] h-[640px] rounded-full pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(closest-side, rgba(255,87,34,0.10), rgba(255,87,34,0) 70%)",
-        }}
-      />
-      <motion.div
-        aria-hidden
-        animate={{ opacity: [0.4, 0.65, 0.4], scale: [1.05, 1, 1.05] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute -bottom-40 -left-32 w-[640px] h-[640px] rounded-full pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(closest-side, rgba(30,58,186,0.08), rgba(30,58,186,0) 70%)",
-        }}
-      />
-
-      {/* Faint diagonal hairline pattern */}
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none opacity-50"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(135deg, rgba(15,19,48,0.025) 0 1px, transparent 1px 22px)",
-          maskImage:
-            "radial-gradient(ellipse at center, black 30%, transparent 80%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse at center, black 30%, transparent 80%)",
-        }}
-      />
-
-      {/* Top hairline gradient — orange to blue */}
-      <motion.div
-        aria-hidden
-        initial={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.4, ease }}
-        className="absolute top-0 left-0 right-0 h-[2px] origin-left"
-        style={{
-          background:
-            "linear-gradient(90deg, rgba(255,87,34,0.7) 0%, rgba(30,58,186,0.7) 100%)",
-        }}
-      />
-
       <div className="container-wide relative">
-        {/* Marquee tagline strip */}
-        <div className="relative border-b border-navy/10 mt-10 lg:mt-12 py-5 overflow-hidden">
-          <motion.div
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 38, repeat: Infinity, ease: "linear" }}
-            className="flex items-center gap-12 whitespace-nowrap"
-          >
-            {Array.from({ length: 2 }).map((_, batch) => (
-              <div key={batch} className="flex items-center gap-12">
-                {[
-                  "Customer Support",
-                  "Finance Operations",
-                  "Back Office",
-                  "IT Helpdesk",
-                  "Virtual Assistance",
-                  "Process Automation",
-                ].map((s) => (
-                  <span key={`${batch}-${s}`} className="flex items-center gap-12 text-[12.5px] uppercase tracking-[0.26em] text-navy/55 font-medium">
-                    {s}
-                    <span className="w-1.5 h-1.5 rounded-full bg-orange" />
-                  </span>
-                ))}
-              </div>
-            ))}
-          </motion.div>
-        </div>
-
-        {/* Main columns — premium white card on ivory */}
-        <div className="py-10">
-          <motion.div
-            {...reveal(0)}
-            className="relative rounded-3xl overflow-hidden border border-navy/8 bg-white"
-            style={{
-              boxShadow:
-                "0 1px 0 rgba(255,255,255,0.7) inset, 0 1px 2px rgba(15,19,48,0.03), 0 40px 80px -30px rgba(15,19,48,0.20)",
-            }}
-          >
-            {/* Top accent strip (orange→blue) inside the card */}
-            <span
-              aria-hidden
-              className="absolute top-0 left-0 right-0 h-[3px]"
-              style={{
-                background:
-                  "linear-gradient(90deg, #FF5722 0%, #1E3ABA 100%)",
-              }}
-            />
-
-            {/* Ambient inside */}
-            <div
-              aria-hidden
-              className="absolute -top-32 -right-32 w-[400px] h-[400px] rounded-full pointer-events-none"
-              style={{
-                background:
-                  "radial-gradient(closest-side, rgba(255,87,34,0.08), rgba(255,87,34,0) 70%)",
-              }}
-            />
-
-            {/* Header bar — Logo + tagline */}
-            <div className="relative px-7 lg:px-10 pt-8 pb-6 border-b border-navy/8 flex items-center justify-between gap-4">
-              <Logo size="lg" />
-              <div className="hidden sm:flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-navy/55 font-semibold">
-                <span className="block w-5 h-[2px] bg-orange" />
-                Made in Kolkata · Est. 2017
-              </div>
-            </div>
-
-            {/* Columns row */}
-            <div className="relative grid grid-cols-2 lg:grid-cols-12 gap-y-8 lg:gap-0 px-7 lg:px-0 py-9">
-              {/* Studio */}
-              <motion.div
-                {...reveal(0)}
-                className="col-span-2 lg:col-span-3 lg:px-10 lg:border-r lg:border-navy/8"
-              >
-                <ColHeader title="Studio" />
-                <address className="mt-4 not-italic font-display text-[15px] text-navy leading-[1.5] tracking-tight font-semibold">
-                  Salt Lake Sector V
-                  <br />
-                  Kolkata 700091
-                </address>
-                <div className="mt-1 text-[12px] text-navy/55">
-                  West Bengal, India
-                </div>
-                <a
-                  href="tel:+919051234876"
-                  className="group mt-4 inline-flex items-center gap-2 rounded-full bg-white border border-navy/10 px-3.5 py-2 text-[12.5px] text-navy hover:text-orange hover:border-orange/40 hover:-translate-y-0.5 transition-all duration-300 font-semibold tabular-nums shadow-[0_1px_2px_rgba(15,19,48,0.03),0_10px_24px_-14px_rgba(15,19,48,0.18)]"
-                >
-                  <span className="grid place-items-center w-5 h-5 rounded-full bg-orange/10 text-orange group-hover:bg-orange group-hover:text-ivory transition-colors">
-                    <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
-                      <path
-                        d="M4 3h1.8L7 6 5.5 7c.9 1.7 2.3 3.1 4 4L10.5 9.5 13.5 11V13c0 .55-.45 1-1 1-5.8 0-10.5-4.7-10.5-10.5 0-.55.45-1 1-1z"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                  +91 90512 34876
-                </a>
-              </motion.div>
-
-              {/* Link columns */}
-              {cols.map((c, i) => (
-                <motion.div
-                  key={c.title}
-                  {...reveal(0.1 + i * 0.06)}
-                  className="lg:col-span-2 lg:px-6 lg:border-r lg:border-navy/8"
-                >
-                  <ColHeader title={c.title} />
-                  <ul className="mt-4 space-y-2.5">
-                    {c.links.map((l) => (
-                      <li key={`${c.title}-${l.label}`}>
-                        <Link
-                          href={l.href}
-                          className="group inline-flex items-center gap-2 text-[12.5px] text-navy/70 hover:text-orange transition-colors font-medium"
-                        >
-                          <span className="block w-0 h-px bg-orange transition-all duration-500 ease-editorial group-hover:w-3" />
-                          <span>{l.label}</span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-
-              {/* Direct lines */}
-              <motion.div
-                {...reveal(0.28)}
-                className="col-span-2 lg:col-span-3 lg:px-10"
-              >
-                <ColHeader title="Direct lines" />
-                <ul className="mt-4 space-y-3">
-                  {emails.map((e) => (
-                    <li key={e.href}>
-                      <a href={e.href} className="group block">
-                        <span className="block text-[9.5px] uppercase tracking-[0.22em] text-navy/45 font-semibold">
-                          {e.tag}
-                        </span>
-                        <span className="mt-0.5 inline-flex items-center gap-1.5 text-[12.5px] text-navy/75 group-hover:text-orange transition-colors font-medium">
-                          {e.label}
-                          <svg
-                            width="10"
-                            height="10"
-                            viewBox="0 0 14 14"
-                            fill="none"
-                            className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500"
-                          >
-                            <path
-                              d="M2 7h9m0 0L7.5 3.5M11 7l-3.5 3.5"
-                              stroke="currentColor"
-                              strokeWidth="1.6"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            </div>
-
-            {/* Bottom hairline gradient inside card */}
-            <span
-              aria-hidden
-              className="absolute left-0 right-0 bottom-0 h-[2px]"
-              style={{
-                background:
-                  "linear-gradient(90deg, rgba(255,87,34,0.4) 0%, rgba(30,58,186,0.4) 100%)",
-              }}
-            />
-          </motion.div>
-        </div>
-
-        {/* Copyright bar */}
         <motion.div
           {...reveal(0)}
-          className="border-t border-navy/10 py-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-5"
+          className="relative rounded-[28px] overflow-hidden border border-navy/8 bg-white"
+          style={{
+            boxShadow:
+              "0 1px 0 rgba(255,255,255,0.8) inset, 0 1px 2px rgba(15,19,48,0.03), 0 40px 90px -34px rgba(15,19,48,0.22)",
+          }}
         >
-          <div className="flex items-center gap-4 text-[12px] text-navy/55">
-            <span>© {new Date().getFullYear()} Urbanwiz Private Limited.</span>
-            <span className="hidden sm:block w-px h-3 bg-navy/15" />
-            <span className="hidden sm:inline text-navy/45">
-              Made with care in Kolkata.
-            </span>
+          {/* subtle corner wash */}
+          <span
+            aria-hidden
+            className="pointer-events-none absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full"
+            style={{
+              background:
+                "radial-gradient(closest-side, rgba(255,87,34,0.06), transparent 70%)",
+            }}
+          />
+          {/* faint arc lines top-right */}
+          <span
+            aria-hidden
+            className="pointer-events-none absolute top-0 right-0 w-[45%] h-full opacity-[0.5]"
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(135deg, rgba(15,19,48,0.02) 0 1px, transparent 1px 26px)",
+              maskImage:
+                "radial-gradient(120% 120% at 100% 0%, black, transparent 60%)",
+              WebkitMaskImage:
+                "radial-gradient(120% 120% at 100% 0%, black, transparent 60%)",
+            }}
+          />
+
+          {/* ── Main grid ── */}
+          <div className="relative px-8 lg:px-12 pt-9 lg:pt-10 pb-8">
+            {/* Made in Kolkata — top right */}
+            <div className="flex items-start justify-between gap-6">
+              <div />
+              <div className="hidden sm:flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-navy/55 font-bold">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" className="text-orange">
+                  <path d="M12 21c4-4 6-7 6-10a6 6 0 10-12 0c0 3 2 6 6 10z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+                  <circle cx="12" cy="11" r="2.2" stroke="currentColor" strokeWidth="1.8" />
+                </svg>
+                Made in Kolkata, Est. 2017
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 mt-1">
+              {/* Brand column */}
+              <div className="lg:col-span-4 lg:pr-8">
+                <Logo size="lg" />
+                <p className="mt-2.5 text-[12.5px] tracking-[0.02em] text-navy/50 font-medium">
+                  People. Performance. Progress.
+                </p>
+                <p className="mt-4 max-w-xs text-[13.5px] leading-[1.6] text-navy/60">
+                  We partner with ambitious businesses to build, scale, and
+                  transform—through technology and trust.
+                </p>
+
+                {/* contact rows */}
+                <div className="mt-5 space-y-3">
+                  <div className="flex items-start gap-3">
+                    <span className="grid place-items-center w-9 h-9 rounded-full bg-navy/[0.04] text-orange shrink-0">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 21c4-4 6-7 6-10a6 6 0 10-12 0c0 3 2 6 6 10z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+                        <circle cx="12" cy="11" r="2.2" stroke="currentColor" strokeWidth="1.6" />
+                      </svg>
+                    </span>
+                    <p className="text-[13.5px] leading-[1.5] text-navy/75 font-medium mt-1">
+                      Ecospace Business Park,
+                      <br />
+                      New Town, Kolkata 700160
+                    </p>
+                  </div>
+                  <a href="tel:+919038816866" className="group flex items-center gap-3">
+                    <span className="grid place-items-center w-9 h-9 rounded-full bg-navy/[0.04] text-orange shrink-0 group-hover:bg-orange group-hover:text-ivory transition-colors">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+                        <path d="M6 4h2.6L10.6 8 8.4 9.6c1.4 2.5 3.5 4.6 6 6L16 13.4 20 15.4V18c0 .8-.7 1.5-1.5 1.5-8.6 0-15.5-6.9-15.5-15.5C3 3.7 3.7 3 4.5 3z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+                      </svg>
+                    </span>
+                    <span className="text-[13.5px] text-navy/75 font-medium tabular-nums group-hover:text-orange transition-colors">
+                      +91 90388 16866
+                    </span>
+                  </a>
+                  <a href="mailto:info@urbanwiz.co.in" className="group flex items-center gap-3">
+                    <span className="grid place-items-center w-9 h-9 rounded-full bg-navy/[0.04] text-orange shrink-0 group-hover:bg-orange group-hover:text-ivory transition-colors">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+                        <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.6" />
+                        <path d="M4 7l8 6 8-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
+                    <span className="text-[13.5px] text-navy/75 font-medium group-hover:text-orange transition-colors">
+                      info@urbanwiz.co.in
+                    </span>
+                  </a>
+                </div>
+
+                {/* socials */}
+                <div className="mt-5 flex items-center gap-2.5">
+                  {socials.map((s, i) => (
+                    <motion.div
+                      key={s.name}
+                      initial={{ opacity: 0, scale: 0.6 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, ease, delay: 0.1 + i * 0.06 }}
+                      whileHover={{ y: -2 }}
+                    >
+                      <Link
+                        href={s.href}
+                        aria-label={s.name}
+                        className="grid place-items-center w-10 h-10 rounded-full bg-navy/[0.04] border border-navy/8 text-navy/65 hover:bg-orange hover:text-ivory hover:border-orange transition-all duration-300"
+                      >
+                        {s.icon}
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Link columns */}
+              <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8 lg:gap-6">
+                {columns.map((c, ci) => (
+                  <motion.div key={c.title} {...reveal(0.08 + ci * 0.05)}>
+                    <div className="text-[12px] uppercase tracking-[0.2em] text-navy font-bold">
+                      {c.title}
+                    </div>
+                    <span aria-hidden className="mt-2.5 block w-7 h-[2px] bg-orange rounded-full" />
+                    <ul className="mt-5 space-y-3">
+                      {c.links.map((l) => (
+                        <li key={l.label}>
+                          <Link
+                            href={l.href}
+                            className="group inline-flex items-center gap-1.5 text-[13.5px] text-navy/60 hover:text-orange transition-colors font-medium"
+                          >
+                            <span className="block w-0 h-px bg-orange transition-all duration-500 ease-editorial group-hover:w-3" />
+                            {l.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
 
-          <div className="flex items-center gap-5 flex-wrap">
-            <div className="flex items-center gap-4 text-[12px]">
-              <Link href="#" className="text-navy/55 hover:text-orange transition-colors font-medium">
-                Privacy Policy
-              </Link>
-              <span className="block w-px h-3 bg-navy/15" />
-              <Link href="#" className="text-navy/55 hover:text-orange transition-colors font-medium">
-                Terms of Service
-              </Link>
+          {/* ── CTA strip ── */}
+          <div className="relative border-t border-navy/8 px-8 lg:px-12 py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-navy/[0.015]">
+            <div className="flex items-center gap-4">
+              <span className="grid place-items-center w-12 h-12 rounded-full bg-orange/10 text-orange shrink-0">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none">
+                  <path d="M6 4h2.6L10.6 8 8.4 9.6c1.4 2.5 3.5 4.6 6 6L16 13.4 20 15.4V18c0 .8-.7 1.5-1.5 1.5-8.6 0-15.5-6.9-15.5-15.5C3 3.7 3.7 3 4.5 3z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+                </svg>
+              </span>
+              <div>
+                <div className="text-[12.5px] text-navy/55 font-medium">
+                  Ready to build something great together?
+                </div>
+                <div className="font-display text-[18px] sm:text-[20px] text-navy font-bold tracking-[-0.02em] leading-tight">
+                  Let&apos;s create impact that lasts.
+                </div>
+              </div>
             </div>
-            <span className="hidden md:block w-px h-4 bg-navy/15" />
-            <div className="flex items-center gap-2">
-              {socials.map((s, i) => (
-                <motion.div
-                  key={s.name}
-                  initial={{ opacity: 0, scale: 0.6 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, ease, delay: 0.1 + i * 0.06 }}
-                  whileHover={{ y: -2 }}
-                >
-                  <Link
-                    href={s.href}
-                    aria-label={s.name}
-                    className="grid place-items-center w-10 h-10 rounded-full bg-white border border-navy/10 text-navy/65 hover:bg-orange hover:text-ivory hover:border-orange transition-all duration-300 shadow-[0_1px_2px_rgba(15,19,48,0.03)]"
-                  >
-                    {s.icon}
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
+            <Link
+              href="/contact"
+              className="group inline-flex items-center gap-3 rounded-xl bg-navy text-ivory pl-6 pr-6 py-3.5 text-[12.5px] uppercase tracking-[0.2em] font-bold transition-colors duration-300 hover:bg-orange shrink-0"
+              style={{ boxShadow: "0 14px 30px -14px rgba(15,19,48,0.5)" }}
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-orange group-hover:text-ivory transition-colors group-hover:translate-x-0.5 duration-300">
+                <path d="M3 8h9m0 0L8.5 4.5M12 8l-3.5 3.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              Book a Call
+            </Link>
+          </div>
+        </motion.div>
+
+        {/* ── Copyright bar ── */}
+        <motion.div
+          {...reveal(0)}
+          className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 px-2"
+        >
+          <span className="text-[12.5px] text-navy/50">
+            © {new Date().getFullYear()} Urbanwiz Private Limited. All rights
+            reserved.
+          </span>
+          <div className="flex items-center gap-4 text-[12.5px]">
+            <Link href="#" className="text-navy/55 hover:text-orange transition-colors font-medium">
+              Privacy Policy
+            </Link>
+            <span className="block w-px h-3 bg-navy/20" />
+            <Link href="#" className="text-navy/55 hover:text-orange transition-colors font-medium">
+              Terms &amp; Conditions
+            </Link>
           </div>
         </motion.div>
       </div>
     </footer>
-  );
-}
-
-function ColHeader({ title }: { title: string }) {
-  return (
-    <div>
-      <div className="text-[10.5px] uppercase tracking-[0.26em] text-orange font-semibold">
-        {title}
-      </div>
-      <div className="mt-2.5 w-7 h-[2px] bg-orange/40 rounded-full" />
-    </div>
   );
 }

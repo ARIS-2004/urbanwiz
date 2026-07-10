@@ -27,12 +27,18 @@ export const metadata: Metadata = {
   title: "Urbanwiz — Operations that move business forward",
   description:
     "Urbanwiz is a business process outsourcing partner delivering customer support, finance operations and IT-enabled services for businesses that value reliability.",
-  metadataBase: new URL("https://urbanwiz.com"),
+  metadataBase: new URL("https://urbanwiz.co.in"),
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
   openGraph: {
     title: "Urbanwiz — Guiding with strength. Growing with care.",
     description:
       "Human-centered outsourcing for businesses that value reliability, operational excellence and lasting partnerships.",
     type: "website",
+    images: ["/logo.png"],
   },
 };
 

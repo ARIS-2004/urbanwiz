@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   AnimatePresence,
   motion,
@@ -33,6 +34,14 @@ export default function Loader() {
   const [show, setShow] = useState(true);
 
   useEffect(() => {
+    // Allow bypassing the intro (e.g. ?nointro) for previews/screenshots.
+    if (
+      typeof window !== "undefined" &&
+      new URLSearchParams(window.location.search).has("nointro")
+    ) {
+      setShow(false);
+      return;
+    }
     const t = setTimeout(() => setShow(false), DURATION);
     return () => clearTimeout(t);
   }, []);
@@ -154,11 +163,17 @@ export default function Loader() {
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8, ease }}
-                className="relative overflow-hidden inline-flex items-baseline font-display font-extrabold tracking-[-0.02em] leading-none text-[44px] sm:text-[56px] lg:text-[68px]"
+                className="relative overflow-hidden inline-block"
                 aria-label="Urbanwiz"
               >
-                <span className="text-navy">Urban</span>
-                <span className="text-orange">wiz</span>
+                <Image
+                  src="/logo.png"
+                  alt="Urbanwiz"
+                  width={720}
+                  height={180}
+                  priority
+                  className="block h-[56px] sm:h-[72px] lg:h-[92px] w-auto"
+                />
                 {/* White curtain panel slides off to the right */}
                 <motion.span
                   aria-hidden

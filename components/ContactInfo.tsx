@@ -16,9 +16,9 @@ const items: {
   icon: React.ReactNode;
 }[] = [
   {
-    label: "General enquiries",
-    value: "hello@urbanwiz.com",
-    href: "mailto:hello@urbanwiz.com",
+    label: "Email",
+    value: "info@urbanwiz.co.in",
+    href: "mailto:info@urbanwiz.co.in",
     cta: "Send",
     variant: "tintOrange",
     icon: (
@@ -29,38 +29,9 @@ const items: {
     ),
   },
   {
-    label: "Partnerships",
-    value: "partners@urbanwiz.com",
-    href: "mailto:partners@urbanwiz.com",
-    cta: "Send",
-    variant: "white",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <circle cx="9" cy="9" r="3" stroke="currentColor" strokeWidth="1.6" />
-        <circle cx="17" cy="11" r="2.3" stroke="currentColor" strokeWidth="1.6" />
-        <path d="M3 19c.8-3 3.2-5 6-5s5.2 2 6 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-        <path d="M14 18.5c.5-2 2-3.4 4-3.4s3.5 1.4 4 3.4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    label: "Careers",
-    value: "careers@urbanwiz.com",
-    href: "mailto:careers@urbanwiz.com",
-    cta: "Send",
-    variant: "tintBlue",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" strokeWidth="1.6" />
-        <path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2" stroke="currentColor" strokeWidth="1.6" />
-        <path d="M3 12h18" stroke="currentColor" strokeWidth="1.6" />
-      </svg>
-    ),
-  },
-  {
     label: "Phone",
-    value: "+91 90512 34876",
-    href: "tel:+919051234876",
+    value: "+91 90388 16866",
+    href: "tel:+919038816866",
     cta: "Call now",
     variant: "fillNavy",
     icon: (
@@ -213,7 +184,7 @@ export default function ContactInfo() {
             transition={{ duration: 0.7, delay: 0.2, ease }}
             className="mt-4 text-[13px] text-navy/55 leading-[1.65] max-w-md mx-auto"
           >
-            Every channel is read by a real person in our Salt Lake studio.
+            Every channel is read by a real person in our Ecospace office.
           </motion.p>
         </div>
 
@@ -226,7 +197,7 @@ export default function ContactInfo() {
             hidden: {},
             show: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
           }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 max-w-6xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 max-w-2xl mx-auto"
         >
           {items.map((it, i) => {
             const v = variants[it.variant];

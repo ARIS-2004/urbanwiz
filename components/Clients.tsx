@@ -128,46 +128,6 @@ export default function Clients() {
       />
 
       <div className="container-wide relative">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-12">
-          {/* Headline */}
-          <motion.h2
-            initial={{ opacity: 0, y: 12, filter: "blur(6px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.9, ease }}
-            className="font-display text-[24px] sm:text-[36px] xl:text-[52px] tracking-[-0.025em] leading-[1.05] text-navy font-bold"
-          >
-            Powering{" "}
-            <span className="text-orange">150+ growing teams</span>{" "}
-            <span className="text-blue-deep">across India.</span>
-          </motion.h2>
-
-          {/* Rating card */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.7, delay: 0.25, ease }}
-            className="mt-7 inline-flex items-center gap-3 rounded-full bg-white border border-navy/8 pl-3 pr-5 py-2 shadow-[0_1px_2px_rgba(15,19,48,0.03),0_14px_28px_-18px_rgba(15,19,48,0.20)]"
-          >
-            <span className="flex items-center gap-0.5 text-orange">
-              {Array.from({ length: 5 }).map((_, s) => (
-                <svg key={s} width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
-                  <path d="M7 1l1.8 3.7L13 5.4l-3 2.9.7 4.2L7 10.6 3.3 12.5 4 8.3 1 5.4l4.2-.7L7 1z" />
-                </svg>
-              ))}
-            </span>
-            <span className="font-display text-[14px] text-navy font-bold tabular-nums">
-              4.9<span className="text-navy/55">/5</span>
-            </span>
-            <span className="block w-px h-3.5 bg-navy/15" />
-            <span className="text-[11.5px] text-navy/60 font-medium">
-              From real businesses we work with every day
-            </span>
-          </motion.div>
-        </div>
-
         {/* Logos — two marquee rows */}
         <div className="relative space-y-3.5">
           {/* Fade masks */}
