@@ -225,11 +225,11 @@ const accents = {
 
 function SocialIcon({ label }: { label: Social["label"] }) {
   const shared =
-    "grid place-items-center w-8 h-8 rounded-full text-white transition-transform duration-300 group-hover/soc:scale-110";
+    "grid place-items-center w-9 h-9 rounded-full text-white transition-transform duration-300 group-hover/soc:scale-110";
   if (label === "LinkedIn") {
     return (
       <span className={shared} style={{ background: "#0A66C2" }}>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
           <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.55C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.72V1.73C24 .77 23.2 0 22.22 0z" />
         </svg>
       </span>
@@ -238,7 +238,7 @@ function SocialIcon({ label }: { label: Social["label"] }) {
   if (label === "Facebook") {
     return (
       <span className={shared} style={{ background: "#1877F2" }}>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
           <path d="M24 12.073C24 5.446 18.627 0.073 12 0.073S0 5.446 0 12.073C0 18.06 4.388 23.023 10.125 23.927v-8.385H7.078v-3.47h3.047V9.42c0-3.007 1.792-4.669 4.533-4.669 1.313 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.875v2.253h3.328l-.532 3.47h-2.796v8.385C19.612 23.023 24 18.06 24 12.073z" />
         </svg>
       </span>
@@ -252,7 +252,7 @@ function SocialIcon({ label }: { label: Social["label"] }) {
           "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
       }}
     >
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
         <rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" strokeWidth="1.8" />
         <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
         <circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" />
@@ -283,21 +283,21 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
         className={`absolute top-0 left-0 right-0 h-[3px] origin-left ${a.bar}`}
       />
       {/* ── Masthead ── */}
-      <div className="relative flex items-center px-6 sm:px-8 lg:px-10 pt-6 pb-4">
+      <div className="relative flex items-center px-7 sm:px-10 lg:px-12 pt-8 pb-4">
         <div className="flex items-center gap-3">
-          <span className={`block w-8 h-[2px] ${a.bar}`} />
-          <span className="text-[10px] tracking-[0.3em] uppercase font-bold text-navy/50">
+          <span className={`block w-9 h-[2px] ${a.bar}`} />
+          <span className="text-[10.5px] tracking-[0.3em] uppercase font-bold text-navy/50">
             Founder Profile
           </span>
         </div>
       </div>
 
       {/* ── Identity block ── */}
-      <div className="relative mx-6 sm:mx-8 lg:mx-10 rounded-2xl border border-navy/8 bg-navy/[0.015] px-5 sm:px-7 py-6 sm:py-7">
-        <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6">
+      <div className="relative mx-7 sm:mx-10 lg:mx-12 rounded-2xl border border-navy/8 bg-navy/[0.015] px-6 sm:px-9 py-7 sm:py-9">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8">
           {/* Portrait — grayscale photo over initials fallback */}
           <div
-            className="relative shrink-0 grid place-items-center w-[84px] h-[84px] sm:w-[96px] sm:h-[96px] rounded-2xl overflow-hidden transition-transform duration-500 ease-editorial group-hover/card:-translate-y-1"
+            className="relative shrink-0 grid place-items-center w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] rounded-2xl overflow-hidden transition-transform duration-500 ease-editorial group-hover/card:-translate-y-1"
             style={{
               backgroundColor: a.monoBg,
               boxShadow: `0 20px 38px -16px rgba(${a.rgb},0.5), inset 0 1px 0 rgba(255,255,255,0.08)`,
@@ -314,7 +314,7 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
               }}
             />
             <span
-              className="absolute font-display font-black text-[32px] sm:text-[36px] tracking-[-0.04em]"
+              className="absolute font-display font-black text-[38px] sm:text-[44px] tracking-[-0.04em]"
               style={{ color: a.monoInk }}
             >
               {leader.initials}
@@ -340,11 +340,11 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
           <div className="min-w-0 flex-1">
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
-                <h3 className="font-display text-[24px] sm:text-[28px] tracking-[-0.025em] leading-[1.05] text-navy font-bold">
+                <h3 className="font-display text-[28px] sm:text-[34px] tracking-[-0.025em] leading-[1.05] text-navy font-bold">
                   {leader.name}
                 </h3>
                 <div
-                  className={`mt-1.5 text-[9.5px] sm:text-[10px] uppercase tracking-[0.22em] font-bold ${a.text}`}
+                  className={`mt-2 text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-bold ${a.text}`}
                 >
                   {leader.role}
                 </div>
@@ -367,15 +367,15 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
             </div>
 
             <div
-              className="mt-3.5 pt-3.5 flex items-start gap-2.5"
+              className="mt-4 pt-4 flex items-start gap-3"
               style={{ borderTop: `1px solid rgba(${a.rgb},0.15)` }}
             >
               <span
-                className={`font-display font-black text-[30px] leading-[0.7] ${a.text} opacity-40 select-none`}
+                className={`font-display font-black text-[36px] leading-[0.7] ${a.text} opacity-40 select-none`}
               >
                 &ldquo;
               </span>
-              <p className="font-display text-[15px] sm:text-[16.5px] leading-[1.4] text-navy/80 font-semibold tracking-[-0.01em]">
+              <p className="font-display text-[16.5px] sm:text-[19px] leading-[1.42] text-navy/80 font-semibold tracking-[-0.01em]">
                 {leader.quote}
                 <span className={`${a.text} opacity-40`}>&rdquo;</span>
               </p>
@@ -401,8 +401,8 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
       </div>
 
       {/* ── Principle strip — editorial, numeral-led (no icons) ── */}
-      <div className="relative px-6 sm:px-8 lg:px-10 pt-9 pb-3">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-7 sm:gap-0 sm:divide-x divide-navy/8">
+      <div className="relative px-7 sm:px-10 lg:px-12 pt-11 pb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0 sm:divide-x divide-navy/8">
           {leader.principles.map((pr, i) => (
             <motion.div
               key={pr.key}
@@ -410,21 +410,21 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.6, ease, delay: 0.08 * i }}
-              className="group/pr relative sm:px-8 first:sm:pl-0 last:sm:pr-0"
+              className="group/pr relative sm:px-9 first:sm:pl-0 last:sm:pr-0"
             >
               <span
-                className={`font-display font-black text-[22px] leading-none tabular-nums ${a.text} opacity-30 transition-opacity duration-300 group-hover/pr:opacity-60`}
+                className={`font-display font-black text-[25px] leading-none tabular-nums ${a.text} opacity-30 transition-opacity duration-300 group-hover/pr:opacity-60`}
               >
                 {["I", "II", "III"][i]}
               </span>
-              <h4 className="mt-3 font-display text-[16px] sm:text-[16.5px] tracking-[-0.015em] text-navy font-bold leading-[1.2]">
+              <h4 className="mt-3.5 font-display text-[17.5px] sm:text-[18.5px] tracking-[-0.015em] text-navy font-bold leading-[1.2]">
                 {pr.title}
               </h4>
               <span
                 aria-hidden
-                className={`mt-3 mb-3.5 block h-[2px] w-7 rounded-full ${a.bar} opacity-60 origin-left transition-transform duration-500 ease-editorial group-hover/pr:scale-x-[1.5]`}
+                className={`mt-3.5 mb-4 block h-[2px] w-8 rounded-full ${a.bar} opacity-60 origin-left transition-transform duration-500 ease-editorial group-hover/pr:scale-x-[1.5]`}
               />
-              <p className="text-[13px] leading-[1.7] text-navy/62">
+              <p className="text-[14px] leading-[1.72] text-navy/62">
                 {pr.text}
               </p>
             </motion.div>
@@ -433,9 +433,9 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
       </div>
 
       {/* ── Footer: expand + meta ── */}
-      <div className="relative mt-4 border-t border-navy/8">
+      <div className="relative mt-5 border-t border-navy/8">
         <div
-          className="px-6 sm:px-8 lg:px-10 py-5 grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center"
+          className="px-7 sm:px-10 lg:px-12 py-6 grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center"
           style={{ backgroundColor: a.softBg }}
         >
           <div className="lg:col-span-8 flex items-center gap-5">
@@ -443,21 +443,21 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
               type="button"
               onClick={() => setOpen((o) => !o)}
               aria-expanded={open}
-              className="group/btn relative inline-flex items-center gap-3 rounded-xl bg-navy text-ivory pl-6 pr-2.5 py-3.5 overflow-hidden transition-colors duration-300 hover:bg-navy-soft shrink-0"
+              className="group/btn relative inline-flex items-center gap-3 rounded-xl bg-navy text-ivory pl-7 pr-3 py-4 overflow-hidden transition-colors duration-300 hover:bg-navy-soft shrink-0"
               style={{
                 boxShadow:
                   "0 16px 30px -14px rgba(15,19,48,0.6), inset 0 1px 0 rgba(255,255,255,0.12)",
               }}
             >
-              <span className="text-[11.5px] uppercase tracking-[0.2em] font-bold">
+              <span className="text-[12.5px] uppercase tracking-[0.2em] font-bold">
                 {open ? "Hide Full Story" : "Read Full Story"}
               </span>
               <motion.span
                 animate={{ rotate: open ? 180 : 0 }}
                 transition={{ duration: 0.4, ease }}
-                className="grid place-items-center w-7 h-7 rounded-full bg-orange text-ivory"
+                className="grid place-items-center w-8 h-8 rounded-full bg-orange text-ivory"
               >
-                <svg width="11" height="11" viewBox="0 0 14 14" fill="none">
+                <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
                   <path d="M3 5l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </motion.span>
@@ -668,7 +668,7 @@ export default function Leadership() {
         </div>
 
         {/* Founder profiles */}
-        <div className="space-y-8 lg:space-y-10">
+        <div className="space-y-10 lg:space-y-12 max-w-[1320px] mx-auto">
           {leaders.map((l) => (
             <FounderProfile key={l.name} leader={l} />
           ))}
