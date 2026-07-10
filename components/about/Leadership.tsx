@@ -80,7 +80,6 @@ const leaders: Leader[] = [
         href: "https://www.instagram.com/samael_the_light_bringer?igsh=OGg0c3k5anFxaTdz",
       },
       { label: "Facebook", href: "https://www.facebook.com/share/19QaeKZY3a/" },
-      { label: "LinkedIn", href: "#" },
     ],
   },
   {
@@ -131,7 +130,6 @@ const leaders: Leader[] = [
         label: "Facebook",
         href: "https://www.facebook.com/shilanjan.ghosh.2025",
       },
-      { label: "LinkedIn", href: "#" },
     ],
   },
   {
@@ -182,7 +180,6 @@ const leaders: Leader[] = [
         href: "https://www.instagram.com/vineet_d_devilboy?igsh=MXFsNjQ2b3ZlYXU3aQ==",
       },
       { label: "Facebook", href: "https://www.facebook.com/share/188fw2oCMS/" },
-      { label: "LinkedIn", href: "#" },
     ],
   },
 ];

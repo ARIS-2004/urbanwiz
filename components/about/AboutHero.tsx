@@ -52,18 +52,16 @@ export default function AboutHero() {
       <div className="container-content relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-12 lg:gap-14">
           {/* Left — copy */}
-          <div className="lg:col-span-6 relative">
+          <div className="lg:col-span-6 relative order-2 lg:order-1">
             <motion.div
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease }}
-              className="inline-flex items-center gap-2.5 rounded-full bg-white border border-navy/10 pl-2.5 pr-4 py-1.5 shadow-[0_1px_2px_rgba(15,19,48,0.03),0_10px_24px_-16px_rgba(15,19,48,0.2)]"
+              className="flex items-center gap-3"
             >
-              <span className="grid place-items-center w-6 h-6 rounded-full bg-orange/10">
-                <span className="block w-1.5 h-1.5 rounded-full bg-orange" />
-              </span>
-              <span className="text-[10.5px] uppercase tracking-[0.26em] text-navy/60 font-bold">
-                The Three Pillars · Est. 2017
+              <span className="block w-8 h-[2px] bg-orange rounded-full" />
+              <span className="text-[10.5px] uppercase tracking-[0.3em] text-navy/55 font-bold">
+                Our Story
               </span>
             </motion.div>
 
@@ -129,8 +127,20 @@ export default function AboutHero() {
           </div>
 
           {/* Right — framed photo */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative w-full max-w-[540px] mx-auto lg:ml-auto aspect-[4/3]">
+          <div className="lg:col-span-6 relative order-1 lg:order-2">
+            <div className="relative w-full max-w-[440px] sm:max-w-[540px] mx-auto lg:ml-auto aspect-[4/3]">
+              {/* soft aura */}
+              <motion.div
+                aria-hidden
+                animate={{ opacity: [0.5, 0.8, 0.5], scale: [1, 1.05, 1] }}
+                transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -inset-8 pointer-events-none"
+                style={{
+                  background:
+                    "radial-gradient(closest-side, rgba(255,87,34,0.14), rgba(255,87,34,0) 70%)",
+                  filter: "blur(28px)",
+                }}
+              />
               {/* orange offset block */}
               <motion.div
                 aria-hidden
@@ -138,6 +148,14 @@ export default function AboutHero() {
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 transition={{ delay: 0.5, duration: 1.0, ease }}
                 className="absolute -bottom-4 -right-4 w-[60%] h-[55%] rounded-3xl bg-orange/90"
+              />
+              {/* floating accent dot */}
+              <motion.span
+                aria-hidden
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.9, duration: 0.8, ease }}
+                className="hidden lg:block absolute -top-6 right-10 w-16 h-16 rounded-full border border-orange/30 pointer-events-none z-20"
               />
               {/* navy outline block */}
               <motion.div

@@ -48,7 +48,10 @@ export default function OriginStory() {
           </motion.div>
 
           <motion.h2
-            {...fadeUp(0.1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.4 }}
+            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } } }}
             className="mt-6 mx-auto max-w-[1000px] font-display font-bold text-navy"
             style={{
               fontSize: "clamp(1.9rem, 3.8vw, 3.1rem)",
@@ -56,10 +59,24 @@ export default function OriginStory() {
               letterSpacing: "-0.035em",
             }}
           >
-            <span className="block">Every company begins with an idea.</span>
-            <span className="block mt-1.5">
+            <motion.span
+              className="block"
+              variants={{
+                hidden: { opacity: 0, y: 20, filter: "blur(8px)" },
+                show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.8, ease } },
+              }}
+            >
+              Every company begins with an idea.
+            </motion.span>
+            <motion.span
+              className="block mt-1.5"
+              variants={{
+                hidden: { opacity: 0, y: 20, filter: "blur(8px)" },
+                show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.8, ease } },
+              }}
+            >
               Urbanwiz began with a <span className="text-orange">belief.</span>
-            </span>
+            </motion.span>
           </motion.h2>
 
           <motion.p
