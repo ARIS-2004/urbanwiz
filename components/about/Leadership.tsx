@@ -646,30 +646,25 @@ export default function Leadership() {
 
       <div className="container-content relative">
         {/* Header */}
-        <div className="max-w-3xl mb-14 lg:mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 6 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.6, ease }}
-            className="flex items-center gap-3"
-          >
-            <span className="block w-6 h-[2px] bg-orange" />
-            <span className="text-[10.5px] uppercase tracking-[0.32em] text-navy/55 font-bold">
-              The Three Pillars
-            </span>
-          </motion.div>
-
+        <div className="max-w-3xl mb-12 lg:mb-14 flex items-center gap-4">
           <motion.h2
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ delay: 0.1, duration: 0.85, ease }}
-            className="mt-6 font-display text-[34px] sm:text-[48px] xl:text-[58px] tracking-[-0.03em] leading-[1.0] text-navy font-bold"
+            transition={{ duration: 0.8, ease }}
+            className="font-display text-[22px] sm:text-[28px] xl:text-[32px] tracking-[-0.025em] leading-[1.1] text-navy font-bold whitespace-nowrap"
           >
             Meet the Three Pillars of{" "}
-            <span className="text-orange">Urbanwiz</span>.
+            <span className="text-orange">Urbanwiz</span>
           </motion.h2>
+          <motion.span
+            aria-hidden
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.15, duration: 0.9, ease }}
+            className="hidden sm:block flex-1 h-px origin-left bg-navy/12"
+          />
         </div>
 
         {/* Founder profiles */}

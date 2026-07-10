@@ -202,16 +202,22 @@ export default function MissionValues() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.8, ease }}
-          className="mt-12 lg:mt-14 rounded-2xl px-6 sm:px-9 py-6 flex items-center justify-center gap-4 text-center"
+          className="mt-12 lg:mt-14 rounded-2xl px-6 sm:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4"
           style={{ backgroundColor: "rgba(255,87,34,0.07)", border: "1px solid rgba(255,87,34,0.15)" }}
         >
-          <span aria-hidden className="font-display font-black text-[34px] leading-[0.5] text-orange/50 select-none shrink-0">
-            &ldquo;
+          <div className="flex items-center gap-4">
+            <span aria-hidden className="font-display font-black text-[34px] leading-[0.5] text-orange/50 select-none shrink-0">
+              &ldquo;
+            </span>
+            <p className="font-display text-[17px] sm:text-[21px] tracking-[-0.01em] text-navy font-bold">
+              We are human, before we are{" "}
+              <span className="text-orange">Corporate.</span>
+            </p>
+          </div>
+          {/* right-side closing quote */}
+          <span aria-hidden className="font-display font-black text-[34px] leading-[0.5] text-orange/50 select-none shrink-0 self-end">
+            &rdquo;
           </span>
-          <p className="font-display text-[17px] sm:text-[20px] tracking-[-0.01em] text-navy font-bold">
-            We are human, before we are{" "}
-            <span className="text-orange">Corporate.</span>
-          </p>
         </motion.div>
       </div>
     </section>
