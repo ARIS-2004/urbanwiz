@@ -36,16 +36,14 @@ export default function Navbar() {
       initial={{ y: -24, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease }}
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-editorial ${
-        scrolled ? "py-3" : "py-6"
-      }`}
+      className="fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-editorial py-3"
     >
       <div className="container-wide">
         <div
-          className={`relative flex items-center justify-between rounded-[22px] transition-all duration-500 ease-editorial overflow-hidden ${
+          className={`relative flex items-center justify-between rounded-[22px] h-[80px] pl-8 pr-4 transition-all duration-500 ease-editorial overflow-hidden ${
             scrolled
-              ? "h-[84px] pl-8 pr-4 bg-white/85 backdrop-blur-xl border border-navy/10 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset,0_20px_48px_-16px_rgba(15,19,48,0.26)]"
-              : "h-[104px] pl-9 pr-6 bg-white/70 backdrop-blur-md border border-white/60 shadow-[0_1px_0_rgba(255,255,255,0.8)_inset,0_18px_44px_-18px_rgba(15,19,48,0.20)]"
+              ? "bg-white/90 backdrop-blur-xl border border-navy/10 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset,0_20px_48px_-16px_rgba(15,19,48,0.26)]"
+              : "bg-white/80 backdrop-blur-xl border border-navy/10 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset,0_16px_40px_-18px_rgba(15,19,48,0.22)]"
           }`}
         >
           {/* Faint orange gradient sheen on the right */}

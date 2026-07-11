@@ -14,49 +14,6 @@ const stroke = {
   strokeLinejoin: "round" as const,
 };
 
-const stats = [
-  {
-    value: "150+",
-    label: "Trained Professionals",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" {...stroke}>
-        <path d="M4 13a8 8 0 1116 0v3a2 2 0 01-2 2h-1v-6h3" />
-        <path d="M4 13v3a2 2 0 002 2h1v-6H4" />
-      </svg>
-    ),
-  },
-  {
-    value: "Global",
-    label: "Clients",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" {...stroke}>
-        <circle cx="12" cy="12" r="9" />
-        <path d="M3 12h18M12 3c2.5 2.6 4 6.1 4 9s-1.5 6.4-4 9c-2.5-2.6-4-6.1-4-9s1.5-6.4 4-9z" />
-      </svg>
-    ),
-  },
-  {
-    value: "90%+",
-    label: "Client Retention",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" {...stroke}>
-        <path d="M4 19V5M4 19h16M7 15l3-4 3 2 4-6" />
-        <path d="M17 7h3v3" />
-      </svg>
-    ),
-  },
-  {
-    value: "24/7",
-    label: "Global Operations",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" {...stroke}>
-        <circle cx="12" cy="12" r="9" />
-        <path d="M12 7v5l3.5 2" />
-      </svg>
-    ),
-  },
-];
-
 export default function Hero() {
   return (
     <section id="hero" className="relative bg-ivory -mt-24">
@@ -91,11 +48,15 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 14, filter: "blur(6px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.9, delay: 0.2, ease }}
-                className="mt-6 font-display text-[36px] sm:text-[50px] xl:text-[58px] tracking-[-0.03em] leading-[1.0] text-navy font-bold"
+                className="mt-6 font-display text-[38px] sm:text-[52px] xl:text-[60px] tracking-[-0.032em] leading-[0.98] text-navy font-bold"
               >
-                Operational excellence.
+                Operational
                 <br />
-                <span className="text-navy/55">Delivered by </span>
+                excellence.
+                <br />
+                <span className="text-navy/45 font-semibold">
+                  Delivered by{" "}
+                </span>
                 <span className="text-orange">people who care.</span>
               </motion.h1>
 
@@ -166,52 +127,40 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right — office photo with floating roadmap card */}
-        <div className="relative min-h-[440px] sm:min-h-[520px] lg:min-h-0 overflow-hidden order-1 lg:order-2">
-          <Image
-            src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=80"
-            alt="Urbanwiz office"
-            fill
-            priority
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover"
-          />
-          {/* navy tint — deeper at the bottom for the floating chip */}
-          <div
-            aria-hidden
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(11,14,36,0.30) 0%, rgba(11,14,36,0.10) 40%, rgba(11,14,36,0.55) 100%)",
-            }}
-          />
-          {/* orange corner glow */}
-          <div
-            aria-hidden
-            className="absolute -top-10 -right-10 w-64 h-64 rounded-full pointer-events-none"
-            style={{
-              background:
-                "radial-gradient(closest-side, rgba(255,87,34,0.28), rgba(255,87,34,0) 70%)",
-            }}
-          />
-
-          {/* Top-left location pill */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.5, ease }}
-            className="absolute top-28 lg:top-36 left-6 sm:left-8 inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15 px-3.5 py-2"
-          >
-            <span className="grid place-items-center w-3.5 h-3.5 text-orange">
-              <svg width="12" height="12" viewBox="0 0 24 24" {...stroke}>
-                <path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" />
-                <circle cx="12" cy="9" r="2.4" />
-              </svg>
-            </span>
-            <span className="text-[10px] uppercase tracking-[0.22em] text-white font-bold">
-              Kolkata, India
-            </span>
-          </motion.div>
+        {/* Right — office photo (framed on desktop) with floating tagline chip */}
+        <div className="relative order-1 lg:order-2 lg:py-6 lg:pr-[max(1.5rem,calc((100vw-1200px)/2))]">
+          <div className="relative min-h-[440px] sm:min-h-[520px] h-full lg:min-h-[600px] overflow-hidden lg:rounded-[28px] lg:shadow-[0_40px_90px_-40px_rgba(15,19,48,0.5)]">
+            <Image
+              src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=80"
+              alt="Urbanwiz office"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+            {/* navy tint — deeper at the bottom for the floating chip */}
+            <div
+              aria-hidden
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(180deg, rgba(11,14,36,0.28) 0%, rgba(11,14,36,0.08) 38%, rgba(11,14,36,0.58) 100%)",
+              }}
+            />
+            {/* soft inner ring for the framed look */}
+            <span
+              aria-hidden
+              className="pointer-events-none absolute inset-0 lg:rounded-[28px] ring-1 ring-inset ring-white/10"
+            />
+            {/* orange corner glow */}
+            <div
+              aria-hidden
+              className="absolute -top-10 -right-10 w-64 h-64 rounded-full pointer-events-none"
+              style={{
+                background:
+                  "radial-gradient(closest-side, rgba(255,87,34,0.26), rgba(255,87,34,0) 70%)",
+              }}
+            />
 
           {/* Bottom floating glass tagline chip */}
           <motion.div
@@ -251,40 +200,10 @@ export default function Hero() {
               </div>
             </div>
           </motion.div>
+          </div>
         </div>
       </div>
 
-      {/* ── Full-width stats bar ── */}
-      <div className="relative container-wide -mt-8 lg:-mt-10 z-20 pb-14 lg:pb-16">
-        <motion.div
-          initial={{ opacity: 0, y: 22 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.8, ease }}
-          className="rounded-2xl bg-white border border-navy/8 overflow-hidden shadow-[0_1px_2px_rgba(15,19,48,0.03),0_30px_60px_-30px_rgba(15,19,48,0.25)]"
-        >
-          <div className="grid grid-cols-2 lg:grid-cols-4 divide-y divide-x divide-navy/8 lg:divide-y-0">
-            {stats.map((s) => (
-              <div
-                key={s.label}
-                className="group flex items-center gap-4 px-6 sm:px-8 py-7"
-              >
-                <span className="grid place-items-center w-12 h-12 rounded-full bg-orange/10 text-orange shrink-0 transition-colors duration-300 group-hover:bg-orange group-hover:text-ivory">
-                  {s.icon}
-                </span>
-                <div className="min-w-0">
-                  <div className="font-display text-[24px] sm:text-[27px] font-bold text-navy leading-none tracking-[-0.02em]">
-                    {s.value}
-                  </div>
-                  <div className="mt-1.5 text-[12px] text-navy/55 font-medium">
-                    {s.label}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-      </div>
     </section>
   );
 }
