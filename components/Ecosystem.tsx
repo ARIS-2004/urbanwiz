@@ -4,19 +4,11 @@ import { motion } from "framer-motion";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const stroke = {
-  fill: "none" as const,
-  stroke: "currentColor",
-  strokeWidth: 1.6,
-  strokeLinecap: "round" as const,
-  strokeLinejoin: "round" as const,
-};
-
 type Phase = {
   eyebrow: string;
   title: string;
   subtitle?: string;
-  items: { label: string; icon: React.ReactNode }[];
+  items: string[];
   accent: "orange" | "blue" | "navy";
   status: string;
 };
@@ -29,42 +21,10 @@ const phases: Phase[] = [
     accent: "orange",
     status: "Live",
     items: [
-      {
-        label: "Customer Support",
-        icon: (
-          <svg width="14" height="14" viewBox="0 0 24 24" {...stroke}>
-            <path d="M4 13a8 8 0 1116 0v3a2 2 0 01-2 2h-1v-6h3" />
-            <path d="M4 13v3a2 2 0 002 2h1v-6H4" />
-          </svg>
-        ),
-      },
-      {
-        label: "Data Operations",
-        icon: (
-          <svg width="14" height="14" viewBox="0 0 24 24" {...stroke}>
-            <ellipse cx="12" cy="6" rx="7" ry="2.5" />
-            <path d="M5 6v6c0 1.5 3 2.5 7 2.5s7-1 7-2.5V6M5 12v6c0 1.5 3 2.5 7 2.5s7-1 7-2.5v-6" />
-          </svg>
-        ),
-      },
-      {
-        label: "Service Resolution",
-        icon: (
-          <svg width="14" height="14" viewBox="0 0 24 24" {...stroke}>
-            <path d="M9 12l2 2 4-4" />
-            <circle cx="12" cy="12" r="9" />
-          </svg>
-        ),
-      },
-      {
-        label: "Business Operations",
-        icon: (
-          <svg width="14" height="14" viewBox="0 0 24 24" {...stroke}>
-            <rect x="3" y="7" width="18" height="13" rx="2" />
-            <path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M3 12h18" />
-          </svg>
-        ),
-      },
+      "Customer Support",
+      "Data Operations",
+      "Service Resolution",
+      "Business Operations",
     ],
   },
   {
@@ -74,33 +34,9 @@ const phases: Phase[] = [
     accent: "blue",
     status: "Rolling out",
     items: [
-      {
-        label: "Information Technology",
-        icon: (
-          <svg width="14" height="14" viewBox="0 0 24 24" {...stroke}>
-            <rect x="3" y="5" width="18" height="12" rx="2" />
-            <path d="M8 21h8M12 17v4" />
-          </svg>
-        ),
-      },
-      {
-        label: "AI & Machine Learning",
-        icon: (
-          <svg width="14" height="14" viewBox="0 0 24 24" {...stroke}>
-            <path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" />
-            <circle cx="12" cy="12" r="4" />
-          </svg>
-        ),
-      },
-      {
-        label: "Intelligent Process Automation",
-        icon: (
-          <svg width="14" height="14" viewBox="0 0 24 24" {...stroke}>
-            <path d="M4 7h12M16 7l-3-3M16 7l-3 3" />
-            <path d="M20 17H8M8 17l3-3M8 17l3 3" />
-          </svg>
-        ),
-      },
+      "Information Technology",
+      "AI & Machine Learning",
+      "Intelligent Process Automation",
     ],
   },
   {
@@ -110,33 +46,9 @@ const phases: Phase[] = [
     accent: "navy",
     status: "In exploration",
     items: [
-      {
-        label: "FinTech Operations",
-        icon: (
-          <svg width="14" height="14" viewBox="0 0 24 24" {...stroke}>
-            <path d="M12 4a8 8 0 108 8h-8z" />
-            <path d="M12 4v8h8a8 8 0 00-8-8z" />
-          </svg>
-        ),
-      },
-      {
-        label: "Legal Process Services",
-        icon: (
-          <svg width="14" height="14" viewBox="0 0 24 24" {...stroke}>
-            <path d="M12 3v3M6 6h12M8 6l-3 8h6l-3-8zM19 6l-3 8h6l-3-8z" />
-            <path d="M12 6v12M8 18h8" />
-          </svg>
-        ),
-      },
-      {
-        label: "Strategic Business Solutions",
-        icon: (
-          <svg width="14" height="14" viewBox="0 0 24 24" {...stroke}>
-            <path d="M3 3l7 7-4 4-3-3zM14 14l7 7-4-1-3-3z" />
-            <path d="M10 10l4 4" />
-          </svg>
-        ),
-      },
+      "FinTech Operations",
+      "Legal Process Services",
+      "Strategic Business Solutions",
     ],
   },
 ];
@@ -284,8 +196,13 @@ export default function Ecosystem() {
                   hidden: { opacity: 0, y: 22 },
                   show: { opacity: 1, y: 0, transition: { duration: 0.75, ease } },
                 }}
-                className="group relative rounded-3xl bg-white border border-navy/8 p-6 lg:p-7 shadow-[0_1px_2px_rgba(15,19,48,0.03),0_22px_44px_-22px_rgba(15,19,48,0.20)] hover:border-navy/15 hover:-translate-y-1 hover:shadow-[0_1px_2px_rgba(15,19,48,0.03),0_34px_60px_-22px_rgba(15,19,48,0.28)] transition-all duration-500 ease-editorial overflow-hidden"
+                className="group relative flex flex-col rounded-[24px] bg-white border border-navy/8 p-7 lg:p-8 shadow-[0_1px_2px_rgba(15,19,48,0.03),0_22px_44px_-22px_rgba(15,19,48,0.20)] hover:border-navy/15 hover:-translate-y-1.5 hover:shadow-[0_1px_2px_rgba(15,19,48,0.03),0_36px_64px_-24px_rgba(15,19,48,0.30)] transition-all duration-500 ease-editorial overflow-hidden"
               >
+                {/* Top accent border — reveals on hover */}
+                <span
+                  aria-hidden
+                  className={`absolute top-0 left-0 right-0 h-[3px] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-editorial ${a.bar}`}
+                />
                 {/* Inner top highlight */}
                 <span
                   aria-hidden
@@ -295,23 +212,35 @@ export default function Ecosystem() {
                 {/* Corner accent wash on hover */}
                 <span
                   aria-hidden
-                  className="absolute -top-14 -right-14 w-40 h-40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  className="absolute -top-16 -right-16 w-48 h-48 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                   style={{ background: a.wash }}
                 />
 
-                {/* Header row: eyebrow */}
-                <div className="relative flex items-center gap-3">
-                  <div className={`text-[10.5px] uppercase tracking-[0.28em] font-bold ${a.eyebrowColor}`}>
+                {/* Ghost phase number — anchor */}
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute -top-2 right-4 font-display text-[64px] leading-none font-black tracking-[-0.05em] select-none transition-transform duration-500 group-hover:scale-110"
+                  style={{ color: `rgba(15,19,48,0.05)` }}
+                >
+                  0{phaseIdx + 1}
+                </span>
+
+                {/* Header: eyebrow chip */}
+                <div className="relative flex items-center gap-2.5">
+                  <span
+                    className={`inline-flex items-center rounded-full px-3 py-1 text-[9.5px] uppercase tracking-[0.24em] font-bold ${a.eyebrowColor}`}
+                    style={{ background: a.wash.includes("255,87,34") ? "rgba(255,87,34,0.10)" : a.wash.includes("30,58,186") ? "rgba(30,58,186,0.09)" : "rgba(15,19,48,0.06)" }}
+                  >
                     {phase.eyebrow}
-                  </div>
+                  </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="relative mt-4 font-display text-[22px] sm:text-[24px] xl:text-[26px] tracking-[-0.022em] text-navy font-bold leading-tight">
+                <h3 className="relative mt-5 font-display text-[23px] sm:text-[25px] xl:text-[27px] tracking-[-0.022em] text-navy font-bold leading-[1.08]">
                   {phase.title}
                 </h3>
                 {phase.subtitle && (
-                  <div className="relative mt-1.5 text-[11px] text-navy/50 uppercase tracking-[0.2em] font-semibold">
+                  <div className="relative mt-2 text-[10.5px] text-navy/45 uppercase tracking-[0.2em] font-semibold">
                     {phase.subtitle}
                   </div>
                 )}
@@ -319,45 +248,27 @@ export default function Ecosystem() {
                 {/* Hairline */}
                 <span
                   aria-hidden
-                  className={`relative block mt-4 w-8 h-[2px] rounded-full ${a.bar}`}
+                  className={`relative block mt-5 w-9 h-[2px] rounded-full ${a.bar}`}
                 />
 
-                {/* Items list */}
-                <ul className="relative mt-4 space-y-2.5">
-                  {phase.items.map((item) => (
+                {/* Items list — indexed rows, no icons */}
+                <ul className="relative mt-4 flex-1">
+                  {phase.items.map((item, itemIdx) => (
                     <li
-                      key={item.label}
-                      className="flex items-center gap-3 rounded-xl bg-white border border-navy/6 px-3 py-2.5 transition-all duration-300 hover:border-navy/12 hover:bg-navy/[0.02]"
+                      key={item}
+                      className="group/row flex items-baseline gap-3.5 py-3 border-b border-navy/8 last:border-b-0"
                     >
                       <span
-                        className={`shrink-0 grid place-items-center w-8 h-8 rounded-lg ${a.tile}`}
-                        style={{ boxShadow: a.tileShadow }}
+                        className={`shrink-0 font-display text-[11px] font-bold tabular-nums leading-none ${a.eyebrowColor} opacity-45 group-hover/row:opacity-90 transition-opacity duration-300`}
                       >
-                        {item.icon}
+                        {String(itemIdx + 1).padStart(2, "0")}
                       </span>
-                      <span className="text-[12.5px] font-semibold text-navy leading-tight">
-                        {item.label}
+                      <span className="text-[14px] sm:text-[14.5px] font-semibold text-navy leading-snug transition-transform duration-300 group-hover/row:translate-x-0.5">
+                        {item}
                       </span>
                     </li>
                   ))}
                 </ul>
-
-                {/* Bottom accent hairline that fills on hover */}
-                <span
-                  aria-hidden
-                  className={`absolute left-0 right-0 bottom-0 h-[2px] transition-colors duration-500 bg-transparent ${
-                    phase.accent === "orange"
-                      ? "group-hover:bg-orange"
-                      : phase.accent === "blue"
-                      ? "group-hover:bg-blue-deep"
-                      : "group-hover:bg-navy"
-                  }`}
-                />
-
-                {/* Phase index — subtle bottom-left */}
-                <span className="absolute bottom-4 left-6 text-[9px] uppercase tracking-[0.22em] text-navy/30 font-semibold tabular-nums pointer-events-none">
-                  0{phaseIdx + 1} / 03
-                </span>
               </motion.div>
             );
           })}

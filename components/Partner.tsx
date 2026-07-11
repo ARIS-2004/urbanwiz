@@ -271,7 +271,7 @@ export default function Partner() {
               hidden: {},
               show: { transition: { staggerChildren: 0.08, delayChildren: 0.15 } },
             }}
-            className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3"
+            className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5 auto-rows-fr"
           >
             {pillars.map((p, i) => (
               <motion.div
@@ -280,6 +280,7 @@ export default function Partner() {
                   hidden: { opacity: 0, x: 18 },
                   show: { opacity: 1, x: 0, transition: { duration: 0.7, ease } },
                 }}
+                className="h-full"
               >
                 <PillarCard p={p} i={i} />
               </motion.div>
@@ -298,85 +299,64 @@ function PillarCard({
   p: typeof pillars[number];
   i: number;
 }) {
+  const num = String(i + 1).padStart(2, "0");
   return (
-    <div className="group relative overflow-hidden flex items-center gap-5 bg-white border border-navy/8 rounded-2xl px-5 sm:px-6 py-5 transition-all duration-500 ease-editorial hover:border-navy/15 hover:-translate-y-0.5 hover:shadow-[0_24px_50px_-24px_rgba(15,19,48,0.20)] shadow-[0_1px_2px_rgba(15,19,48,0.03)]">
+    <div className="group relative h-full overflow-hidden bg-white border border-navy/8 rounded-[20px] pl-7 pr-6 sm:pr-7 py-7 transition-all duration-500 ease-editorial hover:border-orange/25 hover:-translate-y-1 hover:shadow-[0_30px_60px_-28px_rgba(15,19,48,0.26)] shadow-[0_1px_2px_rgba(15,19,48,0.03)]">
       {/* Inner top highlight */}
       <span
         aria-hidden
         className="absolute top-0 left-6 right-6 h-px bg-white pointer-events-none"
       />
 
+      {/* Left accent rail — grows on hover */}
+      <span
+        aria-hidden
+        className="absolute left-0 top-6 bottom-6 w-[3px] rounded-full bg-orange origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-editorial"
+      />
+
       {/* Corner orange wash on hover */}
       <span
         aria-hidden
-        className="absolute -top-12 -right-12 w-36 h-36 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+        className="absolute -top-16 -right-16 w-44 h-44 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         style={{
           background:
-            "radial-gradient(closest-side, rgba(255,87,34,0.14), rgba(255,87,34,0) 70%)",
+            "radial-gradient(closest-side, rgba(255,87,34,0.13), rgba(255,87,34,0) 70%)",
         }}
       />
 
-      {/* Big watermark number behind content */}
+      {/* Big watermark number — the visual anchor (replaces the icon) */}
       <span
         aria-hidden
-        className="absolute top-1 right-3 font-display text-[64px] sm:text-[72px] leading-none font-black tracking-[-0.04em] pointer-events-none select-none"
-        style={{ color: "rgba(8,18,59,0.045)" }}
+        className="absolute -top-4 right-2 font-display text-[88px] sm:text-[104px] leading-none font-black tracking-[-0.06em] pointer-events-none select-none transition-all duration-500 group-hover:scale-105"
+        style={{ color: "rgba(255,87,34,0.07)" }}
       >
-        {String(i + 1).padStart(2, "0")}
+        {num}
       </span>
 
-      {/* Icon tile */}
-      <motion.span
-        whileHover={{ rotate: -6, scale: 1.05 }}
-        transition={{ type: "spring", stiffness: 400, damping: 20 }}
-        className="relative shrink-0 grid place-items-center w-14 h-14 rounded-2xl text-orange"
-        style={{
-          background: "#FFF2EB",
-          boxShadow:
-            "0 8px 18px -6px rgba(255,87,34,0.25), inset 0 1px 0 rgba(255,255,255,0.8)",
-        }}
-      >
-        {p.icon}
-      </motion.span>
-
-      {/* Content */}
-      <div className="relative min-w-0 flex-1">
-        <div className="flex items-center gap-3 mb-1.5">
-          <span className="font-display text-[12px] text-navy/40 tabular-nums font-semibold">
-            {String(i + 1).padStart(2, "0")}
-          </span>
-          <span className="block w-3 h-px bg-orange/60" />
-          <span className="text-[9.5px] uppercase tracking-[0.24em] text-orange font-semibold">
-            {p.meta}
-          </span>
-        </div>
-        <h3 className="font-display text-[17px] sm:text-[19px] tracking-[-0.01em] text-navy leading-tight font-bold">
-          {p.title}
-        </h3>
-        <p className="mt-1.5 text-[12.5px] sm:text-[13px] leading-[1.55] text-navy/55 max-w-md">
-          {p.body}
-        </p>
+      {/* Header row: number + meta chip */}
+      <div className="relative flex items-center gap-3">
+        <span
+          className="font-display text-[13px] tabular-nums font-black leading-none"
+          style={{ color: "#FF5722" }}
+        >
+          {num}
+        </span>
+        <span className="inline-flex items-center rounded-full bg-navy/[0.04] px-2.5 py-1 text-[9px] uppercase tracking-[0.24em] text-navy/55 font-bold group-hover:bg-orange/10 group-hover:text-orange transition-colors duration-300">
+          {p.meta}
+        </span>
       </div>
 
-      {/* Reveal arrow */}
-      <svg
-        width="14"
-        height="14"
-        viewBox="0 0 14 14"
-        fill="none"
-        className="relative shrink-0 text-orange opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-editorial"
-      >
-        <path
-          d="M2 7h9m0 0L7.5 3.5M11 7l-3.5 3.5"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-
-      {/* Bottom orange hairline that fills on hover */}
-      <span className="absolute left-0 right-0 bottom-0 h-[2px] bg-orange/0 group-hover:bg-orange transition-colors duration-500" />
+      {/* Title + body */}
+      <h3 className="relative mt-5 font-display text-[19px] sm:text-[21px] tracking-[-0.018em] text-navy leading-[1.14] font-bold">
+        {p.title}
+      </h3>
+      <span
+        aria-hidden
+        className="relative mt-3.5 block w-8 h-[2px] rounded-full bg-orange/30 origin-left transition-all duration-500 ease-editorial group-hover:w-12 group-hover:bg-orange/60"
+      />
+      <p className="relative mt-3.5 text-[13px] leading-[1.7] text-navy/60">
+        {p.body}
+      </p>
     </div>
   );
 }

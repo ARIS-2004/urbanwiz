@@ -27,18 +27,81 @@ const insetFocusShadow =
 const tileRaised =
   "6px 6px 14px rgba(15,19,48,0.10), -4px -4px 10px rgba(255,255,255,0.95), inset 0 1px 0 rgba(255,255,255,0.6)";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+
 export default function ContactForm() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle"
+  );
+  const [feedback, setFeedback] = useState("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (status === "sending") return;
+
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const payload = {
+      name: String(fd.get("name") || ""),
+      email: String(fd.get("email") || ""),
+      company: String(fd.get("company") || ""),
+      size: String(fd.get("size") || ""),
+      service: String(fd.get("service") || ""),
+      message: String(fd.get("message") || ""),
+      website: String(fd.get("website") || ""), // honeypot
+    };
+
+    setStatus("sending");
+    setFeedback("");
+
+    try {
+      const res = await fetch(`${API_URL}/api/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok && data.ok) {
+        setStatus("sent");
+        setFeedback(
+          data.message ||
+            "Thank you. Your inquiry is queued — a senior partner will reply within one business day."
+        );
+        form.reset();
+      } else {
+        setStatus("error");
+        setFeedback(
+          data.message ||
+            "Something went wrong sending your message. Please try again or email us directly."
+        );
+      }
+    } catch {
+      setStatus("error");
+      setFeedback(
+        "We couldn't reach the server. Please check your connection and try again, or email us directly."
+      );
+    }
+  }
+
+  const sent = status === "sent";
+  const sending = status === "sending";
 
   return (
     <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        setSent(true);
-      }}
+      onSubmit={handleSubmit}
       className="relative rounded-3xl bg-ivory overflow-hidden"
       style={{ boxShadow: raisedShadow }}
     >
+      {/* Honeypot — hidden from humans, catches bots. */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute -left-[9999px] w-px h-px opacity-0 pointer-events-none"
+      />
       {/* Colored gradient top strip */}
       <span
         aria-hidden
@@ -163,16 +226,19 @@ export default function ContactForm() {
         {/* Neumorphic raised submit button */}
         <motion.button
           type="submit"
-          whileHover={{ y: -2 }}
-          whileTap={{ scale: 0.97, y: 0 }}
+          disabled={sending}
+          whileHover={sending ? undefined : { y: -2 }}
+          whileTap={sending ? undefined : { scale: 0.97, y: 0 }}
           transition={{ type: "spring", stiffness: 400, damping: 25 }}
-          className="group relative inline-flex h-14 items-center gap-3 rounded-2xl bg-ivory pl-6 pr-2 text-[12px] uppercase tracking-[0.2em] font-semibold text-navy self-start sm:self-auto"
+          className="group relative inline-flex h-14 items-center gap-3 rounded-2xl bg-ivory pl-6 pr-2 text-[12px] uppercase tracking-[0.2em] font-semibold text-navy self-start sm:self-auto disabled:cursor-not-allowed disabled:opacity-80"
           style={{
             boxShadow:
               "10px 10px 24px rgba(15,19,48,0.12), -8px -8px 20px rgba(255,255,255,0.95), inset 0 1px 0 rgba(255,255,255,0.6)",
           }}
         >
-          <span className="relative">Send inquiry</span>
+          <span className="relative">
+            {sending ? "Sending…" : "Send inquiry"}
+          </span>
           {/* Orange action chip */}
           <span
             className="relative grid place-items-center w-10 h-10 rounded-xl bg-orange text-ivory transition-transform duration-500 group-hover:rotate-[-35deg] group-hover:scale-110"
@@ -181,44 +247,87 @@ export default function ContactForm() {
                 "4px 4px 10px rgba(255,87,34,0.40), -2px -2px 6px rgba(255,255,255,0.4), inset 0 1px 0 rgba(255,255,255,0.25)",
             }}
           >
-            <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-              <path
-                d="M2 7h9m0 0L7.5 3.5M11 7l-3.5 3.5"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </span>
-        </motion.button>
-      </div>
-
-      <AnimatePresence>
-        {sent && (
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="px-6 sm:px-9 py-5 flex items-center gap-3 text-[13px] text-navy/80 mx-6 sm:mx-9 mb-6 rounded-2xl bg-orange/[0.06]"
-            style={{ boxShadow: insetShadow }}
-          >
-            <span className="grid place-items-center w-7 h-7 rounded-full bg-orange text-ivory shrink-0">
+            {sending ? (
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="animate-spin"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="9"
+                  stroke="currentColor"
+                  strokeOpacity="0.3"
+                  strokeWidth="2.5"
+                />
+                <path
+                  d="M21 12a9 9 0 0 0-9-9"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                />
+              </svg>
+            ) : (
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
                 <path
-                  d="M3 7.5l2.5 2.5L11 4"
+                  d="M2 7h9m0 0L7.5 3.5M11 7l-3.5 3.5"
                   stroke="currentColor"
                   strokeWidth="1.8"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 />
               </svg>
+            )}
+          </span>
+        </motion.button>
+      </div>
+
+      <AnimatePresence>
+        {(sent || status === "error") && (
+          <motion.div
+            key={status}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className={`px-6 sm:px-9 py-5 flex items-center gap-3 text-[13px] mx-6 sm:mx-9 mb-6 rounded-2xl ${
+              sent ? "text-navy/80 bg-orange/[0.06]" : "text-navy/80 bg-red-500/[0.06]"
+            }`}
+            style={{ boxShadow: insetShadow }}
+            role="status"
+            aria-live="polite"
+          >
+            <span
+              className={`grid place-items-center w-7 h-7 rounded-full text-ivory shrink-0 ${
+                sent ? "bg-orange" : "bg-red-500"
+              }`}
+            >
+              {sent ? (
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M3 7.5l2.5 2.5L11 4"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              ) : (
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M7 3.5v4M7 10.2v.1"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              )}
             </span>
-            <span>
-              Thank you. Your inquiry is queued — a senior partner will reply
-              within one business day.
-            </span>
+            <span>{feedback}</span>
           </motion.div>
         )}
       </AnimatePresence>

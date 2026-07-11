@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import AboutIntro from "@/components/AboutIntro";
 import ServicesGrid from "@/components/ServicesGrid";
 import Ecosystem from "@/components/Ecosystem";
 import Partner from "@/components/Partner";
@@ -9,6 +10,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <AboutIntro />
       <ServicesGrid />
       <Ecosystem />
       <Partner />

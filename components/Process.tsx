@@ -76,7 +76,7 @@ export default function Process() {
   return (
     <section
       id="process"
-      className="relative overflow-hidden py-14 lg:py-16"
+      className="relative overflow-hidden py-16 lg:py-20"
       style={{ backgroundColor: "#FAF8F6" }}
     >
       {/* Ambient washes */}
@@ -99,7 +99,7 @@ export default function Process() {
 
       <div className="container-wide relative">
         {/* Top header — single row */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end mb-12 lg:mb-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end mb-12 lg:mb-16">
           <div className="lg:col-span-8">
             <motion.div
               initial={{ opacity: 0, y: 8 }}
@@ -133,16 +133,22 @@ export default function Process() {
             </motion.h2>
           </div>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.7, delay: 0.2, ease }}
-            className="lg:col-span-4 lg:pb-2 text-[13.5px] text-navy/55 leading-[1.65] max-w-md lg:ml-auto lg:text-right"
+            className="lg:col-span-4 lg:pb-2 lg:ml-auto max-w-md"
           >
-            A four-step path designed to feel deliberate, not transactional.
-            Built around clarity, communication and outcomes.
-          </motion.p>
+            <span
+              aria-hidden
+              className="block w-9 h-[2px] rounded-full bg-orange/60 lg:ml-auto"
+            />
+            <p className="mt-4 text-[14px] text-navy/60 leading-[1.75] lg:text-right tracking-[-0.002em]">
+              A four-step path designed to feel deliberate, not transactional.
+              Built around clarity, communication and outcomes.
+            </p>
+          </motion.div>
         </div>
 
         {/* 4-step timeline */}
@@ -154,10 +160,11 @@ export default function Process() {
             hidden: {},
             show: { transition: { staggerChildren: 0.14, delayChildren: 0.15 } },
           }}
-          className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-5 lg:gap-x-6"
+          className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-6 lg:gap-x-7"
         >
           {steps.map((step, idx) => {
             const isBlue = idx % 2 === 1;
+            const accent = isBlue ? "#1E3ABA" : "#FF5722";
             return (
               <motion.div
                 key={step.n}
@@ -172,42 +179,51 @@ export default function Process() {
                   {/* Big watermark number — peeks out top-left from behind the image */}
                   <span
                     aria-hidden
-                    className="absolute -top-6 -left-3 z-0 font-display text-[110px] sm:text-[130px] xl:text-[150px] leading-none font-black tracking-[-0.05em] pointer-events-none select-none"
+                    className="absolute -top-7 -left-3 z-0 font-display text-[104px] sm:text-[124px] xl:text-[140px] leading-none font-black tracking-[-0.05em] pointer-events-none select-none"
                     style={{
                       color: isBlue
-                        ? "rgba(30,58,186,0.14)"
-                        : "rgba(255,87,34,0.16)",
+                        ? "rgba(30,58,186,0.12)"
+                        : "rgba(255,87,34,0.14)",
                     }}
                   >
                     {step.n}
                   </span>
 
-                  {/* Image card */}
-                  <div
-                    className="relative z-10 aspect-[4/3] rounded-2xl overflow-hidden shadow-[0_28px_50px_-18px_rgba(15,19,48,0.32)] transition-transform duration-500 ease-editorial group-hover:scale-[1.02]"
-                    style={{ transform: "skewX(-5deg)" }}
-                  >
-                    <div
-                      style={{ transform: "skewX(5deg) scale(1.12)" }}
-                      className="absolute inset-0"
-                    >
-                      <Image
-                        src={step.image}
-                        alt=""
-                        fill
-                        sizes="(max-width: 768px) 100vw, 280px"
-                        className="object-cover transition-transform duration-[1400ms] ease-editorial group-hover:scale-[1.08]"
-                      />
-                    </div>
-                    <div
-                      aria-hidden
-                      className="absolute inset-0 ring-1 ring-inset ring-white/15 pointer-events-none"
-                      style={{ transform: "skewX(5deg)" }}
+                  {/* Accent offset plate behind the image */}
+                  <span
+                    aria-hidden
+                    className="absolute z-0 -bottom-2 left-3 right-5 h-full rounded-[26px] transition-transform duration-500 ease-editorial group-hover:translate-y-1"
+                    style={{ background: `${accent}14` }}
+                  />
+
+                  {/* Image card — clean rounded frame (no skew) */}
+                  <div className="relative z-10 aspect-[4/3] rounded-[24px] overflow-hidden shadow-[0_26px_50px_-20px_rgba(15,19,48,0.30)] transition-all duration-500 ease-editorial group-hover:-translate-y-1 group-hover:shadow-[0_40px_70px_-24px_rgba(15,19,48,0.42)]">
+                    <Image
+                      src={step.image}
+                      alt=""
+                      fill
+                      sizes="(max-width: 768px) 100vw, 300px"
+                      className="object-cover transition-transform duration-[1400ms] ease-editorial group-hover:scale-[1.06]"
                     />
+                    {/* Refined tint — subtle top-down navy + accent floor */}
                     <div
                       aria-hidden
-                      className="absolute inset-0 bg-gradient-to-t from-navy/20 via-transparent to-transparent pointer-events-none"
-                      style={{ transform: "skewX(5deg)" }}
+                      className="absolute inset-0 pointer-events-none"
+                      style={{
+                        background:
+                          "linear-gradient(180deg, rgba(15,19,48,0.10) 0%, rgba(15,19,48,0) 40%, rgba(15,19,48,0.18) 100%)",
+                      }}
+                    />
+                    {/* Inner ring for crispness */}
+                    <span
+                      aria-hidden
+                      className="absolute inset-0 rounded-[24px] ring-1 ring-inset ring-white/15 pointer-events-none"
+                    />
+                    {/* Accent hairline along the bottom, grows on hover */}
+                    <span
+                      aria-hidden
+                      className="absolute left-5 right-5 bottom-0 h-[2px] rounded-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-editorial"
+                      style={{ background: accent }}
                     />
                   </div>
 
@@ -215,40 +231,34 @@ export default function Process() {
                   <motion.span
                     whileHover={{ rotate: -8, scale: 1.08 }}
                     transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                    className={`absolute z-20 -bottom-0 left-4 grid place-items-center w-14 h-14 rounded-2xl bg-white border border-navy/8 ${
-                      isBlue ? "text-blue-deep" : "text-orange"
-                    }`}
+                    className="absolute z-20 bottom-0 left-5 grid place-items-center w-14 h-14 rounded-2xl bg-white border border-navy/8"
                     style={{
-                      boxShadow: isBlue
-                        ? "0 18px 36px -10px rgba(30,58,186,0.45), inset 0 1px 0 rgba(255,255,255,0.85)"
-                        : "0 18px 36px -10px rgba(255,87,34,0.50), inset 0 1px 0 rgba(255,255,255,0.85)",
+                      color: accent,
+                      boxShadow: `0 18px 36px -10px ${accent}80, inset 0 1px 0 rgba(255,255,255,0.85)`,
                     }}
                   >
                     {step.icon}
                   </motion.span>
-
                 </div>
 
-                {/* Text below */}
-                <div className="mt-4 pl-1">
-                  <div className="flex items-center gap-2">
+                {/* Text below — more premium hierarchy */}
+                <div className="mt-6 pl-1">
+                  <div className="flex items-center gap-2.5">
                     <span
-                      className={`block w-3 h-[1.5px] rounded-full ${
-                        isBlue ? "bg-blue-deep" : "bg-orange"
-                      }`}
+                      className="block w-5 h-[2px] rounded-full"
+                      style={{ background: accent }}
                     />
                     <div
-                      className={`text-[10px] uppercase tracking-[0.26em] font-semibold ${
-                        isBlue ? "text-blue-deep" : "text-orange"
-                      }`}
+                      className="text-[10px] uppercase tracking-[0.3em] font-bold"
+                      style={{ color: accent }}
                     >
                       {step.eyebrow}
                     </div>
                   </div>
-                  <h3 className="mt-2.5 font-display text-[22px] sm:text-[24px] xl:text-[28px] tracking-[-0.02em] leading-[1.08] text-navy font-bold">
+                  <h3 className="mt-3.5 font-display text-[26px] sm:text-[29px] xl:text-[32px] tracking-[-0.025em] leading-[1.02] text-navy font-bold">
                     {step.title}
                   </h3>
-                  <p className="mt-3 text-[12.5px] leading-[1.6] text-navy/55 max-w-[260px]">
+                  <p className="mt-4 text-[13.5px] sm:text-[14px] leading-[1.75] text-navy/65 max-w-[262px] tracking-[-0.002em]">
                     {step.body}
                   </p>
                 </div>
@@ -256,7 +266,6 @@ export default function Process() {
             );
           })}
         </motion.div>
-
       </div>
     </section>
   );
