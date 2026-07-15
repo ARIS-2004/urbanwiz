@@ -289,47 +289,6 @@ export default function ServicesHero() {
               </Link>
             </motion.div>
 
-            {/* Trust card */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.15, duration: 0.8, ease }}
-              className="relative mt-5 max-w-md rounded-xl bg-white border border-navy/8 px-4 py-3 flex items-center gap-4 shadow-[0_1px_2px_rgba(15,19,48,0.03),0_18px_36px_-22px_rgba(15,19,48,0.20)]"
-            >
-              <div className="flex -space-x-2">
-                {[
-                  { label: "A", bg: "bg-navy", fg: "text-ivory" },
-                  { label: "A", bg: "bg-blue-deep", fg: "text-ivory" },
-                  { label: "A", bg: "bg-navy/75", fg: "text-ivory" },
-                  { label: "A", bg: "bg-navy/55", fg: "text-ivory" },
-                ].map((c, idx) => (
-                  <span
-                    key={idx}
-                    className={`grid place-items-center w-9 h-9 rounded-full ring-2 ring-white font-display text-[11.5px] font-bold tabular-nums ${c.bg} ${c.fg}`}
-                  >
-                    {c.label}
-                  </span>
-                ))}
-                <span
-                  className="grid place-items-center w-9 h-9 rounded-full ring-2 ring-white bg-orange text-ivory"
-                  style={{
-                    boxShadow: "0 6px 14px -4px rgba(255,87,34,0.5)",
-                  }}
-                >
-                  <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-                    <path d="M7 2v10M2 7h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                  </svg>
-                </span>
-              </div>
-              <div className="leading-tight">
-                <div className="font-display text-[20px] sm:text-[22px] font-bold text-navy tabular-nums">
-                  150<span className="text-orange">+</span>
-                </div>
-                <div className="text-[10.5px] uppercase tracking-[0.22em] text-navy/55 font-semibold mt-0.5">
-                  Operators standing by
-                </div>
-              </div>
-            </motion.div>
           </div>
 
           {/* Right — layered visual composition */}

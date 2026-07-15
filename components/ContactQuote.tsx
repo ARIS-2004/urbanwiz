@@ -280,7 +280,7 @@ export default function ContactQuote() {
             className="relative mt-7 flex justify-center"
           >
             <Link
-              href="mailto:info@urbanwiz.co.in?subject=Book%20a%20call"
+              href="mailto:urbanwiz@info.co.in?subject=Book%20a%20call"
               className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-orange text-ivory pl-5 pr-2 py-2 text-[11px] uppercase tracking-[0.22em] font-bold transition-colors duration-300 hover:bg-ivory hover:text-navy"
               style={{
                 boxShadow:

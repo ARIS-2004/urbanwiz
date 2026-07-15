@@ -167,7 +167,7 @@ export default function Footer() {
                       +91 90388 16866
                     </span>
                   </a>
-                  <a href="mailto:info@urbanwiz.co.in" className="group flex items-center gap-3">
+                  <a href="mailto:urbanwiz@info.co.in" className="group flex items-center gap-3">
                     <span className="grid place-items-center w-9 h-9 rounded-full bg-navy/[0.04] text-orange shrink-0 group-hover:bg-orange group-hover:text-ivory transition-colors">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
                         <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.6" />
@@ -175,7 +175,7 @@ export default function Footer() {
                       </svg>
                     </span>
                     <span className="text-[13.5px] text-navy/75 font-medium group-hover:text-orange transition-colors">
-                      info@urbanwiz.co.in
+                      urbanwiz@info.co.in
                     </span>
                   </a>
                 </div>

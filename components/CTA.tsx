@@ -102,20 +102,6 @@ export default function CTA() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           {/* Left — copy */}
           <div className="lg:col-span-7">
-            {/* Eyebrow */}
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.7, ease }}
-              className="inline-flex items-center gap-3"
-            >
-              <span className="block w-7 h-[2px] bg-orange" />
-              <span className="text-[10.5px] uppercase tracking-[0.3em] text-orange font-semibold">
-                People · Process · Progress
-              </span>
-            </motion.div>
-
             {/* Headline */}
             <motion.h2
               initial="hidden"

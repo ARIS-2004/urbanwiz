@@ -161,25 +161,30 @@ export default function ServicesPage() {
               </span>
             </div>
           </FadeUp>
-          <Stagger gap={0.05} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
+          <Stagger gap={0.05} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
             {services.map((s) => (
               <StaggerItem key={s.id}>
                 <Link
                   href={`#${s.id}`}
-                  className="group relative flex flex-col items-start gap-1.5 rounded-xl bg-white border border-navy/10 px-3.5 py-3 hover:border-orange/40 hover:-translate-y-0.5 transition-all duration-500 ease-editorial shadow-[0_1px_2px_rgba(15,19,48,0.03),0_14px_28px_-22px_rgba(15,19,48,0.18)] overflow-hidden"
+                  className="group relative flex flex-col justify-between h-full min-h-[168px] rounded-[20px] bg-white border border-navy/10 p-6 hover:border-orange/45 hover:-translate-y-1.5 transition-all duration-500 ease-editorial shadow-[0_1px_2px_rgba(15,19,48,0.03),0_18px_38px_-24px_rgba(15,19,48,0.22)] hover:shadow-[0_1px_2px_rgba(15,19,48,0.03),0_32px_58px_-24px_rgba(15,19,48,0.32)] overflow-hidden"
                 >
+                  {/* corner wash */}
                   <span
                     aria-hidden
-                    className="absolute -top-8 -right-8 w-20 h-20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                    className="absolute -top-12 -right-12 w-32 h-32 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                     style={{
                       background:
-                        "radial-gradient(closest-side, rgba(255,87,34,0.14), rgba(255,87,34,0) 70%)",
+                        "radial-gradient(closest-side, rgba(255,87,34,0.15), rgba(255,87,34,0) 70%)",
                     }}
                   />
-                  <span className="relative text-[10px] tracking-[0.22em] text-orange font-bold tabular-nums">
-                    {s.n}
-                  </span>
-                  <span className="relative text-[12.5px] text-navy font-bold leading-tight group-hover:text-orange transition-colors">
+
+                  <div className="relative flex items-center gap-2.5">
+                    <span className="font-display text-[15px] font-black tabular-nums text-orange leading-none">
+                      {s.n}
+                    </span>
+                    <span className="block w-6 h-[2px] rounded-full bg-orange/40 origin-left transition-transform duration-500 ease-editorial group-hover:scale-x-150" />
+                  </div>
+                  <span className="relative mt-4 font-display text-[16px] sm:text-[17px] tracking-[-0.015em] text-navy font-bold leading-[1.15] group-hover:text-orange transition-colors">
                     {s.name}
                   </span>
                 </Link>
@@ -200,47 +205,6 @@ export default function ServicesPage() {
       <CTA />
     </>
   );
-}
-
-function FeatureIcon({ i }: { i: number }) {
-  const s = {
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 1.6,
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-  };
-  switch (i % 4) {
-    case 0:
-      return (
-        <svg width="13" height="13" viewBox="0 0 24 24" {...s}>
-          <path d="M7 3h7l5 5v13H7z" />
-          <path d="M14 3v5h5" />
-        </svg>
-      );
-    case 1:
-      return (
-        <svg width="13" height="13" viewBox="0 0 24 24" {...s}>
-          <path d="M4 7h12M16 7l-3-3M16 7l-3 3" />
-          <path d="M20 17H8M8 17l3-3M8 17l3 3" />
-        </svg>
-      );
-    case 2:
-      return (
-        <svg width="13" height="13" viewBox="0 0 24 24" {...s}>
-          <path d="M4 10l8-5 8 5" />
-          <path d="M6 10v8h12v-8" />
-          <path d="M10 18v-4h4v4" />
-        </svg>
-      );
-    default:
-      return (
-        <svg width="13" height="13" viewBox="0 0 24 24" {...s}>
-          <path d="M5 19V9M11 19V5M17 19v-7" />
-          <path d="M4 19h16" />
-        </svg>
-      );
-  }
 }
 
 function ServiceBlock({
@@ -264,102 +228,82 @@ function ServiceBlock({
       <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
         {/* Image side */}
         <FadeUp className={`lg:col-span-5 order-1 ${flip ? "lg:order-2" : "lg:order-1"}`}>
-          <div className="relative overflow-hidden h-full min-h-[200px] lg:min-h-[300px] bg-navy">
+          <div className="relative overflow-hidden h-full min-h-[220px] lg:min-h-[320px] bg-navy">
             <Image
               src={s.image}
               alt=""
               fill
               sizes="(max-width: 1024px) 100vw, 480px"
-              className="object-cover opacity-95 transition-transform duration-[1400ms] ease-editorial group-hover:scale-[1.06]"
+              className="object-cover transition-transform duration-[1400ms] ease-editorial group-hover:scale-[1.06]"
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-navy/85 via-navy/45 to-navy/15 pointer-events-none" />
+            {/* refined tint — clean, no floating overlays */}
+            <div
+              aria-hidden
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(120deg, rgba(15,19,48,0.55) 0%, rgba(15,19,48,0.20) 50%, rgba(15,19,48,0.10) 100%)",
+              }}
+            />
             <div className="absolute inset-0 ring-1 ring-inset ring-white/10 pointer-events-none" />
 
             {/* Big editorial watermark number */}
             <span
               aria-hidden
-              className="absolute -bottom-6 -right-2 font-display text-[140px] sm:text-[180px] leading-none font-black tracking-[-0.05em] text-ivory pointer-events-none select-none"
-              style={{ opacity: 0.10 }}
+              className="absolute -bottom-7 -right-1 font-display text-[150px] sm:text-[190px] leading-none font-black tracking-[-0.05em] text-ivory pointer-events-none select-none"
+              style={{ opacity: 0.12 }}
             >
               {s.n}
             </span>
-
-            {/* Index pill — top-left */}
-            <div className="absolute top-5 left-5 inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur-md px-3 py-1.5 shadow-[0_8px_18px_-6px_rgba(15,19,48,0.30)]">
-              <span className="block w-1.5 h-1.5 rounded-full bg-orange" />
-              <span className="text-[10px] uppercase tracking-[0.22em] text-navy font-bold tabular-nums">
-                {s.n} / 06
-              </span>
-            </div>
-
-            {/* Tag chip — bottom-left */}
-            <div className="absolute bottom-5 left-5">
-              <span className="inline-block rounded-full bg-orange text-ivory text-[9.5px] uppercase tracking-[0.24em] font-bold px-3 py-1.5 shadow-[0_10px_22px_-8px_rgba(255,87,34,0.55)]">
-                {s.tag}
-              </span>
-            </div>
           </div>
         </FadeUp>
 
         {/* Content side */}
         <div
-          className={`lg:col-span-7 p-6 lg:p-8 flex flex-col order-2 ${
+          className={`lg:col-span-7 p-7 lg:p-10 flex flex-col justify-center order-2 ${
             flip ? "lg:order-1" : "lg:order-2"
           }`}
         >
           <FadeUp>
             <div className="flex items-center gap-2.5">
-              <span className="block w-5 h-[2px] bg-orange" />
-              <span className="text-[10px] uppercase tracking-[0.28em] text-orange font-bold">
+              <span className="block w-6 h-[2px] bg-orange" />
+              <span className="text-[10px] uppercase tracking-[0.3em] text-orange font-bold">
                 Service · {s.n}
               </span>
             </div>
           </FadeUp>
 
           <FadeUp delay={0.05}>
-            <h2 className="mt-3 font-display text-[24px] sm:text-[28px] xl:text-[32px] tracking-[-0.022em] leading-[1.1] text-navy font-bold">
+            <h2 className="mt-4 font-display text-[26px] sm:text-[30px] xl:text-[34px] tracking-[-0.025em] leading-[1.08] text-navy font-bold">
               {s.name}
             </h2>
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <p className="mt-3 text-[13.5px] leading-[1.65] text-navy/60 max-w-lg">
+            <p className="mt-4 text-[14.5px] leading-[1.7] text-navy/60 max-w-xl">
               {s.lead}
             </p>
           </FadeUp>
 
-          {/* 2x2 feature grid */}
+          {/* Feature list — elegant ledger rows */}
           <FadeUp delay={0.12}>
-            <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <div className="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-x-10">
               {s.features.map((f, idx) => (
                 <div
                   key={f.t}
-                  className="group/feat relative rounded-xl bg-white border border-navy/8 px-3.5 py-3 transition-all duration-500 ease-editorial hover:border-orange/30 hover:-translate-y-0.5 overflow-hidden"
+                  className={`group/feat py-4 border-t border-navy/8 ${
+                    idx < 2 ? "sm:border-t" : ""
+                  }`}
                 >
-                  <span
-                    aria-hidden
-                    className="absolute -top-8 -right-8 w-20 h-20 rounded-full opacity-0 group-hover/feat:opacity-100 transition-opacity duration-500 pointer-events-none"
-                    style={{
-                      background:
-                        "radial-gradient(closest-side, rgba(255,87,34,0.12), rgba(255,87,34,0) 70%)",
-                    }}
-                  />
-                  <div className="relative flex items-start gap-3">
-                    <span
-                      className="shrink-0 grid place-items-center w-8 h-8 rounded-lg text-orange"
-                      style={{
-                        background: "#FFF2EB",
-                        boxShadow:
-                          "0 4px 10px -3px rgba(255,87,34,0.22), inset 0 1px 0 rgba(255,255,255,0.7)",
-                      }}
-                    >
-                      <FeatureIcon i={idx} />
+                  <div className="flex items-baseline gap-3">
+                    <span className="font-display text-[12px] font-black tabular-nums text-orange/70 leading-none shrink-0 transition-colors duration-300 group-hover/feat:text-orange">
+                      0{idx + 1}
                     </span>
-                    <div className="min-w-0">
-                      <div className="text-[12.5px] font-bold text-navy leading-tight">
+                    <div>
+                      <div className="text-[15.5px] font-bold text-navy leading-tight tracking-[-0.01em]">
                         {f.t}
                       </div>
-                      <div className="mt-1 text-[11px] leading-[1.5] text-navy/55">
+                      <div className="mt-1.5 text-[13.5px] leading-[1.6] text-navy/60">
                         {f.b}
                       </div>
                     </div>
@@ -371,20 +315,20 @@ function ServiceBlock({
 
           {/* Footer row */}
           <FadeUp delay={0.18}>
-            <div className="mt-5 pt-4 border-t border-navy/8 flex items-center justify-between gap-3 flex-wrap">
+            <div className="mt-7 pt-5 border-t border-navy/8 flex items-center justify-between gap-3 flex-wrap">
               <Link
                 href="/contact"
-                className="group/btn inline-flex items-center justify-between gap-3 rounded-full bg-navy text-ivory pl-4 pr-1.5 py-1.5 text-[10.5px] uppercase tracking-[0.22em] font-bold hover:bg-orange transition-colors duration-300"
+                className="group/btn inline-flex items-center justify-between gap-3 rounded-full bg-navy text-ivory pl-5 pr-2 py-2 text-[11px] uppercase tracking-[0.22em] font-bold hover:bg-orange transition-colors duration-300"
                 style={{
                   boxShadow:
                     "0 12px 24px -10px rgba(15,19,48,0.50), inset 0 1px 0 rgba(255,255,255,0.12)",
                 }}
               >
                 Discuss this service
-                <span className="grid place-items-center w-7 h-7 rounded-full bg-orange text-ivory transition-all duration-300 group-hover/btn:bg-ivory group-hover/btn:text-orange">
+                <span className="grid place-items-center w-8 h-8 rounded-full bg-orange text-ivory transition-all duration-300 group-hover/btn:bg-ivory group-hover/btn:text-orange">
                   <svg
-                    width="10"
-                    height="10"
+                    width="11"
+                    height="11"
                     viewBox="0 0 14 14"
                     fill="none"
                     className="transition-transform duration-300 group-hover/btn:translate-x-0.5"

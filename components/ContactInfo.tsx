@@ -17,8 +17,8 @@ const items: {
 }[] = [
   {
     label: "Email",
-    value: "info@urbanwiz.co.in",
-    href: "mailto:info@urbanwiz.co.in",
+    value: "urbanwiz@info.co.in",
+    href: "mailto:urbanwiz@info.co.in",
     cta: "Send",
     variant: "tintOrange",
     icon: (
