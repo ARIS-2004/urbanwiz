@@ -339,7 +339,7 @@ function ServiceBlock({
                       <div className="text-[15.5px] font-bold text-navy dark:text-ivory leading-tight tracking-[-0.01em]">
                         {f.t}
                       </div>
-                      <div className="mt-1.5 text-[13.5px] leading-[1.6] text-navy/60 dark:text-ivory/55">
+                      <div className="mt-1.5 text-[14px] leading-[1.65] leading-[1.6] text-navy/60 dark:text-ivory/55">
                         {f.b}
                       </div>
                     </div>

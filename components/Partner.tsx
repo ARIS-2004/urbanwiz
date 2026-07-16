@@ -144,7 +144,7 @@ export default function Partner() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.7, delay: 0.2, ease }}
-            className="lg:col-span-4 lg:pb-3 text-[14px] leading-[1.7] text-navy/55 dark:text-ivory/50 max-w-sm lg:ml-auto lg:text-right"
+            className="lg:col-span-4 lg:pb-3 text-[15px] leading-[1.7] text-navy/55 dark:text-ivory/50 max-w-sm lg:ml-auto lg:text-right"
           >
             The principles that guide every account — from the first
             conversation through the long, quiet years of running
@@ -330,7 +330,7 @@ function PillarCard({
         aria-hidden
         className="relative mt-3.5 block w-8 h-[2px] rounded-full bg-orange/30 origin-left transition-all duration-500 ease-editorial group-hover:w-12 group-hover:bg-orange/60"
       />
-      <p className="relative mt-3.5 text-[13px] leading-[1.7] text-navy/60 dark:text-ivory/55">
+      <p className="relative mt-3.5 text-[14.5px] leading-[1.7] text-navy/60 dark:text-ivory/55">
         {p.body}
       </p>
     </div>

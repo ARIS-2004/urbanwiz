@@ -163,7 +163,7 @@ export default function ServicesGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.7, delay: 0.25, ease }}
-              className="lg:ml-auto lg:max-w-xs text-[13.5px] text-navy/55 dark:text-ivory/50 leading-[1.65]"
+              className="lg:ml-auto lg:max-w-xs text-[15px] text-navy/55 dark:text-ivory/50 leading-[1.7]"
             >
               <span
                 aria-hidden
@@ -332,7 +332,7 @@ function ServiceCard({ s }: { s: Service }) {
           style={{
             color: dark ? "rgba(255,255,255,0.72)" : "rgba(8,18,59,0.6)",
           }}
-          className="mt-4 text-[13px] leading-[1.65] max-w-[300px]"
+          className="mt-4 text-[14px] leading-[1.7] leading-[1.65] max-w-[300px]"
         >
           {s.body}
         </p>

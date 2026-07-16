@@ -167,7 +167,7 @@ export default function Ecosystem() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.7, delay: 0.2, ease }}
-            className="lg:col-span-5 lg:pb-2 text-[13.5px] text-navy/55 dark:text-ivory/50 leading-[1.65] max-w-md lg:ml-auto lg:text-right"
+            className="lg:col-span-5 lg:pb-2 text-[15px] text-navy/55 dark:text-ivory/50 leading-[1.7] max-w-md lg:ml-auto lg:text-right"
           >
             We&apos;re a people-first business solutions company. What we ship
             today, what we&apos;re building next, and where we&apos;re headed —

@@ -133,7 +133,7 @@ export default function CTA() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ delay: 0.4, duration: 0.8, ease }}
-              className="mt-3.5 text-[13px] sm:text-[14px] leading-[1.65] text-ivory/65 max-w-xl"
+              className="mt-3.5 text-[14.5px] sm:text-[15px] leading-[1.65] text-ivory/65 max-w-xl"
             >
               Whether you&apos;re scaling your first team or optimising an
               established business, Urbanwiz builds efficient operations powered
