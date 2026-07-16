@@ -91,7 +91,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="relative rounded-3xl bg-ivory overflow-hidden"
+      className="relative rounded-3xl bg-ivory dark:bg-[#12173a] dark:border dark:border-white/10 overflow-hidden transition-colors duration-300"
       style={{ boxShadow: raisedShadow }}
     >
       {/* Honeypot — hidden from humans, catches bots. */}
@@ -154,7 +154,7 @@ export default function ContactForm() {
             <div className="text-[10.5px] uppercase tracking-[0.24em] text-orange font-semibold">
               Inquiry form
             </div>
-            <div className="text-[12px] text-navy/55 mt-1">
+            <div className="text-[12px] text-navy/55 dark:text-ivory/50 mt-1">
               Takes about a minute. Read by a senior partner.
             </div>
           </div>
@@ -355,7 +355,7 @@ function NeuField({
 }) {
   return (
     <label className="block group">
-      <span className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-navy/55 font-semibold mb-2.5 group-focus-within:text-orange transition-colors duration-300">
+      <span className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/55 font-semibold mb-2.5 group-focus-within:text-orange transition-colors duration-300">
         <span
           aria-hidden
           className="block w-1 h-1 rounded-full bg-navy/25 group-focus-within:bg-orange transition-colors duration-300"
@@ -367,7 +367,7 @@ function NeuField({
         type={type}
         required
         placeholder={placeholder}
-        className="w-full h-12 rounded-xl bg-ivory px-4 text-[14.5px] text-navy placeholder:text-navy/30 focus:outline-none transition-all duration-300"
+        className="w-full h-12 rounded-xl bg-ivory dark:bg-white/[0.06] px-4 text-[14.5px] text-navy dark:text-ivory placeholder:text-navy/30 dark:placeholder:text-ivory/30 focus:outline-none transition-all duration-300"
         style={{ boxShadow: insetShadow }}
         onFocus={(e) => (e.currentTarget.style.boxShadow = insetFocusShadow)}
         onBlur={(e) => (e.currentTarget.style.boxShadow = insetShadow)}
@@ -389,7 +389,7 @@ function NeuSelect({
 }) {
   return (
     <label className="block group">
-      <span className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-navy/55 font-semibold mb-2.5 group-focus-within:text-orange transition-colors duration-300">
+      <span className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/55 font-semibold mb-2.5 group-focus-within:text-orange transition-colors duration-300">
         <span
           aria-hidden
           className="block w-1 h-1 rounded-full bg-navy/25 group-focus-within:bg-orange transition-colors duration-300"
@@ -401,7 +401,7 @@ function NeuSelect({
           name={name}
           defaultValue=""
           required
-          className="w-full h-12 rounded-xl bg-ivory pl-4 pr-12 text-[14.5px] text-navy focus:outline-none transition-all duration-300 appearance-none"
+          className="w-full h-12 rounded-xl bg-ivory dark:bg-white/[0.06] pl-4 pr-12 text-[14.5px] text-navy dark:text-ivory focus:outline-none transition-all duration-300 appearance-none"
           style={{ boxShadow: insetShadow }}
           onFocus={(e) => (e.currentTarget.style.boxShadow = insetFocusShadow)}
           onBlur={(e) => (e.currentTarget.style.boxShadow = insetShadow)}
@@ -451,7 +451,7 @@ function NeuTextarea({
 }) {
   return (
     <label className="block group">
-      <span className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-navy/55 font-semibold mb-2.5 group-focus-within:text-orange transition-colors duration-300">
+      <span className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/55 font-semibold mb-2.5 group-focus-within:text-orange transition-colors duration-300">
         <span
           aria-hidden
           className="block w-1 h-1 rounded-full bg-navy/25 group-focus-within:bg-orange transition-colors duration-300"
@@ -463,7 +463,7 @@ function NeuTextarea({
         rows={4}
         required
         placeholder={placeholder}
-        className="w-full rounded-xl bg-ivory px-4 py-3.5 text-[14.5px] text-navy placeholder:text-navy/30 focus:outline-none transition-all duration-300 resize-none"
+        className="w-full rounded-xl bg-ivory dark:bg-white/[0.06] px-4 py-3.5 text-[14.5px] text-navy dark:text-ivory placeholder:text-navy/30 dark:placeholder:text-ivory/30 focus:outline-none transition-all duration-300 resize-none"
         style={{ boxShadow: insetShadow }}
         onFocus={(e) => (e.currentTarget.style.boxShadow = insetFocusShadow)}
         onBlur={(e) => (e.currentTarget.style.boxShadow = insetShadow)}

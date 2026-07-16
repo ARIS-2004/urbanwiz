@@ -167,7 +167,7 @@ export default function Ecosystem() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.7, delay: 0.2, ease }}
-            className="lg:col-span-5 lg:pb-2 text-[13.5px] text-navy/55 leading-[1.65] max-w-md lg:ml-auto lg:text-right"
+            className="lg:col-span-5 lg:pb-2 text-[13.5px] text-navy/55 dark:text-ivory/50 leading-[1.65] max-w-md lg:ml-auto lg:text-right"
           >
             We&apos;re a people-first business solutions company. What we ship
             today, what we&apos;re building next, and where we&apos;re headed —
@@ -195,7 +195,7 @@ export default function Ecosystem() {
                   hidden: { opacity: 0, y: 22 },
                   show: { opacity: 1, y: 0, transition: { duration: 0.75, ease } },
                 }}
-                className="group relative flex flex-col rounded-[24px] bg-white border border-navy/8 p-7 lg:p-8 shadow-[0_1px_2px_rgba(15,19,48,0.03),0_22px_44px_-22px_rgba(15,19,48,0.20)] hover:border-navy/15 hover:-translate-y-1.5 hover:shadow-[0_1px_2px_rgba(15,19,48,0.03),0_36px_64px_-24px_rgba(15,19,48,0.30)] transition-all duration-500 ease-editorial overflow-hidden"
+                className="group relative flex flex-col rounded-[24px] bg-white dark:bg-[#12173a] border border-navy/8 dark:border-white/10 p-7 lg:p-8 shadow-[0_1px_2px_rgba(15,19,48,0.03),0_22px_44px_-22px_rgba(15,19,48,0.20)] hover:border-navy/15 hover:-translate-y-1.5 hover:shadow-[0_1px_2px_rgba(15,19,48,0.03),0_36px_64px_-24px_rgba(15,19,48,0.30)] transition-all duration-500 ease-editorial overflow-hidden"
               >
                 {/* Top accent border — reveals on hover */}
                 <span
@@ -205,7 +205,7 @@ export default function Ecosystem() {
                 {/* Inner top highlight */}
                 <span
                   aria-hidden
-                  className="absolute top-0 left-7 right-7 h-px bg-white pointer-events-none"
+                  className="absolute top-0 left-7 right-7 h-px bg-white dark:bg-white/10 pointer-events-none"
                 />
 
                 {/* Corner accent wash on hover */}
@@ -235,11 +235,11 @@ export default function Ecosystem() {
                 </div>
 
                 {/* Title */}
-                <h3 className="relative mt-5 font-display text-[23px] sm:text-[25px] xl:text-[27px] tracking-[-0.022em] text-navy font-bold leading-[1.08]">
+                <h3 className="relative mt-5 font-display text-[23px] sm:text-[25px] xl:text-[27px] tracking-[-0.022em] text-navy dark:text-ivory font-bold leading-[1.08]">
                   {phase.title}
                 </h3>
                 {phase.subtitle && (
-                  <div className="relative mt-2 text-[10.5px] text-navy/45 uppercase tracking-[0.2em] font-semibold">
+                  <div className="relative mt-2 text-[10.5px] text-navy/45 dark:text-ivory/45 uppercase tracking-[0.2em] font-semibold">
                     {phase.subtitle}
                   </div>
                 )}
@@ -255,14 +255,14 @@ export default function Ecosystem() {
                   {phase.items.map((item, itemIdx) => (
                     <li
                       key={item}
-                      className="group/row flex items-baseline gap-3.5 py-3 border-b border-navy/8 last:border-b-0"
+                      className="group/row flex items-baseline gap-3.5 py-3 border-b border-navy/8 dark:border-white/10 last:border-b-0"
                     >
                       <span
                         className={`shrink-0 font-display text-[11px] font-bold tabular-nums leading-none ${a.eyebrowColor} opacity-45 group-hover/row:opacity-90 transition-opacity duration-300`}
                       >
                         {String(itemIdx + 1).padStart(2, "0")}
                       </span>
-                      <span className="text-[14px] sm:text-[14.5px] font-semibold text-navy leading-snug transition-transform duration-300 group-hover/row:translate-x-0.5">
+                      <span className="text-[14px] sm:text-[14.5px] font-semibold text-navy dark:text-ivory leading-snug transition-transform duration-300 group-hover/row:translate-x-0.5">
                         {item}
                       </span>
                     </li>

@@ -274,7 +274,7 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.12 }}
       transition={{ duration: 0.85, ease }}
-      className="group/card relative rounded-[26px] bg-white border border-navy/10 overflow-hidden transition-shadow duration-500 shadow-[0_1px_2px_rgba(15,19,48,0.03),0_30px_60px_-34px_rgba(15,19,48,0.22)] hover:shadow-[0_1px_2px_rgba(15,19,48,0.04),0_44px_80px_-40px_rgba(15,19,48,0.34)]"
+      className="group/card relative rounded-[26px] bg-white dark:bg-[#12173a] border border-navy/10 dark:border-white/10 overflow-hidden transition-shadow duration-500 shadow-[0_1px_2px_rgba(15,19,48,0.03),0_30px_60px_-34px_rgba(15,19,48,0.22)] hover:shadow-[0_1px_2px_rgba(15,19,48,0.04),0_44px_80px_-40px_rgba(15,19,48,0.34)]"
     >
       {/* Accent edge that reveals on scroll */}
       <motion.span
@@ -289,14 +289,14 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
       <div className="relative flex items-center px-7 sm:px-10 lg:px-12 pt-8 pb-4">
         <div className="flex items-center gap-3">
           <span className={`block w-9 h-[2px] ${a.bar}`} />
-          <span className="text-[10.5px] tracking-[0.3em] uppercase font-bold text-navy/50">
+          <span className="text-[10.5px] tracking-[0.3em] uppercase font-bold text-navy/50 dark:text-ivory/45">
             Founder Profile
           </span>
         </div>
       </div>
 
       {/* ── Identity block ── */}
-      <div className="relative mx-7 sm:mx-10 lg:mx-12 rounded-2xl border border-navy/8 bg-navy/[0.015] px-6 sm:px-9 py-7 sm:py-9">
+      <div className="relative mx-7 sm:mx-10 lg:mx-12 rounded-2xl border border-navy/8 dark:border-white/10 bg-navy/[0.015] px-6 sm:px-9 py-7 sm:py-9">
         <div className="flex flex-col sm:flex-row sm:items-start gap-7 sm:gap-9">
           {/* Portrait — photo frame (real headshot drops in over the initials fallback) */}
           <div className="relative shrink-0 self-start transition-transform duration-500 ease-editorial group-hover/card:-translate-y-1">
@@ -365,7 +365,7 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
           <div className="min-w-0 flex-1">
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
-                <h3 className="font-display text-[28px] sm:text-[34px] tracking-[-0.025em] leading-[1.05] text-navy font-bold">
+                <h3 className="font-display text-[28px] sm:text-[34px] tracking-[-0.025em] leading-[1.05] text-navy dark:text-ivory font-bold">
                   {leader.name}
                 </h3>
                 <div
@@ -400,7 +400,7 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
               >
                 &ldquo;
               </span>
-              <p className="font-display text-[16.5px] sm:text-[19px] leading-[1.42] text-navy/80 font-semibold tracking-[-0.01em]">
+              <p className="font-display text-[16.5px] sm:text-[19px] leading-[1.42] text-navy/80 dark:text-ivory/70 font-semibold tracking-[-0.01em]">
                 {leader.quote}
                 <span className={`${a.text} opacity-40`}>&rdquo;</span>
               </p>
@@ -427,7 +427,7 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
 
       {/* ── Principle strip — editorial, numeral-led (no icons) ── */}
       <div className="relative px-7 sm:px-10 lg:px-12 pt-11 pb-4">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0 sm:divide-x divide-navy/8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0 sm:divide-x divide-navy/8 dark:divide-white/10">
           {leader.principles.map((pr, i) => (
             <motion.div
               key={pr.key}
@@ -442,14 +442,14 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
               >
                 {["I", "II", "III"][i]}
               </span>
-              <h4 className="mt-3.5 font-display text-[17.5px] sm:text-[18.5px] tracking-[-0.015em] text-navy font-bold leading-[1.2]">
+              <h4 className="mt-3.5 font-display text-[17.5px] sm:text-[18.5px] tracking-[-0.015em] text-navy dark:text-ivory font-bold leading-[1.2]">
                 {pr.title}
               </h4>
               <span
                 aria-hidden
                 className={`mt-3.5 mb-4 block h-[2px] w-8 rounded-full ${a.bar} opacity-60 origin-left transition-transform duration-500 ease-editorial group-hover/pr:scale-x-[1.5]`}
               />
-              <p className="text-[14px] leading-[1.72] text-navy/62">
+              <p className="text-[14px] leading-[1.72] text-navy/62 dark:text-ivory/55">
                 {pr.text}
               </p>
             </motion.div>
@@ -458,7 +458,7 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
       </div>
 
       {/* ── Footer: expand + meta ── */}
-      <div className="relative mt-5 border-t border-navy/8">
+      <div className="relative mt-5 border-t border-navy/8 dark:border-white/10">
         <div
           className="px-7 sm:px-10 lg:px-12 py-6 grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center"
           style={{ backgroundColor: a.softBg }}
@@ -489,7 +489,7 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
             </button>
             <div className="hidden sm:flex items-center gap-2.5">
               <span aria-hidden className={`block w-5 h-[1.5px] ${a.bar} opacity-50`} />
-              <p className="text-[12.5px] leading-[1.4] text-navy/55 font-medium">
+              <p className="text-[12.5px] leading-[1.4] text-navy/55 dark:text-ivory/50 font-medium">
                 The complete story, in his own words.
               </p>
             </div>
@@ -497,12 +497,12 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
 
           {/* Meta */}
           <div className="lg:col-span-4 flex items-center lg:justify-end">
-            <div className="inline-flex items-center gap-2.5 rounded-full bg-white border border-navy/8 pl-3 pr-4 py-2 shadow-[0_1px_2px_rgba(15,19,48,0.03)]">
+            <div className="inline-flex items-center gap-2.5 rounded-full bg-white dark:bg-[#12173a] border border-navy/8 dark:border-white/10 pl-3 pr-4 py-2 shadow-[0_1px_2px_rgba(15,19,48,0.03)]">
               <span className={`block w-1.5 h-1.5 rounded-full ${a.bar}`} />
-              <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-navy/45">
+              <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-navy/45 dark:text-ivory/45">
                 Roots
               </span>
-              <span className="text-[12.5px] text-navy/70 font-medium">
+              <span className="text-[12.5px] text-navy/70 dark:text-ivory/65 font-medium">
                 {leader.roots}
               </span>
             </div>
@@ -521,7 +521,7 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
               className="overflow-hidden"
             >
               <div
-                className="relative border-t border-navy/8"
+                className="relative border-t border-navy/8 dark:border-white/10"
                 style={{ backgroundColor: "#FCFBFA" }}
               >
                 {/* faint accent wash */}
@@ -546,10 +546,10 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
                       <div className={`mt-3 text-[9.5px] uppercase tracking-[0.28em] font-bold ${a.text}`}>
                         In His Own Words
                       </div>
-                      <h4 className="mt-1.5 font-display text-[19px] tracking-[-0.02em] text-navy font-bold leading-[1.1]">
+                      <h4 className="mt-1.5 font-display text-[19px] tracking-[-0.02em] text-navy dark:text-ivory font-bold leading-[1.1]">
                         {leader.name}
                       </h4>
-                      <div className="mt-1 text-[9.5px] uppercase tracking-[0.2em] text-navy/45 font-semibold">
+                      <div className="mt-1 text-[9.5px] uppercase tracking-[0.2em] text-navy/45 dark:text-ivory/45 font-semibold">
                         {leader.role}
                       </div>
                       <span
@@ -572,7 +572,7 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
                               className="my-7 pl-6"
                               style={{ borderLeft: `3px solid rgba(${a.rgb},0.5)` }}
                             >
-                              <blockquote className="font-display text-[19px] sm:text-[23px] leading-[1.3] text-navy font-bold tracking-[-0.025em]">
+                              <blockquote className="font-display text-[19px] sm:text-[23px] leading-[1.3] text-navy dark:text-ivory font-bold tracking-[-0.025em]">
                                 {p.text}
                               </blockquote>
                             </figure>
@@ -587,7 +587,7 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
                               style={{ borderTop: `1px solid rgba(${a.rgb},0.12)` }}
                             >
                               <span className={`block w-7 h-[2px] ${a.bar}`} />
-                              <p className="font-display text-[16px] sm:text-[18px] text-navy font-bold tracking-[-0.02em]">
+                              <p className="font-display text-[16px] sm:text-[18px] text-navy dark:text-ivory font-bold tracking-[-0.02em]">
                                 {p}
                               </p>
                             </div>
@@ -657,8 +657,7 @@ export default function Leadership() {
   return (
     <section
       id="leadership"
-      className="relative overflow-hidden py-20 lg:py-28"
-      style={{ backgroundColor: "#FAF8F6" }}
+      className="relative overflow-hidden py-20 lg:py-28 bg-[#FAF8F6] dark:bg-[#0E1230] transition-colors duration-300"
     >
       <div
         aria-hidden
@@ -677,7 +676,7 @@ export default function Leadership() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8, ease }}
-            className="font-display text-[22px] sm:text-[28px] xl:text-[32px] tracking-[-0.025em] leading-[1.1] text-navy font-bold whitespace-nowrap"
+            className="font-display text-[22px] sm:text-[28px] xl:text-[32px] tracking-[-0.025em] leading-[1.1] text-navy dark:text-ivory font-bold whitespace-nowrap"
           >
             Meet the Three Pillars of{" "}
             <span className="text-orange">Urbanwiz</span>

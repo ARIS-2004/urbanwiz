@@ -86,7 +86,7 @@ export default function Partner() {
   return (
     <section
       id="partner"
-      className="relative py-16 lg:py-20 bg-ivory overflow-hidden"
+      className="relative py-16 lg:py-20 bg-ivory dark:bg-[#0B0E24] overflow-hidden transition-colors duration-300"
     >
       {/* Ambient washes */}
       <div
@@ -134,7 +134,7 @@ export default function Partner() {
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.9, delay: 0.1, ease }}
-            className="lg:col-span-8 font-display text-[38px] sm:text-[50px] xl:text-[60px] tracking-[-0.025em] leading-[0.98] text-navy font-bold"
+            className="lg:col-span-8 font-display text-[38px] sm:text-[50px] xl:text-[60px] tracking-[-0.025em] leading-[0.98] text-navy dark:text-ivory font-bold"
           >
             Six reasons companies <span className="text-orange">stay</span>{" "}
             with us.
@@ -144,7 +144,7 @@ export default function Partner() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.7, delay: 0.2, ease }}
-            className="lg:col-span-4 lg:pb-3 text-[14px] leading-[1.7] text-navy/55 max-w-sm lg:ml-auto lg:text-right"
+            className="lg:col-span-4 lg:pb-3 text-[14px] leading-[1.7] text-navy/55 dark:text-ivory/50 max-w-sm lg:ml-auto lg:text-right"
           >
             The principles that guide every account — from the first
             conversation through the long, quiet years of running
@@ -169,7 +169,7 @@ export default function Partner() {
               className="hidden lg:block absolute -top-6 -right-6 w-28 h-28 rounded-full border border-orange/30 pointer-events-none z-10"
             />
 
-            <div className="relative h-full min-h-[460px] overflow-hidden rounded-3xl border border-navy/8 shadow-[0_2px_4px_rgba(15,19,48,0.03),0_30px_70px_-24px_rgba(15,19,48,0.25)]">
+            <div className="relative h-full min-h-[460px] overflow-hidden rounded-3xl border border-navy/8 dark:border-white/10 shadow-[0_2px_4px_rgba(15,19,48,0.03),0_30px_70px_-24px_rgba(15,19,48,0.25)]">
               <Image
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
                 alt="Urbanwiz operations team"
@@ -278,11 +278,11 @@ function PillarCard({
 }) {
   const num = String(i + 1).padStart(2, "0");
   return (
-    <div className="group relative h-full overflow-hidden bg-white border border-navy/8 rounded-[20px] pl-7 pr-6 sm:pr-7 py-7 transition-all duration-500 ease-editorial hover:border-orange/25 hover:-translate-y-1 hover:shadow-[0_30px_60px_-28px_rgba(15,19,48,0.26)] shadow-[0_1px_2px_rgba(15,19,48,0.03)]">
+    <div className="group relative h-full overflow-hidden bg-white dark:bg-[#12173a] border border-navy/8 dark:border-white/10 rounded-[20px] pl-7 pr-6 sm:pr-7 py-7 transition-all duration-500 ease-editorial hover:border-orange/25 hover:-translate-y-1 hover:shadow-[0_30px_60px_-28px_rgba(15,19,48,0.26)] shadow-[0_1px_2px_rgba(15,19,48,0.03)]">
       {/* Inner top highlight */}
       <span
         aria-hidden
-        className="absolute top-0 left-6 right-6 h-px bg-white pointer-events-none"
+        className="absolute top-0 left-6 right-6 h-px bg-white dark:bg-white/10 pointer-events-none"
       />
 
       {/* Left accent rail — grows on hover */}
@@ -318,20 +318,20 @@ function PillarCard({
         >
           {num}
         </span>
-        <span className="inline-flex items-center rounded-full bg-navy/[0.04] px-2.5 py-1 text-[9px] uppercase tracking-[0.24em] text-navy/55 font-bold group-hover:bg-orange/10 group-hover:text-orange transition-colors duration-300">
+        <span className="inline-flex items-center rounded-full bg-navy/[0.04] px-2.5 py-1 text-[9px] uppercase tracking-[0.24em] text-navy/55 dark:text-ivory/50 font-bold group-hover:bg-orange/10 group-hover:text-orange transition-colors duration-300">
           {p.meta}
         </span>
       </div>
 
       {/* Title + body */}
-      <h3 className="relative mt-5 font-display text-[19px] sm:text-[21px] tracking-[-0.018em] text-navy leading-[1.14] font-bold">
+      <h3 className="relative mt-5 font-display text-[19px] sm:text-[21px] tracking-[-0.018em] text-navy dark:text-ivory leading-[1.14] font-bold">
         {p.title}
       </h3>
       <span
         aria-hidden
         className="relative mt-3.5 block w-8 h-[2px] rounded-full bg-orange/30 origin-left transition-all duration-500 ease-editorial group-hover:w-12 group-hover:bg-orange/60"
       />
-      <p className="relative mt-3.5 text-[13px] leading-[1.7] text-navy/60">
+      <p className="relative mt-3.5 text-[13px] leading-[1.7] text-navy/60 dark:text-ivory/55">
         {p.body}
       </p>
     </div>

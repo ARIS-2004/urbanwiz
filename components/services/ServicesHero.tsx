@@ -20,7 +20,7 @@ export default function ServicesHero() {
   const headlineWords = "Operations,".split(" ");
 
   return (
-    <section className="relative bg-white overflow-hidden pt-14 sm:pt-20 lg:pt-24 pb-14 lg:pb-20">
+    <section className="relative bg-white dark:bg-[#12173a] overflow-hidden pt-14 sm:pt-20 lg:pt-24 pb-14 lg:pb-20">
       {/* Layered ambient washes */}
       <motion.div
         aria-hidden
@@ -110,7 +110,7 @@ export default function ServicesHero() {
             </motion.div>
 
             {/* Headline */}
-            <h1 className="relative mt-6 font-display text-[36px] sm:text-[58px] xl:text-[72px] leading-[0.96] tracking-[-0.028em] text-navy font-bold">
+            <h1 className="relative mt-6 font-display text-[36px] sm:text-[58px] xl:text-[72px] leading-[0.96] tracking-[-0.028em] text-navy dark:text-ivory font-bold">
               <motion.span
                 variants={wordContainer}
                 initial="hidden"
@@ -154,10 +154,10 @@ export default function ServicesHero() {
                     "linear-gradient(180deg, #FF5722 0%, rgba(255,87,34,0) 100%)",
                 }}
               />
-              <p className="font-display text-[16.5px] sm:text-[17.5px] leading-[1.5] tracking-[-0.005em] text-navy font-bold">
+              <p className="font-display text-[16.5px] sm:text-[17.5px] leading-[1.5] tracking-[-0.005em] text-navy dark:text-ivory font-bold">
                 Six interlocking practices.
               </p>
-              <p className="mt-2 text-[13.5px] leading-[1.65] text-navy/55">
+              <p className="mt-2 text-[13.5px] leading-[1.65] text-navy/55 dark:text-ivory/50">
                 Adopt one or run them all together. Same standards, same
                 accountability, same senior ownership on every account.
               </p>
@@ -171,7 +171,7 @@ export default function ServicesHero() {
               className="relative mt-7 grid grid-cols-2 gap-3 max-w-md"
             >
               {/* Practices */}
-              <div className="group relative rounded-xl bg-white border border-navy/8 px-4 py-3.5 shadow-[0_1px_2px_rgba(15,19,48,0.03),0_18px_36px_-22px_rgba(15,19,48,0.20)] hover:border-navy/15 hover:-translate-y-0.5 transition-all duration-500 ease-editorial">
+              <div className="group relative rounded-xl bg-white dark:bg-[#12173a] border border-navy/8 dark:border-white/10 px-4 py-3.5 shadow-[0_1px_2px_rgba(15,19,48,0.03),0_18px_36px_-22px_rgba(15,19,48,0.20)] hover:border-navy/15 hover:-translate-y-0.5 transition-all duration-500 ease-editorial">
                 <div className="flex items-start gap-3">
                   <span
                     className="relative shrink-0 grid place-items-center w-10 h-10 rounded-full text-orange"
@@ -189,13 +189,13 @@ export default function ServicesHero() {
                     </svg>
                   </span>
                   <div className="min-w-0 flex-1">
-                    <div className="text-[9.5px] uppercase tracking-[0.22em] text-navy/55 font-semibold">
+                    <div className="text-[9.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/50 font-semibold">
                       Practices
                     </div>
-                    <div className="mt-1 font-display text-[18px] text-navy font-bold leading-none tabular-nums">
+                    <div className="mt-1 font-display text-[18px] text-navy dark:text-ivory font-bold leading-none tabular-nums">
                       <span className="text-orange">06</span> · core
                     </div>
-                    <div className="mt-1.5 text-[10.5px] text-navy/50 leading-tight">
+                    <div className="mt-1.5 text-[10.5px] text-navy/50 dark:text-ivory/45 leading-tight">
                       Adopted alone or together
                     </div>
                   </div>
@@ -203,7 +203,7 @@ export default function ServicesHero() {
               </div>
 
               {/* Coverage */}
-              <div className="group relative rounded-xl bg-white border border-navy/8 px-4 py-3.5 shadow-[0_1px_2px_rgba(15,19,48,0.03),0_18px_36px_-22px_rgba(15,19,48,0.20)] hover:border-navy/15 hover:-translate-y-0.5 transition-all duration-500 ease-editorial">
+              <div className="group relative rounded-xl bg-white dark:bg-[#12173a] border border-navy/8 dark:border-white/10 px-4 py-3.5 shadow-[0_1px_2px_rgba(15,19,48,0.03),0_18px_36px_-22px_rgba(15,19,48,0.20)] hover:border-navy/15 hover:-translate-y-0.5 transition-all duration-500 ease-editorial">
                 <div className="flex items-start gap-3">
                   <span
                     className="relative shrink-0 grid place-items-center w-10 h-10 rounded-full text-blue-deep"
@@ -219,13 +219,13 @@ export default function ServicesHero() {
                     </svg>
                   </span>
                   <div className="min-w-0 flex-1">
-                    <div className="text-[9.5px] uppercase tracking-[0.22em] text-navy/55 font-semibold">
+                    <div className="text-[9.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/50 font-semibold">
                       Coverage
                     </div>
-                    <div className="mt-1 font-display text-[18px] text-navy font-bold leading-none">
+                    <div className="mt-1 font-display text-[18px] text-navy dark:text-ivory font-bold leading-none">
                       24<span className="text-orange">×</span>7
                     </div>
-                    <div className="mt-1.5 text-[10.5px] text-navy/50 leading-tight">
+                    <div className="mt-1.5 text-[10.5px] text-navy/50 dark:text-ivory/45 leading-tight">
                       Across time zones
                     </div>
                   </div>
@@ -271,7 +271,7 @@ export default function ServicesHero() {
               </a>
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center justify-center gap-2.5 rounded-xl bg-white border border-navy/15 px-4 py-3 transition-all duration-300 hover:border-orange hover:-translate-y-0.5 shadow-[0_1px_2px_rgba(15,19,48,0.03)]"
+                className="group relative inline-flex items-center justify-center gap-2.5 rounded-xl bg-white dark:bg-[#12173a] border border-navy/15 dark:border-white/15 px-4 py-3 transition-all duration-300 hover:border-orange hover:-translate-y-0.5 shadow-[0_1px_2px_rgba(15,19,48,0.03)]"
               >
                 <span className="grid place-items-center w-6 h-6 rounded-full bg-orange/10 text-orange group-hover:bg-orange group-hover:text-ivory transition-colors">
                   <svg width="11" height="11" viewBox="0 0 16 16" fill="none">
@@ -283,7 +283,7 @@ export default function ServicesHero() {
                     />
                   </svg>
                 </span>
-                <span className="text-[11.5px] uppercase tracking-[0.22em] font-bold text-navy group-hover:text-orange transition-colors">
+                <span className="text-[11.5px] uppercase tracking-[0.22em] font-bold text-navy dark:text-ivory group-hover:text-orange transition-colors">
                   Talk to a partner
                 </span>
               </Link>
@@ -309,7 +309,7 @@ export default function ServicesHero() {
                 initial={{ opacity: 0, x: -20, y: -20 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 transition={{ delay: 0.45, duration: 1.0, ease }}
-                className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-[42%] h-[42%] rounded-3xl border border-navy/15 bg-white pointer-events-none"
+                className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-[42%] h-[42%] rounded-3xl border border-navy/15 dark:border-white/15 bg-white dark:bg-[#12173a] pointer-events-none"
               />
 
               {/* Soft orange aura */}
@@ -331,7 +331,7 @@ export default function ServicesHero() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 1.1, ease }}
-                className="relative aspect-[3/2] rounded-3xl overflow-hidden border border-navy/10 shadow-[0_2px_4px_rgba(15,19,48,0.03),0_40px_80px_-28px_rgba(15,19,48,0.35)] z-10"
+                className="relative aspect-[3/2] rounded-3xl overflow-hidden border border-navy/10 dark:border-white/10 shadow-[0_2px_4px_rgba(15,19,48,0.03),0_40px_80px_-28px_rgba(15,19,48,0.35)] z-10"
               >
                 <Image
                   src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=80"

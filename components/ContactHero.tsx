@@ -19,7 +19,7 @@ export default function ContactHero() {
   const headlineWords = "Let's build something".split(" ");
 
   return (
-    <section className="relative bg-white overflow-hidden pt-14 sm:pt-20 lg:pt-24 pb-14 lg:pb-20">
+    <section className="relative bg-white dark:bg-[#12173a] overflow-hidden pt-14 sm:pt-20 lg:pt-24 pb-14 lg:pb-20">
       {/* Layered ambient washes */}
       <motion.div
         aria-hidden
@@ -108,7 +108,7 @@ export default function ContactHero() {
               </span>
             </motion.div>
 
-            <h1 className="relative mt-6 font-display text-[44px] sm:text-[58px] xl:text-[72px] leading-[0.96] tracking-[-0.028em] text-navy font-bold">
+            <h1 className="relative mt-6 font-display text-[44px] sm:text-[58px] xl:text-[72px] leading-[0.96] tracking-[-0.028em] text-navy dark:text-ivory font-bold">
               <motion.span
                 variants={wordContainer}
                 initial="hidden"
@@ -160,10 +160,10 @@ export default function ContactHero() {
                     "linear-gradient(180deg, #FF5722 0%, rgba(255,87,34,0) 100%)",
                 }}
               />
-              <p className="font-display text-[16.5px] sm:text-[17.5px] leading-[1.5] tracking-[-0.005em] text-navy font-bold">
+              <p className="font-display text-[16.5px] sm:text-[17.5px] leading-[1.5] tracking-[-0.005em] text-navy dark:text-ivory font-bold">
                 Real conversations. Real people.
               </p>
-              <p className="mt-2 text-[13.5px] leading-[1.65] text-navy/55">
+              <p className="mt-2 text-[13.5px] leading-[1.65] text-navy/55 dark:text-ivory/50">
                 We reply personally — usually within a single business day.
               </p>
             </motion.div>
@@ -207,7 +207,7 @@ export default function ContactHero() {
               </a>
               <a
                 href="tel:+919038816866"
-                className="group relative inline-flex items-center justify-center gap-2.5 rounded-xl bg-white border border-navy/15 px-4 py-3 transition-all duration-300 hover:border-orange hover:-translate-y-0.5 shadow-[0_1px_2px_rgba(15,19,48,0.03)]"
+                className="group relative inline-flex items-center justify-center gap-2.5 rounded-xl bg-white dark:bg-[#12173a] border border-navy/15 dark:border-white/15 px-4 py-3 transition-all duration-300 hover:border-orange hover:-translate-y-0.5 shadow-[0_1px_2px_rgba(15,19,48,0.03)]"
               >
                 <span className="grid place-items-center w-6 h-6 rounded-full bg-orange/10 text-orange group-hover:bg-orange group-hover:text-ivory transition-colors">
                   <svg width="11" height="11" viewBox="0 0 16 16" fill="none">
@@ -219,7 +219,7 @@ export default function ContactHero() {
                     />
                   </svg>
                 </span>
-                <span className="text-[11.5px] uppercase tracking-[0.22em] font-bold text-navy group-hover:text-orange transition-colors">
+                <span className="text-[11.5px] uppercase tracking-[0.22em] font-bold text-navy dark:text-ivory group-hover:text-orange transition-colors">
                   Schedule a call
                 </span>
               </a>
@@ -245,7 +245,7 @@ export default function ContactHero() {
                 initial={{ opacity: 0, x: -20, y: -20 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 transition={{ delay: 0.45, duration: 1.0, ease }}
-                className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-[42%] h-[42%] rounded-3xl border border-navy/15 bg-white pointer-events-none"
+                className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-[42%] h-[42%] rounded-3xl border border-navy/15 dark:border-white/15 bg-white dark:bg-[#12173a] pointer-events-none"
               />
 
               {/* Soft orange aura behind */}
@@ -267,7 +267,7 @@ export default function ContactHero() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 1.1, ease }}
-                className="relative aspect-[3/2] rounded-3xl overflow-hidden border border-navy/10 shadow-[0_2px_4px_rgba(15,19,48,0.03),0_40px_80px_-28px_rgba(15,19,48,0.35)] z-10"
+                className="relative aspect-[3/2] rounded-3xl overflow-hidden border border-navy/10 dark:border-white/10 shadow-[0_2px_4px_rgba(15,19,48,0.03),0_40px_80px_-28px_rgba(15,19,48,0.35)] z-10"
               >
                 <Image
                   src="/contacthero.png"

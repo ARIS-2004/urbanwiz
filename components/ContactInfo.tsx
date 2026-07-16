@@ -117,7 +117,7 @@ const variants: Record<
 
 export default function ContactInfo() {
   return (
-    <section className="relative bg-white border-y border-navy/8 overflow-hidden">
+    <section className="relative bg-white dark:bg-[#12173a] border-y border-navy/8 dark:border-white/10 overflow-hidden">
       {/* Soft ambient washes */}
       <div
         aria-hidden
@@ -170,7 +170,7 @@ export default function ContactInfo() {
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.9, delay: 0.1, ease }}
-            className="mt-5 font-display text-[26px] sm:text-[34px] xl:text-[40px] tracking-[-0.025em] leading-[1.05] text-navy font-bold"
+            className="mt-5 font-display text-[26px] sm:text-[34px] xl:text-[40px] tracking-[-0.025em] leading-[1.05] text-navy dark:text-ivory font-bold"
           >
             Reach the right team{" "}
             <span className="text-orange">within </span>
@@ -182,7 +182,7 @@ export default function ContactInfo() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.7, delay: 0.2, ease }}
-            className="mt-4 text-[13px] text-navy/55 leading-[1.65] max-w-md mx-auto"
+            className="mt-4 text-[13px] text-navy/55 dark:text-ivory/50 leading-[1.65] max-w-md mx-auto"
           >
             Every channel is read by a real person in our Ecospace office.
           </motion.p>

@@ -94,12 +94,7 @@ export default function ServicesGrid() {
   return (
     <section
       id="services"
-      className="relative overflow-hidden py-16 lg:py-20"
-      style={{
-        background:
-          "linear-gradient(180deg, rgba(255,255,255,0.8), rgba(248,246,244,0.95))",
-        backgroundColor: "#FAF8F6",
-      }}
+      className="relative overflow-hidden py-16 lg:py-20 bg-[#FAF8F6] dark:bg-[#0E1230] transition-colors duration-300"
     >
       {/* Ambient washes */}
       <div
@@ -141,7 +136,7 @@ export default function ServicesGrid() {
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.9, delay: 0.1, ease }}
-              className="mt-4 font-display text-[40px] sm:text-[52px] xl:text-[60px] tracking-[-0.025em] leading-[0.98] text-navy font-bold"
+              className="mt-4 font-display text-[40px] sm:text-[52px] xl:text-[60px] tracking-[-0.025em] leading-[0.98] text-navy dark:text-ivory font-bold"
             >
               Three core practices.
               <br />
@@ -153,7 +148,7 @@ export default function ServicesGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.7, delay: 0.2, ease }}
-              className="mt-5 max-w-[550px] text-[15px] text-navy/55 leading-[1.7]"
+              className="mt-5 max-w-[550px] text-[15px] text-navy/55 dark:text-ivory/50 leading-[1.7]"
             >
               Adopt one or run them all together. The same senior owners, the
               same SLAs, the same transparency — from customer support to data
@@ -168,7 +163,7 @@ export default function ServicesGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.7, delay: 0.25, ease }}
-              className="lg:ml-auto lg:max-w-xs text-[13.5px] text-navy/55 leading-[1.65]"
+              className="lg:ml-auto lg:max-w-xs text-[13.5px] text-navy/55 dark:text-ivory/50 leading-[1.65]"
             >
               <span
                 aria-hidden
@@ -417,7 +412,7 @@ function ServiceCard({ s }: { s: Service }) {
           initial={{ y: 0 }}
           animate={{ y: [-3, 3, -3] }}
           transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-6 right-6 z-20 inline-flex items-start gap-2.5 rounded-2xl bg-white px-4 py-3 shadow-[0_20px_50px_rgba(0,0,0,0.22),0_1px_0_rgba(255,255,255,0.8)_inset]"
+          className="absolute bottom-6 right-6 z-20 inline-flex items-start gap-2.5 rounded-2xl bg-white dark:bg-[#12173a] px-4 py-3 shadow-[0_20px_50px_rgba(0,0,0,0.22),0_1px_0_rgba(255,255,255,0.8)_inset]"
         >
           <span className="mt-0.5 grid place-items-center w-4 h-4 rounded-full bg-orange text-ivory shrink-0">
             <svg width="9" height="9" viewBox="0 0 14 14" fill="none">
@@ -430,7 +425,7 @@ function ServiceCard({ s }: { s: Service }) {
               />
             </svg>
           </span>
-          <span className="text-[12.5px] font-semibold text-navy leading-[1.25] whitespace-pre-line">
+          <span className="text-[12.5px] font-semibold text-navy dark:text-ivory leading-[1.25] whitespace-pre-line">
             {s.floatingNote}
           </span>
         </motion.div>

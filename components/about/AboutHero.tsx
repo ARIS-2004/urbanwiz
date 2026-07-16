@@ -17,10 +17,10 @@ const wordItem: Variants = {
 export default function AboutHero() {
   return (
     <section
-      className="relative -mt-24 pt-32 pb-14 lg:pt-36 lg:pb-16 overflow-hidden"
+      className="relative -mt-24 pt-32 pb-14 lg:pt-36 lg:pb-16 overflow-hidden bg-[#F4F5F7] dark:bg-[#0B0E24] transition-colors duration-300"
       style={{
-        background:
-          "radial-gradient(circle at 80% 15%, rgba(255,87,34,0.06), transparent 45%), radial-gradient(circle at 10% 90%, rgba(23,42,138,0.05), transparent 45%), linear-gradient(180deg, #FAFAFA, #F4F5F7)",
+        backgroundImage:
+          "radial-gradient(circle at 80% 15%, rgba(255,87,34,0.06), transparent 45%), radial-gradient(circle at 10% 90%, rgba(23,42,138,0.05), transparent 45%)",
       }}
     >
       {/* Faint diagonal hairlines */}
@@ -60,7 +60,7 @@ export default function AboutHero() {
               className="flex items-center gap-3"
             >
               <span className="block w-8 h-[2px] bg-orange rounded-full" />
-              <span className="text-[10.5px] uppercase tracking-[0.3em] text-navy/55 font-bold">
+              <span className="text-[10.5px] uppercase tracking-[0.3em] text-navy/55 dark:text-ivory/50 font-bold">
                 Our Story
               </span>
             </motion.div>
@@ -69,7 +69,7 @@ export default function AboutHero() {
               variants={wordContainer}
               initial="hidden"
               animate="show"
-              className="mt-7 font-display text-[38px] sm:text-[54px] xl:text-[64px] tracking-[-0.03em] leading-[1.0] text-navy font-bold"
+              className="mt-7 font-display text-[38px] sm:text-[54px] xl:text-[64px] tracking-[-0.03em] leading-[1.0] text-navy dark:text-ivory font-bold"
             >
               <motion.span variants={wordItem} className="inline-block mr-[0.25em]">Story</motion.span>
               <motion.span variants={wordItem} className="inline-block mr-[0.25em]">of</motion.span>
@@ -94,7 +94,7 @@ export default function AboutHero() {
                     "linear-gradient(180deg, #FF5722 0%, rgba(255,87,34,0) 100%)",
                 }}
               />
-              <p className="font-display text-[16px] sm:text-[18px] leading-[1.5] text-navy/80 font-semibold tracking-[-0.01em]">
+              <p className="font-display text-[16px] sm:text-[18px] leading-[1.5] text-navy/80 dark:text-ivory/70 font-semibold tracking-[-0.01em]">
                 We are human, before we are Corporate.
               </p>
             </motion.div>
@@ -107,19 +107,19 @@ export default function AboutHero() {
               className="mt-9 flex items-center gap-6"
             >
               <div>
-                <div className="font-display text-[26px] sm:text-[32px] font-bold text-navy tabular-nums leading-none">
+                <div className="font-display text-[26px] sm:text-[32px] font-bold text-navy dark:text-ivory tabular-nums leading-none">
                   2026
                 </div>
-                <div className="mt-1.5 text-[9.5px] uppercase tracking-[0.24em] text-navy/50 font-semibold">
+                <div className="mt-1.5 text-[9.5px] uppercase tracking-[0.24em] text-navy/50 dark:text-ivory/45 font-semibold">
                   Founded in Kolkata
                 </div>
               </div>
               <span aria-hidden className="block w-px h-9 bg-navy/12" />
               <div>
-                <div className="font-display text-[26px] sm:text-[32px] font-bold text-navy tabular-nums leading-none">
+                <div className="font-display text-[26px] sm:text-[32px] font-bold text-navy dark:text-ivory tabular-nums leading-none">
                   03
                 </div>
-                <div className="mt-1.5 text-[9.5px] uppercase tracking-[0.24em] text-navy/50 font-semibold">
+                <div className="mt-1.5 text-[9.5px] uppercase tracking-[0.24em] text-navy/50 dark:text-ivory/45 font-semibold">
                   The Three Pillars
                 </div>
               </div>
@@ -163,14 +163,14 @@ export default function AboutHero() {
                 initial={{ opacity: 0, x: -14, y: -14 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 transition={{ delay: 0.45, duration: 1.0, ease }}
-                className="absolute -top-3 -left-3 w-[34%] h-[34%] rounded-3xl border border-navy/15 pointer-events-none"
+                className="absolute -top-3 -left-3 w-[34%] h-[34%] rounded-3xl border border-navy/15 dark:border-white/15 pointer-events-none"
               />
               {/* main image */}
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35, duration: 1.0, ease }}
-                className="absolute inset-0 rounded-3xl overflow-hidden border border-navy/10 shadow-[0_2px_4px_rgba(15,19,48,0.03),0_40px_74px_-32px_rgba(15,19,48,0.32)] z-10"
+                className="absolute inset-0 rounded-3xl overflow-hidden border border-navy/10 dark:border-white/10 shadow-[0_2px_4px_rgba(15,19,48,0.03),0_40px_74px_-32px_rgba(15,19,48,0.32)] z-10"
               >
                 <Image
                   src="/contacthero.png"
@@ -189,7 +189,7 @@ export default function AboutHero() {
                   }}
                 />
                 <div className="absolute bottom-5 left-5 flex items-center gap-2">
-                  <span className="block w-5 h-[1.5px] bg-white" />
+                  <span className="block w-5 h-[1.5px] bg-white dark:bg-[#12173a]" />
                   <span className="text-[9.5px] uppercase tracking-[0.26em] text-white/90 font-bold">
                     Est. 2026 · Kolkata
                   </span>

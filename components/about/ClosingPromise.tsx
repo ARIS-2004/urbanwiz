@@ -7,7 +7,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function ClosingPromise() {
   return (
-    <section className="relative overflow-hidden py-16 lg:py-20 bg-white">
+    <section className="relative overflow-hidden py-16 lg:py-20 bg-white dark:bg-[#12173a]">
       <div
         aria-hidden
         className="absolute inset-x-0 top-0 h-px pointer-events-none"

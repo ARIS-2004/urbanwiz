@@ -15,10 +15,10 @@ export default function OriginStory() {
   return (
     <section
       id="story"
-      className="relative overflow-hidden py-20 lg:py-28"
+      className="relative overflow-hidden py-20 lg:py-28 bg-[#F7F7F8] dark:bg-[#0B0E24] transition-colors duration-300"
       style={{
-        background:
-          "radial-gradient(circle at top center, rgba(255,87,34,0.04), transparent 45%), #F7F7F8",
+        backgroundImage:
+          "radial-gradient(circle at top center, rgba(255,87,34,0.04), transparent 45%)",
       }}
     >
       <div
@@ -52,7 +52,7 @@ export default function OriginStory() {
             whileInView="show"
             viewport={{ once: true, amount: 0.4 }}
             variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } } }}
-            className="mt-6 mx-auto max-w-[1000px] font-display font-bold text-navy"
+            className="mt-6 mx-auto max-w-[1000px] font-display font-bold text-navy dark:text-ivory"
             style={{
               fontSize: "clamp(1.9rem, 3.8vw, 3.1rem)",
               lineHeight: 1.05,
@@ -81,7 +81,7 @@ export default function OriginStory() {
 
           <motion.p
             {...fadeUp(0.25)}
-            className="mt-4 font-display text-[15px] sm:text-[17px] leading-[1.45] text-navy/55 tracking-[-0.01em]"
+            className="mt-4 font-display text-[15px] sm:text-[17px] leading-[1.45] text-navy/55 dark:text-ivory/50 tracking-[-0.01em]"
           >
             A belief that technology should never lose its humanity.
           </motion.p>
@@ -92,17 +92,17 @@ export default function OriginStory() {
           {...fadeUp(0.15)}
           className="mx-auto mt-8 max-w-[720px] text-center"
         >
-          <p className="text-[16px] sm:text-[18px] leading-[1.8] text-navy/80 font-display tracking-[-0.005em]">
+          <p className="text-[16px] sm:text-[18px] leading-[1.8] text-navy/80 dark:text-ivory/70 font-display tracking-[-0.005em]">
             In a world where success is often measured only by numbers, we chose
             to measure ours differently. We believe every line of code
             represents a person&apos;s vision, every project carries
             someone&apos;s dream, and every partnership is built on trust before
             transactions.{" "}
-            <span className="text-navy font-semibold">
+            <span className="text-navy dark:text-ivory font-semibold">
               Revenue fuels growth, but people give that growth purpose.
             </span>
           </p>
-          <p className="mt-6 text-[13px] sm:text-[14px] leading-[1.55] text-navy/50 tracking-[0.02em] uppercase font-semibold">
+          <p className="mt-6 text-[13px] sm:text-[14px] leading-[1.55] text-navy/50 dark:text-ivory/45 tracking-[0.02em] uppercase font-semibold">
             This belief became the foundation of a simple philosophy that guides
             every decision we make
           </p>
@@ -156,7 +156,7 @@ export default function OriginStory() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ delay: 0.06 * i, duration: 0.7, ease }}
-              className="group relative grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-10 px-4 sm:px-6 py-8 lg:py-9 border-b border-navy/12 rounded-xl hover:bg-white/70 transition-colors duration-300"
+              className="group relative grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-10 px-4 sm:px-6 py-8 lg:py-9 border-b border-navy/12 dark:border-white/10 rounded-xl hover:bg-white/70 transition-colors duration-300"
             >
               {/* hover accent on left */}
               <span
@@ -168,12 +168,12 @@ export default function OriginStory() {
                 <span className="font-display font-black text-[34px] sm:text-[40px] text-orange/20 tabular-nums leading-[0.75] transition-colors duration-300 group-hover:text-orange/45">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-1.5 font-display text-[19px] sm:text-[23px] tracking-[-0.025em] text-navy font-bold leading-[1.12]">
+                <h3 className="mt-1.5 font-display text-[19px] sm:text-[23px] tracking-[-0.025em] text-navy dark:text-ivory font-bold leading-[1.12]">
                   {pillar.label}
                 </h3>
               </div>
               {/* text */}
-              <p className="md:col-span-8 text-[14px] sm:text-[15px] leading-[1.82] text-navy/68">
+              <p className="md:col-span-8 text-[14px] sm:text-[15px] leading-[1.82] text-navy/68 dark:text-ivory/60">
                 {pillar.text}
               </p>
             </motion.div>
@@ -218,25 +218,25 @@ export default function OriginStory() {
           <div className="relative max-w-3xl">
             <div className="flex items-center gap-2.5">
               <span className="block w-6 h-[2px] bg-orange" />
-              <span className="text-[10px] uppercase tracking-[0.3em] text-navy/50 font-bold">
+              <span className="text-[10px] uppercase tracking-[0.3em] text-navy/50 dark:text-ivory/45 font-bold">
                 Our Journey Together
               </span>
             </div>
-            <p className="mt-6 font-display text-[19px] sm:text-[23px] leading-[1.4] text-navy font-bold tracking-[-0.02em]">
+            <p className="mt-6 font-display text-[19px] sm:text-[23px] leading-[1.4] text-navy dark:text-ivory font-bold tracking-[-0.02em]">
               Every client who partners with Urbanwiz becomes more than a
               customer.{" "}
-              <span className="text-navy/55 font-semibold">
+              <span className="text-navy/55 dark:text-ivory/50 font-semibold">
                 You become part of our journey.
               </span>
             </p>
-            <p className="mt-5 text-[15px] sm:text-[16px] leading-[1.85] text-navy/70">
+            <p className="mt-5 text-[15px] sm:text-[16px] leading-[1.85] text-navy/70 dark:text-ivory/65">
               Your aspirations become our mission, your challenges become ours to
               solve, and your success becomes the measure of our own. Because at
               the end of every project, beyond every milestone and every
               achievement, there are people whose lives, businesses, and dreams
               have been shaped by what we create together.
             </p>
-            <p className="mt-8 pt-7 border-t border-navy/10 font-display text-[22px] sm:text-[27px] tracking-[-0.025em] leading-[1.3] text-navy font-bold">
+            <p className="mt-8 pt-7 border-t border-navy/10 dark:border-white/10 font-display text-[22px] sm:text-[27px] tracking-[-0.025em] leading-[1.3] text-navy dark:text-ivory font-bold">
               This is more than our story.{" "}
               <span className="text-orange">It is our promise.</span>
             </p>

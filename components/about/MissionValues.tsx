@@ -52,8 +52,7 @@ export default function MissionValues() {
   return (
     <section
       id="philosophy"
-      className="relative overflow-hidden py-16 lg:py-24"
-      style={{ backgroundColor: "#FAF8F6" }}
+      className="relative overflow-hidden py-16 lg:py-24 bg-[#FAF8F6] dark:bg-[#0E1230] transition-colors duration-300"
     >
       <div
         aria-hidden
@@ -86,7 +85,7 @@ export default function MissionValues() {
               className="block w-9 h-[1.5px] rounded-full"
               style={{ background: "linear-gradient(90deg, transparent, #FF5722)" }}
             />
-            <span className="text-[10.5px] uppercase tracking-[0.32em] text-navy/55 font-bold">
+            <span className="text-[10.5px] uppercase tracking-[0.32em] text-navy/55 dark:text-ivory/50 font-bold">
               Our Promise
             </span>
             <span
@@ -100,7 +99,7 @@ export default function MissionValues() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 0.1, duration: 0.85, ease }}
-            className="mt-6 font-display text-[30px] sm:text-[44px] xl:text-[52px] tracking-[-0.03em] leading-[1.04] text-navy font-bold"
+            className="mt-6 font-display text-[30px] sm:text-[44px] xl:text-[52px] tracking-[-0.03em] leading-[1.04] text-navy dark:text-ivory font-bold"
           >
             This is more than our story.
             <br />
@@ -131,7 +130,7 @@ export default function MissionValues() {
               viewport={{ once: true, amount: 0.25 }}
               transition={{ delay: 0.1 * i, duration: 0.75, ease }}
               whileHover={{ y: -8 }}
-              className="group relative rounded-[22px] bg-white border border-navy/10 overflow-hidden flex flex-col shadow-[0_1px_2px_rgba(15,19,48,0.02),0_24px_48px_-30px_rgba(15,19,48,0.22)] hover:shadow-[0_1px_2px_rgba(15,19,48,0.03),0_46px_80px_-38px_rgba(15,19,48,0.38)] transition-shadow duration-500"
+              className="group relative rounded-[22px] bg-white dark:bg-[#12173a] border border-navy/10 dark:border-white/10 overflow-hidden flex flex-col shadow-[0_1px_2px_rgba(15,19,48,0.02),0_24px_48px_-30px_rgba(15,19,48,0.22)] hover:shadow-[0_1px_2px_rgba(15,19,48,0.03),0_46px_80px_-38px_rgba(15,19,48,0.38)] transition-shadow duration-500"
             >
               {/* accent top edge grows on hover */}
               <span
@@ -182,7 +181,7 @@ export default function MissionValues() {
                 <span className="font-display font-black text-[24px] leading-none text-orange/25 tabular-nums transition-colors duration-300 group-hover:text-orange/45">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <p className="mt-3 font-display text-[16px] sm:text-[17px] leading-[1.3] text-navy font-bold tracking-[-0.02em]">
+                <p className="mt-3 font-display text-[16px] sm:text-[17px] leading-[1.3] text-navy dark:text-ivory font-bold tracking-[-0.02em]">
                   {pr.lead}
                   {pr.accent && <span className="text-orange">{pr.accent}</span>}
                   {pr.tail}
@@ -208,7 +207,7 @@ export default function MissionValues() {
           <span aria-hidden className="font-display font-black text-[30px] leading-[0.5] text-orange/50 select-none shrink-0 self-start mt-1">
             &ldquo;
           </span>
-          <p className="font-display text-[17px] sm:text-[21px] tracking-[-0.01em] text-navy font-bold text-center">
+          <p className="font-display text-[17px] sm:text-[21px] tracking-[-0.01em] text-navy dark:text-ivory font-bold text-center">
             We are human, before we are{" "}
             <span className="text-orange">Corporate.</span>
           </p>

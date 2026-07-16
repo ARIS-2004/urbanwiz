@@ -76,8 +76,7 @@ export default function Process() {
   return (
     <section
       id="process"
-      className="relative overflow-hidden py-16 lg:py-20"
-      style={{ backgroundColor: "#FAF8F6" }}
+      className="relative overflow-hidden py-16 lg:py-20 bg-[#FAF8F6] dark:bg-[#0E1230] transition-colors duration-300"
     >
       {/* Ambient washes */}
       <div
@@ -126,7 +125,7 @@ export default function Process() {
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.9, delay: 0.1, ease }}
-              className="mt-5 font-display text-[36px] sm:text-[46px] xl:text-[54px] tracking-[-0.025em] leading-[0.98] text-navy font-bold"
+              className="mt-5 font-display text-[36px] sm:text-[46px] xl:text-[54px] tracking-[-0.025em] leading-[0.98] text-navy dark:text-ivory font-bold"
             >
               Listen. <span className="text-orange">Build.</span>{" "}
               <span className="text-blue-deep">Support. Improve.</span>
@@ -144,7 +143,7 @@ export default function Process() {
               aria-hidden
               className="block w-9 h-[2px] rounded-full bg-orange/60 lg:ml-auto"
             />
-            <p className="mt-4 text-[14px] text-navy/60 leading-[1.75] lg:text-right tracking-[-0.002em]">
+            <p className="mt-4 text-[14px] text-navy/60 dark:text-ivory/55 leading-[1.75] lg:text-right tracking-[-0.002em]">
               A four-step path designed to feel deliberate, not transactional.
               Built around clarity, communication and outcomes.
             </p>
@@ -231,7 +230,7 @@ export default function Process() {
                   <motion.span
                     whileHover={{ rotate: -8, scale: 1.08 }}
                     transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                    className="absolute z-20 bottom-0 left-5 grid place-items-center w-14 h-14 rounded-2xl bg-white border border-navy/8"
+                    className="absolute z-20 bottom-0 left-5 grid place-items-center w-14 h-14 rounded-2xl bg-white dark:bg-[#12173a] border border-navy/8 dark:border-white/10"
                     style={{
                       color: accent,
                       boxShadow: `0 18px 36px -10px ${accent}80, inset 0 1px 0 rgba(255,255,255,0.85)`,
@@ -255,10 +254,10 @@ export default function Process() {
                       {step.eyebrow}
                     </div>
                   </div>
-                  <h3 className="mt-3.5 font-display text-[26px] sm:text-[29px] xl:text-[32px] tracking-[-0.025em] leading-[1.02] text-navy font-bold">
+                  <h3 className="mt-3.5 font-display text-[26px] sm:text-[29px] xl:text-[32px] tracking-[-0.025em] leading-[1.02] text-navy dark:text-ivory font-bold">
                     {step.title}
                   </h3>
-                  <p className="mt-4 text-[13.5px] sm:text-[14px] leading-[1.75] text-navy/65 max-w-[262px] tracking-[-0.002em]">
+                  <p className="mt-4 text-[13.5px] sm:text-[14px] leading-[1.75] text-navy/65 dark:text-ivory/60 max-w-[262px] tracking-[-0.002em]">
                     {step.body}
                   </p>
                 </div>

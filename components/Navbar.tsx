@@ -71,15 +71,15 @@ export default function Navbar() {
           {/* Left: Logo + tagline */}
           <div className="relative flex items-center gap-5">
             <Logo />
-            <span aria-hidden className="hidden lg:block w-px h-11 bg-navy/12" />
+            <span aria-hidden className="hidden lg:block w-px h-11 bg-navy/12 dark:bg-white/12" />
             <div className="hidden lg:flex flex-col gap-1">
               {["People", "Performance", "Progress"].map((w) => (
                 <span
                   key={w}
-                  className="text-[11px] uppercase tracking-[0.24em] text-navy/75 font-bold leading-none"
+                  className="text-[11px] uppercase tracking-[0.24em] text-navy/75 dark:text-ivory/70 font-bold leading-none"
                 >
                   <span className="text-orange text-[13px] font-black">{w.charAt(0)}</span>
-                  <span className="text-navy/70">{w.slice(1)}</span>
+                  <span className="text-navy/70 dark:text-ivory/65">{w.slice(1)}</span>
                 </span>
               ))}
             </div>
@@ -94,7 +94,7 @@ export default function Navbar() {
                   key={l.href}
                   href={l.href}
                   className={`group relative px-5 py-2.5 text-[14.5px] transition-colors font-medium ${
-                    active ? "text-orange" : "text-navy/70 hover:text-navy"
+                    active ? "text-orange" : "text-navy/70 hover:text-navy dark:text-ivory/70 dark:hover:text-ivory"
                   }`}
                 >
                   <span className="relative z-10">{l.label}</span>
@@ -187,7 +187,7 @@ export default function Navbar() {
             transition={{ duration: 0.3, ease }}
             className="md:hidden container-wide mt-3"
           >
-            <div className="rounded-3xl border border-navy/10 bg-white/90 backdrop-blur-xl p-3 shadow-[0_20px_40px_-20px_rgba(15,19,48,0.25)]">
+            <div className="rounded-3xl border border-navy/10 dark:border-white/10 bg-white/90 dark:bg-[#12173a]/95 backdrop-blur-xl p-3 shadow-[0_20px_40px_-20px_rgba(15,19,48,0.25)]">
               {links.map((l, i) => (
                 <motion.div
                   key={l.href}
@@ -199,8 +199,8 @@ export default function Navbar() {
                     href={l.href}
                     className={`flex items-center justify-between rounded-2xl px-4 py-3 text-[15px] transition-colors ${
                       pathname === l.href
-                        ? "bg-navy/[0.06] text-navy font-medium"
-                        : "text-navy/70 hover:bg-navy/[0.04]"
+                        ? "bg-navy/[0.06] text-navy font-medium dark:bg-white/10 dark:text-ivory"
+                        : "text-navy/70 hover:bg-navy/[0.04] dark:text-ivory/70 dark:hover:bg-white/[0.06]"
                     }`}
                   >
                     <span className="flex items-center gap-2.5">

@@ -127,8 +127,7 @@ export default function ServicesPage() {
 
       {/* Service index — quick nav */}
       <section
-        className="relative py-10 lg:py-12 border-y border-navy/8 overflow-hidden"
-        style={{ backgroundColor: "#FAF8F6" }}
+        className="relative py-10 lg:py-12 border-y border-navy/8 dark:border-white/10 overflow-hidden bg-[#FAF8F6] dark:bg-[#0E1230] transition-colors duration-300"
       >
         {/* Ambient washes */}
         <div
@@ -157,7 +156,7 @@ export default function ServicesPage() {
                   Jump to a service
                 </span>
               </div>
-              <span className="text-[10.5px] uppercase tracking-[0.22em] text-navy/45 font-semibold tabular-nums">
+              <span className="text-[10.5px] uppercase tracking-[0.22em] text-navy/45 dark:text-ivory/45 font-semibold tabular-nums">
                 06 practices
               </span>
             </div>
@@ -167,7 +166,7 @@ export default function ServicesPage() {
               <StaggerItem key={s.id}>
                 <Link
                   href={`#${s.id}`}
-                  className="group relative flex flex-col h-full min-h-[178px] rounded-[20px] bg-white border border-navy/10 p-6 hover:border-orange/45 hover:-translate-y-1.5 transition-all duration-500 ease-editorial shadow-[0_1px_2px_rgba(15,19,48,0.03),0_18px_38px_-24px_rgba(15,19,48,0.22)] hover:shadow-[0_1px_2px_rgba(15,19,48,0.03),0_32px_58px_-24px_rgba(15,19,48,0.32)] overflow-hidden"
+                  className="group relative flex flex-col h-full min-h-[178px] rounded-[20px] bg-white dark:bg-[#12173a] border border-navy/10 dark:border-white/10 p-6 hover:border-orange/45 hover:-translate-y-1.5 transition-all duration-500 ease-editorial shadow-[0_1px_2px_rgba(15,19,48,0.03),0_18px_38px_-24px_rgba(15,19,48,0.22)] hover:shadow-[0_1px_2px_rgba(15,19,48,0.03),0_32px_58px_-24px_rgba(15,19,48,0.32)] overflow-hidden"
                 >
                   {/* corner wash */}
                   <span
@@ -192,17 +191,17 @@ export default function ServicesPage() {
                       </span>
                       <span className="block w-6 h-[2px] rounded-full bg-orange/40 origin-left transition-transform duration-500 ease-editorial group-hover:scale-x-150" />
                     </div>
-                    <span className="text-[8.5px] uppercase tracking-[0.2em] text-navy/40 font-bold rounded-full bg-navy/[0.04] px-2 py-1 group-hover:bg-orange/10 group-hover:text-orange transition-colors duration-300">
+                    <span className="text-[8.5px] uppercase tracking-[0.2em] text-navy/40 dark:text-ivory/40 font-bold rounded-full bg-navy/[0.04] px-2 py-1 group-hover:bg-orange/10 group-hover:text-orange transition-colors duration-300">
                       {s.tag}
                     </span>
                   </div>
 
-                  <span className="relative mt-5 font-display text-[16px] sm:text-[17px] tracking-[-0.015em] text-navy font-bold leading-[1.15] group-hover:text-orange transition-colors">
+                  <span className="relative mt-5 font-display text-[16px] sm:text-[17px] tracking-[-0.015em] text-navy dark:text-ivory font-bold leading-[1.15] group-hover:text-orange transition-colors">
                     {s.name}
                   </span>
 
                   {/* Footer: view hint */}
-                  <div className="relative mt-auto pt-4 flex items-center gap-2 text-navy/40 group-hover:text-orange transition-colors duration-300">
+                  <div className="relative mt-auto pt-4 flex items-center gap-2 text-navy/40 dark:text-ivory/40 group-hover:text-orange transition-colors duration-300">
                     <span className="text-[9.5px] uppercase tracking-[0.2em] font-bold">
                       View service
                     </span>
@@ -229,7 +228,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="py-12 lg:py-16 bg-white">
+      <section className="py-12 lg:py-16 bg-white dark:bg-[#12173a]">
         <div className="container-content space-y-5 lg:space-y-6">
           {services.map((s, i) => (
             <ServiceHighlight key={s.id} id={s.id}>
@@ -254,12 +253,12 @@ function ServiceBlock({
   return (
     <article
       id={s.id}
-      className="group relative rounded-3xl border border-navy/8 bg-white shadow-[0_1px_2px_rgba(15,19,48,0.03),0_18px_40px_-22px_rgba(15,19,48,0.16)] overflow-hidden scroll-mt-32 transition-all duration-500 ease-editorial hover:border-navy/15 hover:-translate-y-1 hover:shadow-[0_1px_2px_rgba(15,19,48,0.03),0_30px_56px_-22px_rgba(15,19,48,0.24)]"
+      className="group relative rounded-3xl border border-navy/8 dark:border-white/10 bg-white dark:bg-[#12173a] shadow-[0_1px_2px_rgba(15,19,48,0.03),0_18px_40px_-22px_rgba(15,19,48,0.16)] overflow-hidden scroll-mt-32 transition-all duration-500 ease-editorial hover:border-navy/15 hover:-translate-y-1 hover:shadow-[0_1px_2px_rgba(15,19,48,0.03),0_30px_56px_-22px_rgba(15,19,48,0.24)]"
     >
       {/* Inner top highlight */}
       <span
         aria-hidden
-        className="absolute top-0 left-7 right-7 h-px bg-white pointer-events-none z-10"
+        className="absolute top-0 left-7 right-7 h-px bg-white dark:bg-white/10 pointer-events-none z-10"
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
@@ -311,13 +310,13 @@ function ServiceBlock({
           </FadeUp>
 
           <FadeUp delay={0.05}>
-            <h2 className="mt-4 font-display text-[26px] sm:text-[30px] xl:text-[34px] tracking-[-0.025em] leading-[1.08] text-navy font-bold">
+            <h2 className="mt-4 font-display text-[26px] sm:text-[30px] xl:text-[34px] tracking-[-0.025em] leading-[1.08] text-navy dark:text-ivory font-bold">
               {s.name}
             </h2>
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <p className="mt-4 text-[14.5px] leading-[1.7] text-navy/60 max-w-xl">
+            <p className="mt-4 text-[14.5px] leading-[1.7] text-navy/60 dark:text-ivory/55 max-w-xl">
               {s.lead}
             </p>
           </FadeUp>
@@ -337,10 +336,10 @@ function ServiceBlock({
                       0{idx + 1}
                     </span>
                     <div>
-                      <div className="text-[15.5px] font-bold text-navy leading-tight tracking-[-0.01em]">
+                      <div className="text-[15.5px] font-bold text-navy dark:text-ivory leading-tight tracking-[-0.01em]">
                         {f.t}
                       </div>
-                      <div className="mt-1.5 text-[13.5px] leading-[1.6] text-navy/60">
+                      <div className="mt-1.5 text-[13.5px] leading-[1.6] text-navy/60 dark:text-ivory/55">
                         {f.b}
                       </div>
                     </div>
@@ -352,7 +351,7 @@ function ServiceBlock({
 
           {/* Footer row */}
           <FadeUp delay={0.18}>
-            <div className="mt-7 pt-5 border-t border-navy/8 flex items-center justify-between gap-3 flex-wrap">
+            <div className="mt-7 pt-5 border-t border-navy/8 dark:border-white/10 flex items-center justify-between gap-3 flex-wrap">
               <Link
                 href="/contact"
                 className="group/btn inline-flex items-center justify-between gap-3 rounded-full bg-navy text-ivory pl-5 pr-2 py-2 text-[11px] uppercase tracking-[0.22em] font-bold hover:bg-orange transition-colors duration-300"
@@ -394,7 +393,7 @@ function ServiceBlock({
                     />
                   ))}
                 </div>
-                <span className="text-[10px] uppercase tracking-[0.22em] text-navy/50 font-bold tabular-nums">
+                <span className="text-[10px] uppercase tracking-[0.22em] text-navy/50 dark:text-ivory/45 font-bold tabular-nums">
                   {s.n} / 06
                 </span>
               </div>
