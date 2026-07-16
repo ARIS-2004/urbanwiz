@@ -218,8 +218,7 @@ export default function Ecosystem() {
                 {/* Ghost phase number — anchor */}
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute top-5 right-4 font-display text-[64px] leading-none font-black tracking-[-0.05em] select-none transition-transform duration-500 group-hover:scale-110"
-                  style={{ color: `rgba(15,19,48,0.05)` }}
+                  className="pointer-events-none absolute top-5 right-4 font-display text-[64px] leading-none font-black tracking-[-0.05em] select-none transition-transform duration-500 group-hover:scale-110 text-navy/[0.05] dark:text-white/[0.09]"
                 >
                   0{phaseIdx + 1}
                 </span>
