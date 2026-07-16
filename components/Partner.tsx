@@ -171,7 +171,7 @@ export default function Partner() {
 
             <div className="relative h-full min-h-[460px] overflow-hidden rounded-3xl border border-navy/8 shadow-[0_2px_4px_rgba(15,19,48,0.03),0_30px_70px_-24px_rgba(15,19,48,0.25)]">
               <Image
-                src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=80"
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
                 alt="Urbanwiz operations team"
                 fill
                 sizes="(max-width: 1024px) 100vw, 480px"
@@ -224,29 +224,6 @@ export default function Partner() {
                 <div className="font-display text-[24px] sm:text-[28px] xl:text-[30px] tracking-[-0.02em] leading-[1.15] font-bold">
                   Trust is built in the small,{" "}
                   <span className="text-orange">unseen details.</span>
-                </div>
-
-                {/* Stats strip */}
-                <div className="mt-6 pt-5 border-t border-ivory/15 flex items-center gap-5 lg:gap-7">
-                  {[
-                    { v: "150+", l: "Operators" },
-                    { v: "8+", l: "Years" },
-                    { v: "24×7", l: "Coverage" },
-                  ].map((stat, idx) => (
-                    <div key={stat.l} className="flex items-center gap-5 lg:gap-7">
-                      <div>
-                        <div className="font-display text-[24px] sm:text-[26px] text-ivory leading-none tabular-nums font-bold">
-                          {stat.v}
-                        </div>
-                        <div className="mt-1.5 text-[10px] uppercase tracking-[0.22em] text-ivory/55 font-semibold">
-                          {stat.l}
-                        </div>
-                      </div>
-                      {idx < 2 && (
-                        <span className="block w-px h-10 bg-ivory/15" />
-                      )}
-                    </div>
-                  ))}
                 </div>
               </div>
 

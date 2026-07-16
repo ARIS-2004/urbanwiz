@@ -16,7 +16,7 @@ const stroke = {
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative bg-ivory -mt-24">
+    <section id="hero" className="relative bg-ivory -mt-24 overflow-hidden">
       {/* ── Two-column band: light copy (left) · photo + roadmap card (right) ── */}
       <div className="relative grid grid-cols-1 lg:grid-cols-2">
         {/* Left — copy */}
@@ -30,7 +30,7 @@ export default function Hero() {
                 "radial-gradient(closest-side, rgba(255,87,34,0.06), rgba(255,87,34,0) 70%)",
             }}
           />
-          <div className="relative px-6 sm:px-10 lg:pl-[max(2rem,calc((100vw-1200px)/2))] lg:pr-14 pt-14 pb-16 lg:pt-40 lg:pb-24 max-w-[720px] lg:max-w-none lg:ml-auto lg:w-full">
+          <div className="relative px-6 sm:px-10 lg:pl-[max(2rem,calc((100vw-1200px)/2))] lg:pr-14 pt-10 pb-14 lg:pt-40 lg:pb-24 max-w-[720px] lg:max-w-none lg:ml-auto lg:w-full">
             <div className="lg:max-w-[560px] lg:ml-auto">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -48,7 +48,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 14, filter: "blur(6px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.9, delay: 0.2, ease }}
-                className="mt-6 font-display text-[38px] sm:text-[52px] xl:text-[60px] tracking-[-0.032em] leading-[0.98] text-navy font-bold"
+                className="mt-6 font-display text-[34px] sm:text-[52px] xl:text-[60px] tracking-[-0.032em] leading-[1.0] sm:leading-[0.98] text-navy font-bold"
               >
                 Operational
                 <br />
@@ -128,8 +128,8 @@ export default function Hero() {
         </div>
 
         {/* Right — office photo (framed on desktop) with floating tagline chip */}
-        <div className="relative order-1 lg:order-2 lg:py-6 lg:pr-[max(1.5rem,calc((100vw-1200px)/2))]">
-          <div className="relative min-h-[440px] sm:min-h-[520px] h-full lg:min-h-[600px] overflow-hidden lg:rounded-[28px] lg:shadow-[0_40px_90px_-40px_rgba(15,19,48,0.5)]">
+        <div className="relative order-1 lg:order-2 pt-24 lg:pt-6 px-4 sm:px-6 lg:px-0 lg:py-6 lg:pr-[max(1.5rem,calc((100vw-1200px)/2))]">
+          <div className="relative min-h-[400px] sm:min-h-[480px] h-full lg:min-h-[600px] overflow-hidden rounded-[24px] lg:rounded-[28px] shadow-[0_30px_60px_-30px_rgba(15,19,48,0.4)] lg:shadow-[0_40px_90px_-40px_rgba(15,19,48,0.5)]">
             <Image
               src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=80"
               alt="Urbanwiz office"
@@ -150,7 +150,7 @@ export default function Hero() {
             {/* soft inner ring for the framed look */}
             <span
               aria-hidden
-              className="pointer-events-none absolute inset-0 lg:rounded-[28px] ring-1 ring-inset ring-white/10"
+              className="pointer-events-none absolute inset-0 rounded-[24px] lg:rounded-[28px] ring-1 ring-inset ring-white/10"
             />
             {/* orange corner glow */}
             <div

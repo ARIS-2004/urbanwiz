@@ -17,6 +17,8 @@ html, body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-primary);
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 html { scroll-behavior: smooth; }

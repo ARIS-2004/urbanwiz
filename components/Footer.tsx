@@ -19,10 +19,12 @@ const columns = [
   {
     title: "Services",
     links: [
-      { href: "/services", label: "Customer Support" },
-      { href: "/services", label: "Finance Operations" },
-      { href: "/services", label: "IT Helpdesk" },
-      { href: "/services", label: "Back Office Support" },
+      { href: "/services#customer-support", label: "Customer Support" },
+      { href: "/services#virtual-assistance", label: "Virtual Assistance" },
+      { href: "/services#finance", label: "Finance Process Outsourcing" },
+      { href: "/services#back-office", label: "Back Office Operations" },
+      { href: "/services#it-helpdesk", label: "IT Helpdesk" },
+      { href: "/services#automation", label: "Process Automation" },
     ],
   },
   {

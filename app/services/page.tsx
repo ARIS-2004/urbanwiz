@@ -166,7 +166,7 @@ export default function ServicesPage() {
               <StaggerItem key={s.id}>
                 <Link
                   href={`#${s.id}`}
-                  className="group relative flex flex-col justify-between h-full min-h-[168px] rounded-[20px] bg-white border border-navy/10 p-6 hover:border-orange/45 hover:-translate-y-1.5 transition-all duration-500 ease-editorial shadow-[0_1px_2px_rgba(15,19,48,0.03),0_18px_38px_-24px_rgba(15,19,48,0.22)] hover:shadow-[0_1px_2px_rgba(15,19,48,0.03),0_32px_58px_-24px_rgba(15,19,48,0.32)] overflow-hidden"
+                  className="group relative flex flex-col h-full min-h-[178px] rounded-[20px] bg-white border border-navy/10 p-6 hover:border-orange/45 hover:-translate-y-1.5 transition-all duration-500 ease-editorial shadow-[0_1px_2px_rgba(15,19,48,0.03),0_18px_38px_-24px_rgba(15,19,48,0.22)] hover:shadow-[0_1px_2px_rgba(15,19,48,0.03),0_32px_58px_-24px_rgba(15,19,48,0.32)] overflow-hidden"
                 >
                   {/* corner wash */}
                   <span
@@ -177,16 +177,50 @@ export default function ServicesPage() {
                         "radial-gradient(closest-side, rgba(255,87,34,0.15), rgba(255,87,34,0) 70%)",
                     }}
                   />
+                  {/* top accent that fills on hover */}
+                  <span
+                    aria-hidden
+                    className="absolute top-0 left-0 right-0 h-[3px] bg-orange origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-editorial"
+                  />
 
-                  <div className="relative flex items-center gap-2.5">
-                    <span className="font-display text-[15px] font-black tabular-nums text-orange leading-none">
-                      {s.n}
+                  {/* Header: number + tag chip */}
+                  <div className="relative flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2.5">
+                      <span className="font-display text-[15px] font-black tabular-nums text-orange leading-none">
+                        {s.n}
+                      </span>
+                      <span className="block w-6 h-[2px] rounded-full bg-orange/40 origin-left transition-transform duration-500 ease-editorial group-hover:scale-x-150" />
+                    </div>
+                    <span className="text-[8.5px] uppercase tracking-[0.2em] text-navy/40 font-bold rounded-full bg-navy/[0.04] px-2 py-1 group-hover:bg-orange/10 group-hover:text-orange transition-colors duration-300">
+                      {s.tag}
                     </span>
-                    <span className="block w-6 h-[2px] rounded-full bg-orange/40 origin-left transition-transform duration-500 ease-editorial group-hover:scale-x-150" />
                   </div>
-                  <span className="relative mt-4 font-display text-[16px] sm:text-[17px] tracking-[-0.015em] text-navy font-bold leading-[1.15] group-hover:text-orange transition-colors">
+
+                  <span className="relative mt-5 font-display text-[16px] sm:text-[17px] tracking-[-0.015em] text-navy font-bold leading-[1.15] group-hover:text-orange transition-colors">
                     {s.name}
                   </span>
+
+                  {/* Footer: view hint */}
+                  <div className="relative mt-auto pt-4 flex items-center gap-2 text-navy/40 group-hover:text-orange transition-colors duration-300">
+                    <span className="text-[9.5px] uppercase tracking-[0.2em] font-bold">
+                      View service
+                    </span>
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    >
+                      <path
+                        d="M2 7h9m0 0L7.5 3.5M11 7l-3.5 3.5"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
                 </Link>
               </StaggerItem>
             ))}

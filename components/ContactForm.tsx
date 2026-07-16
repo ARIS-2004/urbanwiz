@@ -44,6 +44,7 @@ export default function ContactForm() {
     const payload = {
       name: String(fd.get("name") || ""),
       email: String(fd.get("email") || ""),
+      phone: String(fd.get("phone") || ""),
       company: String(fd.get("company") || ""),
       size: String(fd.get("size") || ""),
       service: String(fd.get("service") || ""),
@@ -178,6 +179,12 @@ export default function ContactForm() {
               name="email"
               type="email"
               placeholder="name@company.com"
+            />
+            <NeuField
+              label="Phone number"
+              name="phone"
+              type="tel"
+              placeholder="+91 90000 00000"
             />
             <NeuField label="Company name" name="company" placeholder="Your company" />
             <NeuSelect
