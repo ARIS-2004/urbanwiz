@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Logo from "./Logo";
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
@@ -68,22 +68,52 @@ export default function Navbar() {
             }}
           />
 
-          {/* Left: Logo + tagline */}
-          <div className="relative flex items-center gap-5">
-            <Logo />
-            <span aria-hidden className="hidden lg:block w-px h-11 bg-navy/12 dark:bg-white/12" />
-            <div className="hidden lg:flex flex-col gap-1">
-              {["People", "Performance", "Progress"].map((w) => (
-                <span
-                  key={w}
-                  className="text-[11px] uppercase tracking-[0.24em] text-navy/75 dark:text-ivory/70 font-bold leading-none"
-                >
-                  <span className="text-orange text-[13px] font-black">{w.charAt(0)}</span>
-                  <span className="text-navy/70 dark:text-ivory/65">{w.slice(1)}</span>
-                </span>
-              ))}
-            </div>
-          </div>
+          {/* Left: Logo — favicon + wordmark.
+              At top: favicon + wordmark side by side.
+              On scroll: favicon collapses/hides and the wordmark slides into its place. */}
+          <Link
+            href="/"
+            aria-label="Urbanwiz home"
+            className="relative flex items-center select-none"
+          >
+            {/* Favicon icon — collapses away on scroll */}
+            <motion.span
+              aria-hidden
+              animate={{
+                width: scrolled ? 0 : 52,
+                opacity: scrolled ? 0 : 1,
+                marginRight: scrolled ? 0 : 12,
+                scale: scrolled ? 0.7 : 1,
+              }}
+              transition={{ duration: 0.45, ease }}
+              className="relative block h-[52px] shrink-0 overflow-hidden"
+            >
+              <Image
+                src="/favicon.png"
+                alt="Urbanwiz"
+                width={52}
+                height={52}
+                priority
+                className="h-[52px] w-[52px] object-contain"
+              />
+            </motion.span>
+
+            {/* Wordmark — slides left into the favicon's spot on scroll */}
+            <motion.span
+              animate={{ x: 0 }}
+              transition={{ duration: 0.45, ease }}
+              className="relative block shrink-0"
+            >
+              <Image
+                src="/textlogo.png"
+                alt="Urbanwiz"
+                width={160}
+                height={60}
+                priority
+                className="h-9 sm:h-10 w-auto object-contain dark:brightness-0 dark:invert"
+              />
+            </motion.span>
+          </Link>
 
           {/* Center: Nav links */}
           <nav className="relative hidden md:flex items-center gap-1.5">
