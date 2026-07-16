@@ -56,7 +56,7 @@ const services: Service[] = [
       "Process & document handling",
       "Workflow automation",
     ],
-    href: "/services#data-operations",
+    href: "/services#back-office",
     image:
       "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
     dark: false,
@@ -76,7 +76,7 @@ const services: Service[] = [
       "Performance improvement",
       "Scalable operations",
     ],
-    href: "/services#business-process",
+    href: "/services#automation",
     image:
       "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1200&q=80",
     dark: true,

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ServicesHero from "@/components/services/ServicesHero";
+import ServiceHighlight from "@/components/services/ServiceHighlight";
 import CTA from "@/components/CTA";
 import { FadeUp, Stagger, StaggerItem } from "@/components/Reveal";
 
@@ -231,7 +232,9 @@ export default function ServicesPage() {
       <section className="py-12 lg:py-16 bg-white">
         <div className="container-content space-y-5 lg:space-y-6">
           {services.map((s, i) => (
-            <ServiceBlock key={s.id} s={s} flip={i % 2 === 1} />
+            <ServiceHighlight key={s.id} id={s.id}>
+              <ServiceBlock s={s} flip={i % 2 === 1} />
+            </ServiceHighlight>
           ))}
         </div>
       </section>

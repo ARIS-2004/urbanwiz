@@ -277,7 +277,7 @@ export default function ContactQuote() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 0.7, duration: 0.8, ease }}
-            className="relative mt-7 flex justify-center"
+            className="relative mt-7 flex flex-wrap justify-center items-center gap-3"
           >
             <Link
               href="mailto:urbanwiz@info.co.in?subject=Book%20a%20call"
@@ -305,6 +305,27 @@ export default function ContactQuote() {
                   />
                 </svg>
               </span>
+            </Link>
+            <Link
+              href="/services"
+              className="group inline-flex items-center justify-center gap-2 rounded-full border border-ivory/25 text-ivory px-5 py-[10px] text-[11px] uppercase tracking-[0.22em] font-bold transition-colors duration-300 hover:border-orange hover:text-orange"
+            >
+              Explore our services
+              <svg
+                width="11"
+                height="11"
+                viewBox="0 0 14 14"
+                fill="none"
+                className="transition-transform duration-300 group-hover:translate-x-0.5"
+              >
+                <path
+                  d="M2 7h9m0 0L7.5 3.5M11 7l-3.5 3.5"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </Link>
           </motion.div>
         </div>

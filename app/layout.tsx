@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
 import SmoothScroll from "@/components/SmoothScroll";
 import PageTransition from "@/components/PageTransition";
+import { ThemeProvider, themeInitScript } from "@/components/ThemeProvider";
 
 // Primary — Futura (real Futura if licensed locally, else Jost as the closest free geometric substitute)
 const futura = Jost({
@@ -44,13 +45,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${futura.variable} ${rubik.variable}`}>
-      <body className="bg-ivory text-navy antialiased">
-        <Loader />
-        <SmoothScroll />
-        <Navbar />
-        <PageTransition>{children}</PageTransition>
-        <Footer />
+    <html lang="en" className={`${futura.variable} ${rubik.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body className="bg-ivory text-navy antialiased dark:bg-[#0B0E24] dark:text-ivory transition-colors duration-300">
+        <ThemeProvider>
+          <Loader />
+          <SmoothScroll />
+          <Navbar />
+          <PageTransition>{children}</PageTransition>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { href: "/", label: "Home" },
@@ -17,6 +18,8 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function Navbar() {
   const pathname = usePathname();
+  // On the contact page the "Book a call" CTA would just link back here, so hide it.
+  const isContact = pathname === "/contact";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -40,10 +43,10 @@ export default function Navbar() {
     >
       <div className="container-wide">
         <div
-          className={`relative flex items-center justify-between rounded-[22px] h-[80px] pl-8 pr-4 transition-all duration-500 ease-editorial overflow-hidden ${
+          className={`relative flex items-center justify-between rounded-[22px] h-[80px] pl-8 pr-4 transition-all duration-500 ease-editorial overflow-hidden dark:border-white/10 ${
             scrolled
-              ? "bg-white/90 backdrop-blur-xl border border-navy/10 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset,0_20px_48px_-16px_rgba(15,19,48,0.26)]"
-              : "bg-white/80 backdrop-blur-xl border border-navy/10 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset,0_16px_40px_-18px_rgba(15,19,48,0.22)]"
+              ? "bg-white/90 dark:bg-[#12173a]/90 backdrop-blur-xl border border-navy/10 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset,0_20px_48px_-16px_rgba(15,19,48,0.26)] dark:shadow-[0_1px_0_rgba(255,255,255,0.06)_inset,0_20px_48px_-16px_rgba(0,0,0,0.5)]"
+              : "bg-white/80 dark:bg-[#12173a]/80 backdrop-blur-xl border border-navy/10 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset,0_16px_40px_-18px_rgba(15,19,48,0.22)] dark:shadow-[0_1px_0_rgba(255,255,255,0.06)_inset,0_16px_40px_-18px_rgba(0,0,0,0.45)]"
           }`}
         >
           {/* Faint orange gradient sheen on the right */}
@@ -117,32 +120,39 @@ export default function Navbar() {
 
           {/* Right: CTA */}
           <div className="relative hidden md:flex items-center gap-3.5">
-            <span className="hidden xl:inline-flex text-[11px] uppercase tracking-[0.24em] text-navy/45 font-semibold">
+            <span className="hidden xl:inline-flex text-[11px] uppercase tracking-[0.24em] text-navy/45 dark:text-ivory/45 font-semibold">
               Est. 2026
             </span>
-            <span className="hidden xl:block w-px h-6 bg-navy/10" />
-            <Link
-              href="/contact"
-              className="group relative inline-flex h-[56px] items-center gap-3 rounded-2xl bg-navy pl-7 pr-2.5 text-[14.5px] font-semibold text-ivory transition-colors hover:bg-blue-deep shadow-[0_14px_32px_-10px_rgba(15,19,48,0.6),inset_0_1px_0_rgba(255,255,255,0.12)]"
-            >
-              <span>Book a call</span>
-              <span className="grid place-items-center w-10 h-10 rounded-xl bg-orange text-ivory transition-transform duration-300 group-hover:rotate-[-30deg]">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path
-                    d="M2 6h7m0 0L6 3m3 3L6 9"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
-            </Link>
+            <ThemeToggle />
+            {!isContact && (
+              <>
+                <span className="hidden xl:block w-px h-6 bg-navy/10" />
+                <Link
+                  href="/contact"
+                  className="group relative inline-flex h-[56px] items-center gap-3 rounded-2xl bg-navy pl-7 pr-2.5 text-[14.5px] font-semibold text-ivory transition-colors hover:bg-blue-deep shadow-[0_14px_32px_-10px_rgba(15,19,48,0.6),inset_0_1px_0_rgba(255,255,255,0.12)]"
+                >
+                  <span>Book a call</span>
+                  <span className="grid place-items-center w-10 h-10 rounded-xl bg-orange text-ivory transition-transform duration-300 group-hover:rotate-[-30deg]">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path
+                        d="M2 6h7m0 0L6 3m3 3L6 9"
+                        stroke="currentColor"
+                        strokeWidth="1.6"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </Link>
+              </>
+            )}
           </div>
 
-          {/* Mobile toggle */}
+          {/* Mobile: theme toggle + menu */}
+          <div className="relative md:hidden flex items-center gap-2.5">
+            <ThemeToggle />
           <button
-            className="relative md:hidden h-10 w-10 rounded-full grid place-items-center bg-white/70 border border-navy/10 hover:bg-white transition shadow-[0_1px_0_rgba(255,255,255,0.7)_inset]"
+            className="relative h-10 w-10 rounded-full grid place-items-center bg-white/70 border border-navy/10 hover:bg-white transition shadow-[0_1px_0_rgba(255,255,255,0.7)_inset] dark:bg-white/10 dark:border-white/15"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
           >
@@ -164,6 +174,7 @@ export default function Navbar() {
               />
             </span>
           </button>
+          </div>
         </div>
       </div>
 
@@ -206,6 +217,7 @@ export default function Navbar() {
                   </Link>
                 </motion.div>
               ))}
+              {!isContact && (
               <Link
                 href="/contact"
                 className="mt-2 flex items-center justify-between rounded-2xl bg-navy px-4 py-3.5 text-ivory text-[14px] font-medium"
@@ -223,6 +235,7 @@ export default function Navbar() {
                   </svg>
                 </span>
               </Link>
+              )}
             </div>
           </motion.div>
         )}

@@ -150,18 +150,18 @@ export default function CTA() {
             className="lg:col-span-5 flex flex-col gap-3 lg:items-end"
           >
             <Link
-              href="/contact"
-              className="group inline-flex w-full sm:w-auto items-center justify-between gap-3 rounded-full bg-orange text-ivory pl-6 pr-2 py-2.5 text-[11px] uppercase tracking-[0.22em] font-bold transition-colors duration-300 hover:bg-ivory hover:text-navy lg:min-w-[300px]"
+              href="/contact#form"
+              className="group inline-flex w-full sm:w-auto items-center justify-between gap-3 rounded-full bg-orange text-ivory pl-6 pr-2.5 py-3 text-[11px] uppercase tracking-[0.22em] font-bold transition-all duration-300 hover:bg-ivory hover:text-navy hover:-translate-y-0.5 lg:min-w-[310px]"
               style={{
                 boxShadow:
-                  "0 16px 32px -12px rgba(255,87,34,0.50), inset 0 1px 0 rgba(255,255,255,0.20)",
+                  "0 18px 36px -12px rgba(255,87,34,0.55), inset 0 1px 0 rgba(255,255,255,0.22)",
               }}
             >
               Schedule a discovery call
-              <span className="grid place-items-center w-8 h-8 rounded-full bg-ivory/15 group-hover:bg-orange group-hover:text-ivory transition-colors">
+              <span className="grid place-items-center w-9 h-9 rounded-full bg-ivory/20 group-hover:bg-orange group-hover:text-ivory transition-colors">
                 <svg
-                  width="11"
-                  height="11"
+                  width="12"
+                  height="12"
                   viewBox="0 0 14 14"
                   fill="none"
                   className="transition-transform duration-300 group-hover:translate-x-0.5"
@@ -177,14 +177,14 @@ export default function CTA() {
               </span>
             </Link>
             <Link
-              href="/contact"
-              className="group inline-flex w-full sm:w-auto items-center justify-between gap-3 rounded-full border border-ivory/25 text-ivory pl-6 pr-2 py-2.5 text-[11px] uppercase tracking-[0.22em] font-bold transition-colors duration-300 hover:border-orange hover:text-orange lg:min-w-[300px]"
+              href="/services"
+              className="group inline-flex w-full sm:w-auto items-center justify-between gap-3 rounded-full bg-white/[0.06] border border-ivory/20 text-ivory pl-6 pr-2.5 py-3 text-[11px] uppercase tracking-[0.22em] font-bold transition-all duration-300 hover:bg-white/[0.12] hover:border-orange/50 hover:-translate-y-0.5 lg:min-w-[310px] backdrop-blur-sm"
             >
-              Request a custom proposal
-              <span className="grid place-items-center w-8 h-8 rounded-full bg-ivory/10 text-ivory group-hover:bg-orange transition-colors">
+              Explore our services
+              <span className="grid place-items-center w-9 h-9 rounded-full bg-ivory/12 text-ivory group-hover:bg-orange transition-colors">
                 <svg
-                  width="11"
-                  height="11"
+                  width="12"
+                  height="12"
                   viewBox="0 0 14 14"
                   fill="none"
                   className="transition-transform duration-300 group-hover:translate-x-0.5"

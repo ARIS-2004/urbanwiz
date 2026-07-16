@@ -26,7 +26,7 @@ export default function AboutIntro() {
   return (
     <section
       id="about-intro"
-      className="relative overflow-hidden py-16 lg:py-24 bg-ivory"
+      className="relative overflow-hidden py-16 lg:py-24 bg-ivory dark:bg-[#0B0E24] transition-colors duration-300"
     >
       {/* Ambient washes */}
       <div
@@ -81,7 +81,7 @@ export default function AboutIntro() {
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.9, delay: 0.1, ease }}
-              className="mt-6 font-display text-[34px] sm:text-[44px] xl:text-[50px] tracking-[-0.03em] leading-[1.03] text-navy font-bold"
+              className="mt-6 font-display text-[34px] sm:text-[44px] xl:text-[50px] tracking-[-0.03em] leading-[1.03] text-navy dark:text-ivory font-bold"
             >
               A <span className="text-orange">people-first</span> business
               solutions company.
@@ -92,9 +92,9 @@ export default function AboutIntro() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.8, delay: 0.2, ease }}
-              className="mt-6 max-w-xl text-[15px] sm:text-[16px] leading-[1.8] text-navy/65"
+              className="mt-6 max-w-xl text-[15px] sm:text-[16px] leading-[1.8] text-navy/65 dark:text-ivory/60"
             >
-              <span className="text-navy font-semibold">
+              <span className="text-navy dark:text-ivory font-semibold">
                 Urbanwiz is a people-first business solutions company
               </span>{" "}
               delivering BPO, customer support, and data operations services to
@@ -105,7 +105,7 @@ export default function AboutIntro() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.8, delay: 0.3, ease }}
-              className="mt-5 max-w-xl text-[15px] sm:text-[16px] leading-[1.8] text-navy/60"
+              className="mt-5 max-w-xl text-[15px] sm:text-[16px] leading-[1.8] text-navy/60 dark:text-ivory/55"
             >
               As we evolve, we&apos;re expanding into IT, AI/ML, FinTech, Legal
               Process Services, and next-generation business solutions to
@@ -137,7 +137,7 @@ export default function AboutIntro() {
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2.5 rounded-full border border-navy/15 text-navy px-6 py-3 text-[11.5px] uppercase tracking-[0.2em] font-bold hover:border-orange hover:text-orange transition-colors duration-300"
+                className="inline-flex items-center gap-2.5 rounded-full border border-navy/15 dark:border-white/20 text-navy dark:text-ivory px-6 py-3 text-[11.5px] uppercase tracking-[0.2em] font-bold hover:border-orange hover:text-orange dark:hover:border-orange dark:hover:text-orange transition-colors duration-300"
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" {...stroke}>
                   <path d="M6 3h9l4 4v14a1 1 0 01-1 1H6a1 1 0 01-1-1V4a1 1 0 011-1z" />

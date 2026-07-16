@@ -16,11 +16,11 @@ const stroke = {
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative bg-ivory -mt-24 overflow-hidden">
+    <section id="hero" className="relative bg-ivory dark:bg-[#0B0E24] -mt-24 overflow-hidden transition-colors duration-300">
       {/* ── Two-column band: light copy (left) · photo + roadmap card (right) ── */}
       <div className="relative grid grid-cols-1 lg:grid-cols-2">
         {/* Left — copy */}
-        <div className="relative bg-ivory order-2 lg:order-1">
+        <div className="relative bg-ivory dark:bg-[#0B0E24] order-2 lg:order-1 transition-colors duration-300">
           {/* ambient wash */}
           <div
             aria-hidden
@@ -48,13 +48,13 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 14, filter: "blur(6px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.9, delay: 0.2, ease }}
-                className="mt-6 font-display text-[34px] sm:text-[52px] xl:text-[60px] tracking-[-0.032em] leading-[1.0] sm:leading-[0.98] text-navy font-bold"
+                className="mt-6 font-display text-[34px] sm:text-[52px] xl:text-[60px] tracking-[-0.032em] leading-[1.0] sm:leading-[0.98] text-navy dark:text-ivory font-bold"
               >
                 Operational
                 <br />
                 excellence.
                 <br />
-                <span className="text-navy/45 font-semibold">
+                <span className="text-navy/45 dark:text-ivory/45 font-semibold">
                   Delivered by{" "}
                 </span>
                 <span className="text-orange">people who care.</span>
@@ -72,9 +72,9 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4, ease }}
-                className="mt-7 text-[15px] sm:text-[16.5px] leading-[1.8] text-navy/65"
+                className="mt-7 text-[15px] sm:text-[16.5px] leading-[1.8] text-navy/65 dark:text-ivory/60"
               >
-                <span className="text-navy font-semibold">
+                <span className="text-navy dark:text-ivory font-semibold">
                   Urbanwiz helps growing businesses build reliable operations
                 </span>{" "}
                 through skilled people, efficient processes, and dependable
@@ -84,7 +84,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5, ease }}
-                className="mt-5 text-[15px] sm:text-[16.5px] leading-[1.8] text-navy/60"
+                className="mt-5 text-[15px] sm:text-[16.5px] leading-[1.8] text-navy/60 dark:text-ivory/55"
               >
                 From customer support to data operations, we become an extension
                 of your team — helping you scale without sacrificing quality.
@@ -98,7 +98,7 @@ export default function Hero() {
                 className="mt-9 flex flex-wrap gap-3"
               >
                 <Link
-                  href="/contact"
+                  href="/contact#form"
                   className="group inline-flex items-center justify-between gap-3 rounded-full bg-orange text-ivory pl-6 pr-2 py-2 text-[11.5px] uppercase tracking-[0.2em] font-bold transition-colors duration-300 hover:bg-orange-soft"
                   style={{
                     boxShadow:
@@ -111,16 +111,6 @@ export default function Hero() {
                       <path d="M2 7h9m0 0L7.5 3.5M11 7l-3.5 3.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2.5 rounded-full border border-navy/15 text-navy px-6 py-3 text-[11.5px] uppercase tracking-[0.2em] font-bold hover:border-orange hover:text-orange transition-colors duration-300"
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" {...stroke}>
-                    <rect x="3" y="4.5" width="18" height="16" rx="2.5" />
-                    <path d="M3 9h18M8 2.5v4M16 2.5v4" />
-                  </svg>
-                  Schedule a consultation
                 </Link>
               </motion.div>
             </div>

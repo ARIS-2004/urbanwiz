@@ -92,8 +92,7 @@ export default function Ecosystem() {
   return (
     <section
       id="ecosystem"
-      className="relative overflow-hidden py-16 lg:py-20"
-      style={{ backgroundColor: "#FAF8F6" }}
+      className="relative overflow-hidden py-16 lg:py-20 bg-[#FAF8F6] dark:bg-[#0E1230] transition-colors duration-300"
     >
       {/* Ambient washes */}
       <div
@@ -155,7 +154,7 @@ export default function Ecosystem() {
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.9, delay: 0.1, ease }}
-              className="mt-5 font-display text-[32px] sm:text-[42px] xl:text-[50px] tracking-[-0.025em] leading-[1.02] text-navy font-bold"
+              className="mt-5 font-display text-[32px] sm:text-[42px] xl:text-[50px] tracking-[-0.025em] leading-[1.02] text-navy dark:text-ivory font-bold"
             >
               Today.{" "}
               <span className="text-orange">Tomorrow.</span>{" "}
@@ -219,7 +218,7 @@ export default function Ecosystem() {
                 {/* Ghost phase number — anchor */}
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute -top-2 right-4 font-display text-[64px] leading-none font-black tracking-[-0.05em] select-none transition-transform duration-500 group-hover:scale-110"
+                  className="pointer-events-none absolute top-5 right-4 font-display text-[64px] leading-none font-black tracking-[-0.05em] select-none transition-transform duration-500 group-hover:scale-110"
                   style={{ color: `rgba(15,19,48,0.05)` }}
                 >
                   0{phaseIdx + 1}
