@@ -63,27 +63,27 @@ const variants: Record<
 > = {
   tintOrange: {
     card:
-      "bg-orange/[0.06] border-orange/15 hover:border-orange/35 hover:shadow-[0_18px_32px_-18px_rgba(255,87,34,0.35)]",
+      "bg-orange/[0.06] dark:bg-white/[0.04] border-orange/15 dark:border-white/10 hover:border-orange/35 hover:shadow-[0_18px_32px_-18px_rgba(255,87,34,0.35)]",
     tile: "bg-white text-orange shadow-[0_2px_6px_rgba(255,87,34,0.18)] group-hover:bg-orange group-hover:text-ivory",
-    label: "text-navy/55",
-    value: "text-navy group-hover:text-orange",
+    label: "text-navy/55 dark:text-ivory/60",
+    value: "text-navy dark:text-ivory group-hover:text-orange",
     cta: "text-orange",
     arrow: "group-hover:text-orange",
     bar: "group-hover:bg-orange",
-    seq: "text-navy/35",
+    seq: "text-navy/35 dark:text-ivory/40",
     glow:
       "radial-gradient(closest-side, rgba(255,87,34,0.22), rgba(255,87,34,0) 70%)",
   },
   white: {
     card:
-      "bg-white border-navy/10 hover:border-blue-deep/35 hover:shadow-[0_18px_32px_-18px_rgba(30,58,186,0.30)]",
+      "bg-white dark:bg-white/[0.04] border-navy/10 dark:border-white/10 hover:border-blue-deep/35 hover:shadow-[0_18px_32px_-18px_rgba(30,58,186,0.30)]",
     tile: "bg-blue-deep/10 text-blue-deep group-hover:bg-blue-deep group-hover:text-ivory",
-    label: "text-navy/55",
-    value: "text-navy group-hover:text-blue-deep",
-    cta: "text-blue-deep",
+    label: "text-navy/55 dark:text-ivory/60",
+    value: "text-navy dark:text-ivory group-hover:text-blue-deep",
+    cta: "text-blue-deep dark:text-blue-deep",
     arrow: "group-hover:text-blue-deep",
     bar: "group-hover:bg-blue-deep",
-    seq: "text-navy/35",
+    seq: "text-navy/35 dark:text-ivory/40",
     glow:
       "radial-gradient(closest-side, rgba(30,58,186,0.18), rgba(30,58,186,0) 70%)",
   },
@@ -182,7 +182,7 @@ export default function ContactInfo() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.7, delay: 0.2, ease }}
-            className="mt-4 text-[13px] text-navy/55 dark:text-ivory/50 leading-[1.65] max-w-md mx-auto"
+            className="mt-4 text-[14.5px] text-navy/55 dark:text-ivory/70 leading-[1.65] max-w-md mx-auto"
           >
             Every channel is read by a real person in our Ecospace office.
           </motion.p>

@@ -68,24 +68,21 @@ export default function Navbar() {
             }}
           />
 
-          {/* Left: Logo — favicon + wordmark.
-              At top: favicon + wordmark side by side.
-              On scroll: favicon collapses/hides and the wordmark slides into its place. */}
+          {/* Left: Logo — favicon at top, swaps to wordmark on scroll. */}
           <Link
             href="/"
             aria-label="Urbanwiz home"
-            className="relative flex items-center select-none"
+            className="relative flex items-center h-[52px] select-none"
           >
-            {/* Favicon icon — collapses away on scroll */}
+            {/* Favicon icon — shown at top, fades out on scroll */}
             <motion.span
               aria-hidden
               animate={{
                 width: scrolled ? 0 : 52,
                 opacity: scrolled ? 0 : 1,
-                marginRight: scrolled ? 0 : 12,
-                scale: scrolled ? 0.7 : 1,
+                scale: scrolled ? 0.8 : 1,
               }}
-              transition={{ duration: 0.45, ease }}
+              transition={{ duration: 0.4, ease }}
               className="relative block h-[52px] shrink-0 overflow-hidden"
             >
               <Image
@@ -98,11 +95,16 @@ export default function Navbar() {
               />
             </motion.span>
 
-            {/* Wordmark — slides left into the favicon's spot on scroll */}
+            {/* Wordmark — hidden at top, revealed on scroll */}
             <motion.span
-              animate={{ x: 0 }}
-              transition={{ duration: 0.45, ease }}
-              className="relative block shrink-0"
+              aria-hidden
+              animate={{
+                width: scrolled ? 160 : 0,
+                opacity: scrolled ? 1 : 0,
+                scale: scrolled ? 1 : 0.9,
+              }}
+              transition={{ duration: 0.4, ease }}
+              className="relative block h-10 shrink-0 overflow-hidden"
             >
               <Image
                 src="/textlogo.png"
@@ -110,7 +112,7 @@ export default function Navbar() {
                 width={160}
                 height={60}
                 priority
-                className="h-9 sm:h-10 w-auto object-contain dark:brightness-0 dark:invert"
+                className="h-9 sm:h-10 w-auto max-w-none object-contain object-left"
               />
             </motion.span>
           </Link>
@@ -150,7 +152,7 @@ export default function Navbar() {
 
           {/* Right: CTA */}
           <div className="relative hidden md:flex items-center gap-3.5">
-            <span className="hidden xl:inline-flex text-[11px] uppercase tracking-[0.24em] text-navy/45 dark:text-ivory/45 font-semibold">
+            <span className="hidden xl:inline-flex text-[11px] uppercase tracking-[0.24em] text-navy/45 dark:text-ivory/65 font-semibold">
               Est. 2026
             </span>
             <ThemeToggle />

@@ -190,6 +190,7 @@ const leaders: Leader[] = [
 const accents = {
   orange: {
     text: "text-orange",
+    darkText: "dark:text-[#FF7A4D]",
     bar: "bg-orange",
     border: "border-orange",
     rgb: "255,87,34",
@@ -202,6 +203,7 @@ const accents = {
   },
   blue: {
     text: "text-blue-deep",
+    darkText: "dark:text-[#6E86FF]",
     bar: "bg-blue-deep",
     border: "border-blue-deep",
     rgb: "23,42,138",
@@ -214,6 +216,7 @@ const accents = {
   },
   navy: {
     text: "text-navy",
+    darkText: "dark:text-[#C9CEE8]",
     bar: "bg-navy",
     border: "border-navy",
     rgb: "15,19,48",
@@ -289,7 +292,7 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
       <div className="relative flex items-center px-7 sm:px-10 lg:px-12 pt-8 pb-4">
         <div className="flex items-center gap-3">
           <span className={`block w-9 h-[2px] ${a.bar}`} />
-          <span className="text-[10.5px] tracking-[0.3em] uppercase font-bold text-navy/50 dark:text-ivory/45">
+          <span className="text-[10.5px] tracking-[0.3em] uppercase font-bold text-navy/50 dark:text-ivory/65">
             Founder Profile
           </span>
         </div>
@@ -449,7 +452,7 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
                 aria-hidden
                 className={`mt-3.5 mb-4 block h-[2px] w-8 rounded-full ${a.bar} opacity-60 origin-left transition-transform duration-500 ease-editorial group-hover/pr:scale-x-[1.5]`}
               />
-              <p className="text-[14px] leading-[1.72] text-navy/62 dark:text-ivory/55">
+              <p className="text-[14px] leading-[1.72] text-navy/62 dark:text-ivory/72">
                 {pr.text}
               </p>
             </motion.div>
@@ -460,7 +463,7 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
       {/* ── Footer: expand + meta ── */}
       <div className="relative mt-5 border-t border-navy/8 dark:border-white/10">
         <div
-          className="px-7 sm:px-10 lg:px-12 py-6 grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center"
+          className="px-7 sm:px-10 lg:px-12 py-6 grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center dark:!bg-white/[0.08]"
           style={{ backgroundColor: a.softBg }}
         >
           <div className="lg:col-span-8 flex items-center gap-5">
@@ -489,7 +492,7 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
             </button>
             <div className="hidden sm:flex items-center gap-2.5">
               <span aria-hidden className={`block w-5 h-[1.5px] ${a.bar} opacity-50`} />
-              <p className="text-[12.5px] leading-[1.4] text-navy/55 dark:text-ivory/50 font-medium">
+              <p className="text-[14px] leading-[1.4] text-navy/55 dark:text-ivory/70 font-medium">
                 The complete story, in his own words.
               </p>
             </div>
@@ -499,7 +502,7 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
           <div className="lg:col-span-4 flex items-center lg:justify-end">
             <div className="inline-flex items-center gap-2.5 rounded-full bg-white dark:bg-[#12173a] border border-navy/8 dark:border-white/10 pl-3 pr-4 py-2 shadow-[0_1px_2px_rgba(15,19,48,0.03)]">
               <span className={`block w-1.5 h-1.5 rounded-full ${a.bar}`} />
-              <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-navy/45 dark:text-ivory/45">
+              <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-navy/45 dark:text-ivory/65">
                 Roots
               </span>
               <span className="text-[12.5px] text-navy/70 dark:text-ivory/65 font-medium">
@@ -521,8 +524,7 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
               className="overflow-hidden"
             >
               <div
-                className="relative border-t border-navy/8 dark:border-white/10"
-                style={{ backgroundColor: "#FCFBFA" }}
+                className="relative border-t border-navy/8 dark:border-white/10 bg-[#FCFBFA] dark:bg-[#0F1433]"
               >
                 {/* faint accent wash */}
                 <span
@@ -539,17 +541,17 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
                       <span
                         aria-hidden
                         className="block font-display font-black leading-[0.8] tracking-[-0.05em] select-none"
-                        style={{ fontSize: "54px", color: `rgba(${a.rgb},0.12)` }}
+                        style={{ fontSize: "54px", color: `rgba(${a.rgb},0.28)` }}
                       >
                         {leader.initials}
                       </span>
-                      <div className={`mt-3 text-[9.5px] uppercase tracking-[0.28em] font-bold ${a.text}`}>
+                      <div className={`mt-3 text-[9.5px] uppercase tracking-[0.28em] font-bold ${a.text} ${a.darkText}`}>
                         In His Own Words
                       </div>
                       <h4 className="mt-1.5 font-display text-[19px] tracking-[-0.02em] text-navy dark:text-ivory font-bold leading-[1.1]">
                         {leader.name}
                       </h4>
-                      <div className="mt-1 text-[9.5px] uppercase tracking-[0.2em] text-navy/45 dark:text-ivory/45 font-semibold">
+                      <div className="mt-1 text-[9.5px] uppercase tracking-[0.2em] text-navy/45 dark:text-ivory/65 font-semibold">
                         {leader.role}
                       </div>
                       <span
@@ -605,10 +607,10 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
                               initial={{ opacity: 0, y: 8 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.55, ease, delay: 0.08 }}
-                              className="text-[15.5px] sm:text-[16.5px] leading-[1.8] text-navy/85"
+                              className="text-[15.5px] sm:text-[16.5px] leading-[1.8] text-navy/85 dark:text-ivory/85"
                             >
                               <span
-                                className={`float-left mr-3.5 mt-1 font-display font-black leading-[0.62] text-[52px] sm:text-[60px] select-none ${a.text}`}
+                                className={`float-left mr-3.5 mt-1 font-display font-black leading-[0.62] text-[52px] sm:text-[60px] select-none ${a.text} ${a.darkText}`}
                               >
                                 {first}
                               </span>
@@ -623,7 +625,7 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
                               initial={{ opacity: 0, y: 6 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ duration: 0.45, ease }}
-                              className={`mt-5 font-display text-[16px] sm:text-[17px] leading-[1.4] font-bold tracking-[-0.02em] ${a.text}`}
+                              className={`mt-5 font-display text-[16px] sm:text-[17px] leading-[1.4] font-bold tracking-[-0.02em] ${a.text} ${a.darkText}`}
                             >
                               {p}
                             </motion.p>
@@ -635,7 +637,7 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
                             initial={{ opacity: 0, y: 6 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.45, ease }}
-                            className="mt-5 text-[15px] sm:text-[16px] leading-[1.9] text-navy/72"
+                            className="mt-5 text-[15px] sm:text-[16px] leading-[1.9] text-navy/72 dark:text-ivory/80"
                           >
                             {p}
                           </motion.p>

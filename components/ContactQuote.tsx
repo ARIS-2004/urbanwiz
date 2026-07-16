@@ -266,7 +266,7 @@ export default function ContactQuote() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 0.55, duration: 0.8, ease }}
-            className="relative mt-4 text-[13px] sm:text-[14px] leading-[1.65] text-ivory/65 max-w-lg mx-auto"
+            className="relative mt-4 text-[14.5px] sm:text-[14px] leading-[1.65] text-ivory/65 max-w-lg mx-auto"
           >
             Prefer a conversation? Twenty minutes, no obligation — just a quick chat.
           </motion.p>

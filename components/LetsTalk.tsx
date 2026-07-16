@@ -71,7 +71,7 @@ export default function LetsTalk() {
                 <h2 className="font-display text-[22px] sm:text-[26px] xl:text-[30px] leading-[1.05] tracking-[-0.02em] text-navy font-bold">
                   Let&apos;s <span className="text-orange">talk.</span>
                 </h2>
-                <p className="text-[12px] leading-[1.5] text-navy/55">
+                <p className="text-[15px] leading-[1.5] text-navy/55">
                   20-minute call. No obligation.
                 </p>
               </div>

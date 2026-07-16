@@ -81,7 +81,7 @@ export default function OriginStory() {
 
           <motion.p
             {...fadeUp(0.25)}
-            className="mt-4 font-display text-[15px] sm:text-[17px] leading-[1.45] text-navy/55 dark:text-ivory/50 tracking-[-0.01em]"
+            className="mt-4 font-display text-[15px] sm:text-[17px] leading-[1.45] text-navy/55 dark:text-ivory/70 tracking-[-0.01em]"
           >
             A belief that technology should never lose its humanity.
           </motion.p>
@@ -102,7 +102,7 @@ export default function OriginStory() {
               Revenue fuels growth, but people give that growth purpose.
             </span>
           </p>
-          <p className="mt-6 text-[13px] sm:text-[14px] leading-[1.55] text-navy/50 dark:text-ivory/45 tracking-[0.02em] uppercase font-semibold">
+          <p className="mt-6 text-[14.5px] sm:text-[14px] leading-[1.55] text-navy/50 dark:text-ivory/65 tracking-[0.02em] uppercase font-semibold">
             This belief became the foundation of a simple philosophy that guides
             every decision we make
           </p>
@@ -156,7 +156,7 @@ export default function OriginStory() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ delay: 0.06 * i, duration: 0.7, ease }}
-              className="group relative grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-10 px-4 sm:px-6 py-8 lg:py-9 border-b border-navy/12 dark:border-white/10 rounded-xl hover:bg-white/70 transition-colors duration-300"
+              className="group relative grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-10 px-4 sm:px-6 py-8 lg:py-9 border-b border-navy/12 dark:border-white/10 rounded-xl hover:bg-white/70 dark:hover:bg-white/[0.04] transition-colors duration-300"
             >
               {/* hover accent on left */}
               <span
@@ -173,7 +173,7 @@ export default function OriginStory() {
                 </h3>
               </div>
               {/* text */}
-              <p className="md:col-span-8 text-[14px] sm:text-[15px] leading-[1.82] text-navy/68 dark:text-ivory/60">
+              <p className="md:col-span-8 text-[14px] sm:text-[15px] leading-[1.82] text-navy/68 dark:text-ivory/75">
                 {pillar.text}
               </p>
             </motion.div>
@@ -183,12 +183,7 @@ export default function OriginStory() {
         {/* ── Chapter-ending card ── */}
         <motion.div
           {...fadeUp(0.05)}
-          className="mt-12 relative mx-auto max-w-5xl rounded-[24px] overflow-hidden pl-8 sm:pl-14 pr-7 sm:pr-14 py-11 sm:py-14"
-          style={{
-            background: "rgba(255,255,255,0.85)",
-            border: "1px solid rgba(15,19,48,0.06)",
-            boxShadow: "0 12px 40px rgba(15,19,48,0.05)",
-          }}
+          className="mt-12 relative mx-auto max-w-5xl rounded-[24px] overflow-hidden pl-8 sm:pl-14 pr-7 sm:pr-14 py-11 sm:py-14 bg-white/85 dark:!bg-[#12173a] border border-navy/[0.06] dark:border-white/10 shadow-[0_12px_40px_rgba(15,19,48,0.05)]"
         >
           {/* accent gutter */}
           <span
@@ -218,14 +213,14 @@ export default function OriginStory() {
           <div className="relative max-w-3xl">
             <div className="flex items-center gap-2.5">
               <span className="block w-6 h-[2px] bg-orange" />
-              <span className="text-[10px] uppercase tracking-[0.3em] text-navy/50 dark:text-ivory/45 font-bold">
+              <span className="text-[10px] uppercase tracking-[0.3em] text-navy/50 dark:text-ivory/65 font-bold">
                 Our Journey Together
               </span>
             </div>
             <p className="mt-6 font-display text-[19px] sm:text-[23px] leading-[1.4] text-navy dark:text-ivory font-bold tracking-[-0.02em]">
               Every client who partners with Urbanwiz becomes more than a
               customer.{" "}
-              <span className="text-navy/55 dark:text-ivory/50 font-semibold">
+              <span className="text-navy/55 dark:text-ivory/70 font-semibold">
                 You become part of our journey.
               </span>
             </p>

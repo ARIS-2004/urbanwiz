@@ -163,7 +163,7 @@ export default function ContactHero() {
               <p className="font-display text-[16.5px] sm:text-[17.5px] leading-[1.5] tracking-[-0.005em] text-navy dark:text-ivory font-bold">
                 Real conversations. Real people.
               </p>
-              <p className="mt-2 text-[13.5px] leading-[1.65] text-navy/55 dark:text-ivory/50">
+              <p className="mt-2 text-[15px] leading-[1.65] text-navy/55 dark:text-ivory/70">
                 We reply personally — usually within a single business day.
               </p>
             </motion.div>

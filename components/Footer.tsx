@@ -119,7 +119,7 @@ export default function Footer() {
             {/* Made in Kolkata — top right */}
             <div className="flex items-start justify-between gap-6">
               <div />
-              <div className="hidden sm:flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-navy/55 dark:text-ivory/50 font-bold">
+              <div className="hidden sm:flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-navy/55 dark:text-ivory/70 font-bold">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" className="text-orange">
                   <path d="M12 21c4-4 6-7 6-10a6 6 0 10-12 0c0 3 2 6 6 10z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
                   <circle cx="12" cy="11" r="2.2" stroke="currentColor" strokeWidth="1.8" />
@@ -132,10 +132,10 @@ export default function Footer() {
               {/* Brand column */}
               <div className="lg:col-span-4 lg:pr-8">
                 <Logo size="lg" />
-                <p className="mt-2.5 text-[12.5px] tracking-[0.02em] text-navy/50 dark:text-ivory/45 font-medium">
+                <p className="mt-2.5 text-[12.5px] tracking-[0.02em] text-navy/50 dark:text-ivory/80 font-medium">
                   People. Performance. Progress.
                 </p>
-                <p className="mt-4 max-w-xs text-[13.5px] leading-[1.6] text-navy/60 dark:text-ivory/55">
+                <p className="mt-4 max-w-xs text-[15px] leading-[1.6] text-navy/60 dark:text-ivory/85">
                   We partner with ambitious businesses to build, scale, and
                   transform—through technology and trust.
                 </p>
@@ -149,7 +149,7 @@ export default function Footer() {
                         <circle cx="12" cy="11" r="2.2" stroke="currentColor" strokeWidth="1.6" />
                       </svg>
                     </span>
-                    <p className="text-[13.5px] leading-[1.5] text-navy/75 dark:text-ivory/70 font-medium mt-1">
+                    <p className="text-[15px] leading-[1.5] text-navy/75 dark:text-ivory/85 font-medium mt-1">
                       Ecospace Business Park,
                       <br />
                       New Town, Kolkata 700160
@@ -161,7 +161,7 @@ export default function Footer() {
                         <path d="M6 4h2.6L10.6 8 8.4 9.6c1.4 2.5 3.5 4.6 6 6L16 13.4 20 15.4V18c0 .8-.7 1.5-1.5 1.5-8.6 0-15.5-6.9-15.5-15.5C3 3.7 3.7 3 4.5 3z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
                       </svg>
                     </span>
-                    <span className="text-[13.5px] text-navy/75 dark:text-ivory/70 font-medium tabular-nums group-hover:text-orange transition-colors">
+                    <span className="text-[13.5px] text-navy/75 dark:text-ivory/85 font-medium tabular-nums group-hover:text-orange transition-colors">
                       +91 90388 16866
                     </span>
                   </a>
@@ -172,7 +172,7 @@ export default function Footer() {
                         <path d="M4 7l8 6 8-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </span>
-                    <span className="text-[13.5px] text-navy/75 dark:text-ivory/70 font-medium group-hover:text-orange transition-colors">
+                    <span className="text-[13.5px] text-navy/75 dark:text-ivory/85 font-medium group-hover:text-orange transition-colors">
                       urbanwiz@info.co.in
                     </span>
                   </a>
@@ -192,7 +192,7 @@ export default function Footer() {
                       <Link
                         href={s.href}
                         aria-label={s.name}
-                        className="grid place-items-center w-10 h-10 rounded-full bg-navy/[0.04] border border-navy/8 dark:border-white/10 text-navy/65 dark:text-ivory/60 hover:bg-orange hover:text-ivory hover:border-orange transition-all duration-300"
+                        className="grid place-items-center w-10 h-10 rounded-full bg-navy/[0.04] border border-navy/8 dark:border-white/10 text-navy/65 dark:text-ivory/75 hover:bg-orange hover:text-ivory hover:border-orange transition-all duration-300"
                       >
                         {s.icon}
                       </Link>
@@ -214,7 +214,7 @@ export default function Footer() {
                         <li key={l.label}>
                           <Link
                             href={l.href}
-                            className="group inline-flex items-center gap-1.5 text-[13.5px] text-navy/60 dark:text-ivory/55 hover:text-orange transition-colors font-medium"
+                            className="group inline-flex items-center gap-1.5 text-[13.5px] text-navy/60 dark:text-ivory/90 hover:text-orange transition-colors font-medium"
                           >
                             <span className="block w-0 h-px bg-orange transition-all duration-500 ease-editorial group-hover:w-3" />
                             {l.label}
@@ -237,7 +237,7 @@ export default function Footer() {
                 </svg>
               </span>
               <div>
-                <div className="text-[12.5px] text-navy/55 dark:text-ivory/50 font-medium">
+                <div className="text-[12.5px] text-navy/55 dark:text-ivory/70 font-medium">
                   Ready to build something great together?
                 </div>
                 <div className="font-display text-[18px] sm:text-[20px] text-navy dark:text-ivory font-bold tracking-[-0.02em] leading-tight">
@@ -263,16 +263,16 @@ export default function Footer() {
           {...reveal(0)}
           className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 px-2"
         >
-          <span className="text-[12.5px] text-navy/50 dark:text-ivory/45">
+          <span className="text-[12.5px] text-navy/50 dark:text-ivory/65">
             © {new Date().getFullYear()} Urbanwiz Private Limited. All rights
             reserved.
           </span>
           <div className="flex items-center gap-4 text-[12.5px]">
-            <Link href="#" className="text-navy/55 dark:text-ivory/50 hover:text-orange transition-colors font-medium">
+            <Link href="#" className="text-navy/55 dark:text-ivory/70 hover:text-orange transition-colors font-medium">
               Privacy Policy
             </Link>
             <span className="block w-px h-3 bg-navy/20" />
-            <Link href="#" className="text-navy/55 dark:text-ivory/50 hover:text-orange transition-colors font-medium">
+            <Link href="#" className="text-navy/55 dark:text-ivory/70 hover:text-orange transition-colors font-medium">
               Terms &amp; Conditions
             </Link>
           </div>

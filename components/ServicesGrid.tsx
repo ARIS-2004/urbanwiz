@@ -148,7 +148,7 @@ export default function ServicesGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.7, delay: 0.2, ease }}
-              className="mt-5 max-w-[550px] text-[15px] text-navy/55 dark:text-ivory/50 leading-[1.7]"
+              className="mt-5 max-w-[550px] text-[15px] text-navy/55 dark:text-ivory/70 leading-[1.7]"
             >
               Adopt one or run them all together. The same senior owners, the
               same SLAs, the same transparency — from customer support to data
@@ -163,7 +163,7 @@ export default function ServicesGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.7, delay: 0.25, ease }}
-              className="lg:ml-auto lg:max-w-xs text-[15px] text-navy/55 dark:text-ivory/50 leading-[1.7]"
+              className="lg:ml-auto lg:max-w-xs text-[15px] text-navy/55 dark:text-ivory/70 leading-[1.7]"
             >
               <span
                 aria-hidden

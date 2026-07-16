@@ -154,7 +154,7 @@ export default function ContactForm() {
             <div className="text-[10.5px] uppercase tracking-[0.24em] text-orange font-semibold">
               Inquiry form
             </div>
-            <div className="text-[12px] text-navy/55 dark:text-ivory/50 mt-1">
+            <div className="text-[12px] text-navy/55 dark:text-ivory/70 mt-1">
               Takes about a minute. Read by a senior partner.
             </div>
           </div>
@@ -355,7 +355,7 @@ function NeuField({
 }) {
   return (
     <label className="block group">
-      <span className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/55 font-semibold mb-2.5 group-focus-within:text-orange transition-colors duration-300">
+      <span className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/72 font-semibold mb-2.5 group-focus-within:text-orange transition-colors duration-300">
         <span
           aria-hidden
           className="block w-1 h-1 rounded-full bg-navy/25 group-focus-within:bg-orange transition-colors duration-300"
@@ -389,7 +389,7 @@ function NeuSelect({
 }) {
   return (
     <label className="block group">
-      <span className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/55 font-semibold mb-2.5 group-focus-within:text-orange transition-colors duration-300">
+      <span className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/72 font-semibold mb-2.5 group-focus-within:text-orange transition-colors duration-300">
         <span
           aria-hidden
           className="block w-1 h-1 rounded-full bg-navy/25 group-focus-within:bg-orange transition-colors duration-300"
@@ -451,7 +451,7 @@ function NeuTextarea({
 }) {
   return (
     <label className="block group">
-      <span className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/55 font-semibold mb-2.5 group-focus-within:text-orange transition-colors duration-300">
+      <span className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/72 font-semibold mb-2.5 group-focus-within:text-orange transition-colors duration-300">
         <span
           aria-hidden
           className="block w-1 h-1 rounded-full bg-navy/25 group-focus-within:bg-orange transition-colors duration-300"

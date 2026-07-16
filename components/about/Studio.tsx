@@ -100,7 +100,7 @@ export default function Studio() {
                 Ecospace Business Park
               </h3>
 
-              <address className="mt-4 not-italic text-[13.5px] text-navy/70 leading-[1.7]">
+              <address className="mt-4 not-italic text-[15px] text-navy/70 leading-[1.7]">
                 Ecospace Business Park, Action Area II
                 <br />
                 New Town, Kolkata 700160

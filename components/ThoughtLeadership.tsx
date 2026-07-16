@@ -104,7 +104,7 @@ export default function ThoughtLeadership() {
                   <h3 className="font-display text-[20px] tracking-tight text-navy leading-tight">
                     {it.title}
                   </h3>
-                  <p className="mt-3 text-[13px] text-navy/55 leading-[1.6] flex-1">
+                  <p className="mt-3 text-[14.5px] text-navy/55 leading-[1.6] flex-1">
                     {it.excerpt}
                   </p>
                   <div className="mt-4 pt-4 border-t border-navy/8 flex items-center justify-between text-[11px] uppercase tracking-[0.18em] text-navy/45 font-medium">

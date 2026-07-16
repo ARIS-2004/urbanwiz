@@ -143,7 +143,7 @@ export default function Process() {
               aria-hidden
               className="block w-9 h-[2px] rounded-full bg-orange/60 lg:ml-auto"
             />
-            <p className="mt-4 text-[15px] text-navy/60 dark:text-ivory/55 leading-[1.75] lg:text-right tracking-[-0.002em]">
+            <p className="mt-4 text-[15px] text-navy/60 dark:text-ivory/72 leading-[1.75] lg:text-right tracking-[-0.002em]">
               A four-step path designed to feel deliberate, not transactional.
               Built around clarity, communication and outcomes.
             </p>
@@ -257,7 +257,7 @@ export default function Process() {
                   <h3 className="mt-3.5 font-display text-[26px] sm:text-[29px] xl:text-[32px] tracking-[-0.025em] leading-[1.02] text-navy dark:text-ivory font-bold">
                     {step.title}
                   </h3>
-                  <p className="mt-4 text-[14.5px] sm:text-[15px] leading-[1.75] text-navy/65 dark:text-ivory/60 max-w-[262px] tracking-[-0.002em]">
+                  <p className="mt-4 text-[14.5px] sm:text-[15px] leading-[1.75] text-navy/65 dark:text-ivory/75 max-w-[262px] tracking-[-0.002em]">
                     {step.body}
                   </p>
                 </div>

@@ -144,7 +144,7 @@ export default function Partner() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.7, delay: 0.2, ease }}
-            className="lg:col-span-4 lg:pb-3 text-[15px] leading-[1.7] text-navy/55 dark:text-ivory/50 max-w-sm lg:ml-auto lg:text-right"
+            className="lg:col-span-4 lg:pb-3 text-[15px] leading-[1.7] text-navy/55 dark:text-ivory/70 max-w-sm lg:ml-auto lg:text-right"
           >
             The principles that guide every account — from the first
             conversation through the long, quiet years of running
@@ -317,7 +317,7 @@ function PillarCard({
         >
           {num}
         </span>
-        <span className="inline-flex items-center rounded-full bg-navy/[0.04] px-2.5 py-1 text-[9px] uppercase tracking-[0.24em] text-navy/55 dark:text-ivory/50 font-bold group-hover:bg-orange/10 group-hover:text-orange transition-colors duration-300">
+        <span className="inline-flex items-center rounded-full bg-navy/[0.04] px-2.5 py-1 text-[9px] uppercase tracking-[0.24em] text-navy/55 dark:text-ivory/70 font-bold group-hover:bg-orange/10 group-hover:text-orange transition-colors duration-300">
           {p.meta}
         </span>
       </div>
@@ -330,7 +330,7 @@ function PillarCard({
         aria-hidden
         className="relative mt-3.5 block w-8 h-[2px] rounded-full bg-orange/30 origin-left transition-all duration-500 ease-editorial group-hover:w-12 group-hover:bg-orange/60"
       />
-      <p className="relative mt-3.5 text-[14.5px] leading-[1.7] text-navy/60 dark:text-ivory/55">
+      <p className="relative mt-3.5 text-[14.5px] leading-[1.7] text-navy/60 dark:text-ivory/72">
         {p.body}
       </p>
     </div>

@@ -174,7 +174,7 @@ export default function Timeline() {
                   <h3 className="mt-3 font-display text-[19px] sm:text-[22px] xl:text-[24px] tracking-[-0.02em] leading-[1.2] text-navy font-bold">
                     {m.title}
                   </h3>
-                  <p className="mt-2 text-[13.5px] leading-[1.7] text-navy/65 max-w-lg">
+                  <p className="mt-2 text-[15px] leading-[1.7] text-navy/65 max-w-lg">
                     {m.body}
                   </p>
                 </motion.article>

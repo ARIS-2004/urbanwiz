@@ -156,7 +156,7 @@ export default function ServicesPage() {
                   Jump to a service
                 </span>
               </div>
-              <span className="text-[10.5px] uppercase tracking-[0.22em] text-navy/45 dark:text-ivory/45 font-semibold tabular-nums">
+              <span className="text-[10.5px] uppercase tracking-[0.22em] text-navy/45 dark:text-ivory/65 font-semibold tabular-nums">
                 06 practices
               </span>
             </div>
@@ -253,7 +253,7 @@ function ServiceBlock({
   return (
     <article
       id={s.id}
-      className="group relative rounded-3xl border border-navy/8 dark:border-white/10 bg-white dark:bg-[#12173a] shadow-[0_1px_2px_rgba(15,19,48,0.03),0_18px_40px_-22px_rgba(15,19,48,0.16)] overflow-hidden scroll-mt-32 transition-all duration-500 ease-editorial hover:border-navy/15 hover:-translate-y-1 hover:shadow-[0_1px_2px_rgba(15,19,48,0.03),0_30px_56px_-22px_rgba(15,19,48,0.24)]"
+      className="group relative rounded-3xl border border-navy/8 dark:border-white/15 bg-white dark:bg-[#151b42] shadow-[0_1px_2px_rgba(15,19,48,0.03),0_18px_40px_-22px_rgba(15,19,48,0.16)] overflow-hidden scroll-mt-32 transition-all duration-500 ease-editorial hover:border-navy/15 dark:hover:border-orange/40 hover:-translate-y-1 hover:shadow-[0_1px_2px_rgba(15,19,48,0.03),0_30px_56px_-22px_rgba(15,19,48,0.24)]"
     >
       {/* Inner top highlight */}
       <span
@@ -316,7 +316,7 @@ function ServiceBlock({
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <p className="mt-4 text-[14.5px] leading-[1.7] text-navy/60 dark:text-ivory/55 max-w-xl">
+            <p className="mt-4 text-[14.5px] leading-[1.7] text-navy/60 dark:text-ivory/72 max-w-xl">
               {s.lead}
             </p>
           </FadeUp>
@@ -339,7 +339,7 @@ function ServiceBlock({
                       <div className="text-[15.5px] font-bold text-navy dark:text-ivory leading-tight tracking-[-0.01em]">
                         {f.t}
                       </div>
-                      <div className="mt-1.5 text-[14px] leading-[1.65] leading-[1.6] text-navy/60 dark:text-ivory/55">
+                      <div className="mt-1.5 text-[14px] leading-[1.65] leading-[1.6] text-navy/60 dark:text-ivory/72">
                         {f.b}
                       </div>
                     </div>
@@ -393,7 +393,7 @@ function ServiceBlock({
                     />
                   ))}
                 </div>
-                <span className="text-[10px] uppercase tracking-[0.22em] text-navy/50 dark:text-ivory/45 font-bold tabular-nums">
+                <span className="text-[10px] uppercase tracking-[0.22em] text-navy/50 dark:text-ivory/65 font-bold tabular-nums">
                   {s.n} / 06
                 </span>
               </div>

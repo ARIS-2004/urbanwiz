@@ -60,7 +60,7 @@ export default function AboutHero() {
               className="flex items-center gap-3"
             >
               <span className="block w-8 h-[2px] bg-orange rounded-full" />
-              <span className="text-[10.5px] uppercase tracking-[0.3em] text-navy/55 dark:text-ivory/50 font-bold">
+              <span className="text-[10.5px] uppercase tracking-[0.3em] text-navy/55 dark:text-ivory/70 font-bold">
                 Our Story
               </span>
             </motion.div>
@@ -110,7 +110,7 @@ export default function AboutHero() {
                 <div className="font-display text-[26px] sm:text-[32px] font-bold text-navy dark:text-ivory tabular-nums leading-none">
                   2026
                 </div>
-                <div className="mt-1.5 text-[9.5px] uppercase tracking-[0.24em] text-navy/50 dark:text-ivory/45 font-semibold">
+                <div className="mt-1.5 text-[9.5px] uppercase tracking-[0.24em] text-navy/50 dark:text-ivory/65 font-semibold">
                   Founded in Kolkata
                 </div>
               </div>
@@ -119,7 +119,7 @@ export default function AboutHero() {
                 <div className="font-display text-[26px] sm:text-[32px] font-bold text-navy dark:text-ivory tabular-nums leading-none">
                   03
                 </div>
-                <div className="mt-1.5 text-[9.5px] uppercase tracking-[0.24em] text-navy/50 dark:text-ivory/45 font-semibold">
+                <div className="mt-1.5 text-[9.5px] uppercase tracking-[0.24em] text-navy/50 dark:text-ivory/65 font-semibold">
                   The Three Pillars
                 </div>
               </div>

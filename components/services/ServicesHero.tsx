@@ -157,7 +157,7 @@ export default function ServicesHero() {
               <p className="font-display text-[16.5px] sm:text-[17.5px] leading-[1.5] tracking-[-0.005em] text-navy dark:text-ivory font-bold">
                 Six interlocking practices.
               </p>
-              <p className="mt-2 text-[13.5px] leading-[1.65] text-navy/55 dark:text-ivory/50">
+              <p className="mt-2 text-[15px] leading-[1.65] text-navy/55 dark:text-ivory/70">
                 Adopt one or run them all together. Same standards, same
                 accountability, same senior ownership on every account.
               </p>
@@ -189,13 +189,13 @@ export default function ServicesHero() {
                     </svg>
                   </span>
                   <div className="min-w-0 flex-1">
-                    <div className="text-[9.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/50 font-semibold">
+                    <div className="text-[9.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/70 font-semibold">
                       Practices
                     </div>
                     <div className="mt-1 font-display text-[18px] text-navy dark:text-ivory font-bold leading-none tabular-nums">
                       <span className="text-orange">06</span> · core
                     </div>
-                    <div className="mt-1.5 text-[10.5px] text-navy/50 dark:text-ivory/45 leading-tight">
+                    <div className="mt-1.5 text-[10.5px] text-navy/50 dark:text-ivory/65 leading-tight">
                       Adopted alone or together
                     </div>
                   </div>
@@ -219,13 +219,13 @@ export default function ServicesHero() {
                     </svg>
                   </span>
                   <div className="min-w-0 flex-1">
-                    <div className="text-[9.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/50 font-semibold">
+                    <div className="text-[9.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/70 font-semibold">
                       Coverage
                     </div>
                     <div className="mt-1 font-display text-[18px] text-navy dark:text-ivory font-bold leading-none">
                       24<span className="text-orange">×</span>7
                     </div>
-                    <div className="mt-1.5 text-[10.5px] text-navy/50 dark:text-ivory/45 leading-tight">
+                    <div className="mt-1.5 text-[10.5px] text-navy/50 dark:text-ivory/65 leading-tight">
                       Across time zones
                     </div>
                   </div>

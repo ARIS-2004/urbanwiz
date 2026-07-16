@@ -85,7 +85,7 @@ export default function MissionValues() {
               className="block w-9 h-[1.5px] rounded-full"
               style={{ background: "linear-gradient(90deg, transparent, #FF5722)" }}
             />
-            <span className="text-[10.5px] uppercase tracking-[0.32em] text-navy/55 dark:text-ivory/50 font-bold">
+            <span className="text-[10.5px] uppercase tracking-[0.32em] text-navy/55 dark:text-ivory/70 font-bold">
               Our Promise
             </span>
             <span
