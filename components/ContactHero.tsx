@@ -272,7 +272,7 @@ export default function ContactHero() {
               >
                 <Image
                   src="/contacthero.png"
-                  alt="Urbanwiz Ecospace Business Park office"
+                  alt="Urbanwiz Ecospace Business Towers office"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 60vw"

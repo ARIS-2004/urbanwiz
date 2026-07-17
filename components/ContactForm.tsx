@@ -300,10 +300,11 @@ export default function ContactForm() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className={`px-6 sm:px-9 py-5 flex items-center gap-3 text-[13px] mx-6 sm:mx-9 mb-6 rounded-2xl ${
-              sent ? "text-navy/80 bg-orange/[0.06]" : "text-navy/80 bg-red-500/[0.06]"
+            className={`px-6 sm:px-9 py-5 flex items-center gap-3 text-[13px] leading-[1.5] font-medium mx-6 sm:mx-9 mb-6 rounded-2xl border ${
+              sent
+                ? "text-navy/80 dark:text-ivory/90 bg-orange/[0.06] dark:bg-orange/[0.12] border-orange/15 dark:border-orange/25"
+                : "text-navy/80 dark:text-ivory/90 bg-red-500/[0.06] dark:bg-red-500/[0.15] border-red-500/15 dark:border-red-500/35"
             }`}
-            style={{ boxShadow: insetShadow }}
             role="status"
             aria-live="polite"
           >

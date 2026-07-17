@@ -34,12 +34,12 @@ export const site = {
 
   // ── Address ──
   addressLine1:
-    process.env.NEXT_PUBLIC_BRAND_ADDRESS_LINE1 || "Ecospace Business Park",
+    process.env.NEXT_PUBLIC_BRAND_ADDRESS_LINE1 || "Ecospace Business Towers",
   addressLine2:
     process.env.NEXT_PUBLIC_BRAND_ADDRESS_LINE2 || "New Town, Kolkata 700160",
   addressFull:
     process.env.NEXT_PUBLIC_BRAND_ADDRESS ||
-    "Ecospace Business Park, Action Area II, New Town, Kolkata 700160",
+    "Ecospace Business Towers, Action Area II, New Town, Kolkata 700160",
   city: process.env.NEXT_PUBLIC_BRAND_CITY || "Kolkata",
   area: process.env.NEXT_PUBLIC_BRAND_AREA || "New Town",
 
@@ -47,7 +47,7 @@ export const site = {
   website: process.env.NEXT_PUBLIC_BRAND_WEBSITE || "https://urbanwiz.co.in",
   mapsLink:
     process.env.NEXT_PUBLIC_BRAND_MAPS_LINK ||
-    "https://www.google.com/maps/place/Ecospace+Business+Park,+Action+Area+II,+Newtown,+Kolkata",
+    "https://www.google.com/maps/place/Ecospace+Business+Towers/@22.5867522,88.4848413,610m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a0277191d72d203:0xe185009156f2d3eb!8m2!3d22.5867522!4d88.4874162!16s%2Fg%2F11sfq7mftj",
 
   // ── Backend API ──
   apiUrl: process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000",

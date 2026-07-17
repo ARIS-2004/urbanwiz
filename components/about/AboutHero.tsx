@@ -174,7 +174,7 @@ export default function AboutHero() {
               >
                 <Image
                   src="/contacthero.png"
-                  alt="Urbanwiz office — Ecospace Business Park, Kolkata"
+                  alt="Urbanwiz office — Ecospace Business Towers, Kolkata"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 480px"

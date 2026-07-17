@@ -18,7 +18,7 @@ const milestones: Milestone[] = [
     marker: "2026",
     kicker: "Founded",
     title: "Three founders. One belief.",
-    body: "Subhajit, Shilanjan and Vineet start Urbanwiz at Ecospace Business Park, New Town — with a philosophy before they had a client list.",
+    body: "Subhajit, Shilanjan and Vineet start Urbanwiz at Ecospace Business Towers, New Town — with a philosophy before they had a client list.",
     accent: "orange",
     status: "done",
   },

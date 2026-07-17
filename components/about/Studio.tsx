@@ -156,7 +156,7 @@ export default function Studio() {
             <div className="lg:col-span-7 relative order-1 lg:order-2 min-h-[260px] lg:min-h-[400px] bg-navy/5">
               <iframe
                 src={MAP_EMBED}
-                title="Urbanwiz office location — Ecospace Business Park, New Town, Kolkata"
+                title="Urbanwiz office location — Ecospace Business Towers, New Town, Kolkata"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="absolute inset-0 w-full h-full border-0"

@@ -120,17 +120,6 @@ export default function Footer() {
 
           {/* ── Main grid ── */}
           <div className="relative px-8 lg:px-12 pt-9 lg:pt-10 pb-8">
-            {/* Made in Kolkata — top right */}
-            <div className="flex items-start justify-between gap-6">
-              <div />
-              <div className="hidden sm:flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-navy/55 dark:text-ivory/70 font-bold">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" className="text-orange">
-                  <path d="M12 21c4-4 6-7 6-10a6 6 0 10-12 0c0 3 2 6 6 10z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-                  <circle cx="12" cy="11" r="2.2" stroke="currentColor" strokeWidth="1.8" />
-                </svg>
-                Made in Kolkata, Est. 2026
-              </div>
-            </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 mt-1">
               {/* Brand column */}
@@ -233,6 +222,16 @@ export default function Footer() {
                     </ul>
                   </motion.div>
                 ))}
+                {/* Made in Kolkata — one line; bottom on mobile, bottom-right on desktop */}
+                <div className="col-span-2 sm:col-span-3 flex justify-start sm:justify-end mt-6 sm:mt-8">
+                  <div className="flex items-center gap-2 whitespace-nowrap text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-navy/55 dark:text-ivory/70 font-bold">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" className="text-orange shrink-0">
+                      <path d="M12 21c4-4 6-7 6-10a6 6 0 10-12 0c0 3 2 6 6 10z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+                      <circle cx="12" cy="11" r="2.2" stroke="currentColor" strokeWidth="1.8" />
+                    </svg>
+                    Made in Kolkata, Est. 2026
+                  </div>
+                </div>
               </div>
             </div>
           </div>
