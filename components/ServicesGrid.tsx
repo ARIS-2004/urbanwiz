@@ -329,7 +329,7 @@ function ServiceCard({ s }: { s: Service }) {
         {/* Body */}
         <p
           style={{
-            color: dark ? "rgba(255,255,255,0.72)" : "rgba(8,18,59,0.6)",
+            color: dark ? "rgba(255,255,255,0.82)" : "rgba(8,18,59,0.9)",
           }}
           className="mt-4 text-[14px] leading-[1.7] leading-[1.65] max-w-[300px]"
         >

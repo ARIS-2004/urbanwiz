@@ -372,7 +372,7 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
                   {leader.name}
                 </h3>
                 <div
-                  className={`mt-2 text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-bold ${a.text}`}
+                  className={`mt-2 text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-bold ${a.text} ${a.darkText}`}
                 >
                   {leader.role}
                 </div>
@@ -399,13 +399,13 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
               style={{ borderTop: `1px solid rgba(${a.rgb},0.15)` }}
             >
               <span
-                className={`font-display font-black text-[36px] leading-[0.7] ${a.text} opacity-40 select-none`}
+                className={`font-display font-black text-[36px] leading-[0.7] ${a.text} ${a.darkText} opacity-40 dark:opacity-70 select-none`}
               >
                 &ldquo;
               </span>
-              <p className="font-display text-[16.5px] sm:text-[19px] leading-[1.42] text-navy/80 dark:text-ivory/70 font-semibold tracking-[-0.01em]">
+              <p className="font-display text-[16.5px] sm:text-[19px] leading-[1.42] text-navy/80 dark:text-ivory/85 font-semibold tracking-[-0.01em]">
                 {leader.quote}
-                <span className={`${a.text} opacity-40`}>&rdquo;</span>
+                <span className={`${a.text} ${a.darkText} opacity-40 dark:opacity-70`}>&rdquo;</span>
               </p>
             </div>
 
@@ -441,7 +441,7 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
               className="group/pr relative sm:px-9 first:sm:pl-0 last:sm:pr-0"
             >
               <span
-                className={`font-display font-black text-[25px] leading-none tabular-nums ${a.text} opacity-30 transition-opacity duration-300 group-hover/pr:opacity-60`}
+                className={`font-display font-black text-[25px] leading-none tabular-nums ${a.text} ${a.darkText} opacity-30 dark:opacity-70 transition-opacity duration-300 group-hover/pr:opacity-60 dark:group-hover/pr:opacity-100`}
               >
                 {["I", "II", "III"][i]}
               </span>
@@ -540,8 +540,8 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
                     <div className="lg:sticky lg:top-24">
                       <span
                         aria-hidden
-                        className="block font-display font-black leading-[0.8] tracking-[-0.05em] select-none"
-                        style={{ fontSize: "54px", color: `rgba(${a.rgb},0.28)` }}
+                        className={`block font-display font-black leading-[0.8] tracking-[-0.05em] select-none ${a.text} ${a.darkText} opacity-[0.28] dark:opacity-60`}
+                        style={{ fontSize: "54px" }}
                       >
                         {leader.initials}
                       </span>
@@ -561,41 +561,60 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
                     </div>
                   </div>
 
-                  {/* Article body */}
-                  <div className="lg:col-span-9 max-w-[42rem]">
+                  {/* Article body — editorial reading column */}
+                  <div className="lg:col-span-9 max-w-[43rem]">
                     {(() => {
                       let firstPara = true;
                       return leader.paragraphs.map((p, i) => {
                         if (typeof p !== "string") {
-                          // pull-quote — left-ruled feature, same font (no italic)
+                          // Feature pull-quote — large, quote-marked, generous space.
                           return (
-                            <figure
+                            <motion.figure
                               key={i}
-                              className="my-7 pl-6"
-                              style={{ borderLeft: `3px solid rgba(${a.rgb},0.5)` }}
+                              initial={{ opacity: 0, y: 10 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              viewport={{ once: true, amount: 0.4 }}
+                              transition={{ duration: 0.6, ease }}
+                              className="relative my-9 sm:my-11 pl-7 sm:pl-9"
+                              style={{ borderLeft: `2px solid rgba(${a.rgb},0.35)` }}
                             >
-                              <blockquote className="font-display text-[19px] sm:text-[23px] leading-[1.3] text-navy dark:text-ivory font-bold tracking-[-0.025em]">
+                              <span
+                                aria-hidden
+                                className={`absolute -top-4 left-4 sm:left-6 font-display font-black text-[46px] leading-none select-none ${a.text} ${a.darkText} opacity-40 dark:opacity-70`}
+                              >
+                                &ldquo;
+                              </span>
+                              <blockquote className="relative font-display text-[21px] sm:text-[26px] leading-[1.28] text-navy dark:text-ivory font-bold tracking-[-0.028em]">
                                 {p.text}
                               </blockquote>
-                            </figure>
+                            </motion.figure>
                           );
                         }
                         if (p === "We are Human, before we are Corporate.") {
-                          // signature flourish
+                          // Signature flourish — refined, centered accent + initials.
                           return (
-                            <div
+                            <motion.div
                               key={i}
-                              className="mt-7 pt-6 flex items-center gap-3"
-                              style={{ borderTop: `1px solid rgba(${a.rgb},0.12)` }}
+                              initial={{ opacity: 0, y: 10 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              viewport={{ once: true, amount: 0.4 }}
+                              transition={{ duration: 0.6, ease }}
+                              className="mt-10 pt-7 flex items-center gap-4"
+                              style={{ borderTop: `1px solid rgba(${a.rgb},0.14)` }}
                             >
-                              <span className={`block w-7 h-[2px] ${a.bar}`} />
-                              <p className="font-display text-[16px] sm:text-[18px] text-navy dark:text-ivory font-bold tracking-[-0.02em]">
+                              <span className={`block w-9 h-[2px] rounded-full ${a.bar}`} />
+                              <p className="font-display text-[17px] sm:text-[19px] text-navy dark:text-ivory font-bold tracking-[-0.02em]">
                                 {p}
                               </p>
-                            </div>
+                              <span
+                                className={`ml-auto font-display font-black text-[15px] tracking-[-0.02em] ${a.text} ${a.darkText}`}
+                              >
+                                — {leader.name.split(" ")[0]}
+                              </span>
+                            </motion.div>
                           );
                         }
-                        // short single-line paragraphs → colored emphasis (same font)
+                        // Short single-line paragraphs → colored editorial emphasis line.
                         const isShort = p.length < 62;
                         if (firstPara) {
                           firstPara = false;
@@ -605,12 +624,13 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
                             <motion.p
                               key={i}
                               initial={{ opacity: 0, y: 8 }}
-                              animate={{ opacity: 1, y: 0 }}
+                              whileInView={{ opacity: 1, y: 0 }}
+                              viewport={{ once: true, amount: 0.4 }}
                               transition={{ duration: 0.55, ease, delay: 0.08 }}
-                              className="text-[15.5px] sm:text-[16.5px] leading-[1.8] text-navy/85 dark:text-ivory/85"
+                              className="text-[16px] sm:text-[17.5px] leading-[1.85] text-navy/90 dark:text-ivory/90"
                             >
                               <span
-                                className={`float-left mr-3.5 mt-1 font-display font-black leading-[0.62] text-[52px] sm:text-[60px] select-none ${a.text} ${a.darkText}`}
+                                className={`float-left mr-4 mt-1.5 font-display font-black leading-[0.6] text-[58px] sm:text-[68px] select-none ${a.text} ${a.darkText}`}
                               >
                                 {first}
                               </span>
@@ -622,11 +642,13 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
                           return (
                             <motion.p
                               key={i}
-                              initial={{ opacity: 0, y: 6 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.45, ease }}
-                              className={`mt-5 font-display text-[16px] sm:text-[17px] leading-[1.4] font-bold tracking-[-0.02em] ${a.text} ${a.darkText}`}
+                              initial={{ opacity: 0, x: -6 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              viewport={{ once: true, amount: 0.5 }}
+                              transition={{ duration: 0.5, ease }}
+                              className={`mt-8 mb-2 flex items-center gap-3.5 font-display text-[17px] sm:text-[19px] leading-[1.35] font-bold tracking-[-0.02em] ${a.text} ${a.darkText}`}
                             >
+                              <span aria-hidden className={`hidden sm:block w-6 h-[2px] rounded-full shrink-0 ${a.bar} opacity-70`} />
                               {p}
                             </motion.p>
                           );
@@ -635,9 +657,10 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
                           <motion.p
                             key={i}
                             initial={{ opacity: 0, y: 6 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.45, ease }}
-                            className="mt-5 text-[15px] sm:text-[16px] leading-[1.9] text-navy/72 dark:text-ivory/80"
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.35 }}
+                            transition={{ duration: 0.5, ease }}
+                            className="mt-6 text-[15.5px] sm:text-[16.5px] leading-[1.9] text-navy/80 dark:text-ivory/85"
                           >
                             {p}
                           </motion.p>
@@ -659,7 +682,7 @@ export default function Leadership() {
   return (
     <section
       id="leadership"
-      className="relative overflow-hidden pt-10 lg:pt-14 pb-20 lg:pb-28 bg-[#FAF8F6] dark:bg-[#0E1230] transition-colors duration-300"
+      className="relative overflow-hidden pt-2 lg:pt-4 pb-20 lg:pb-28 bg-[#FAF8F6] dark:bg-[#0E1230] transition-colors duration-300"
     >
       <div
         aria-hidden

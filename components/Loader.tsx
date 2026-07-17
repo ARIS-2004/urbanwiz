@@ -172,7 +172,7 @@ export default function Loader() {
                   width={720}
                   height={180}
                   priority
-                  className="block h-[56px] sm:h-[72px] lg:h-[92px] w-auto"
+                  className="block h-[112px] sm:h-[144px] lg:h-[184px] w-auto"
                 />
                 {/* White curtain panel slides off to the right */}
                 <motion.span

@@ -196,7 +196,7 @@ export default function OriginStory() {
           {/* watermark quote */}
           <span
             aria-hidden
-            className="pointer-events-none absolute right-4 top-2 font-display font-black text-[170px] leading-none text-orange/[0.06] select-none"
+            className="pointer-events-none absolute right-4 top-2 font-display font-black text-[170px] leading-none text-orange/[0.06] dark:text-orange/25 select-none"
           >
             &rdquo;
           </span>

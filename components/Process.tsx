@@ -143,7 +143,7 @@ export default function Process() {
               aria-hidden
               className="block w-9 h-[2px] rounded-full bg-orange/60 lg:ml-auto"
             />
-            <p className="mt-4 text-[15px] text-navy/60 dark:text-ivory/72 leading-[1.75] lg:text-right tracking-[-0.002em]">
+            <p className="mt-4 text-[15px] text-navy/60 dark:text-ivory/85 leading-[1.75] lg:text-right tracking-[-0.002em]">
               A four-step path designed to feel deliberate, not transactional.
               Built around clarity, communication and outcomes.
             </p>

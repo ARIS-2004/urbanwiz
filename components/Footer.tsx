@@ -279,11 +279,11 @@ export default function Footer() {
             reserved.
           </span>
           <div className="flex items-center gap-4 text-[12.5px]">
-            <Link href="#" className="text-navy/55 dark:text-ivory/70 hover:text-orange transition-colors font-medium">
+            <Link href="/privacy" className="text-navy/55 dark:text-ivory/70 hover:text-orange transition-colors font-medium">
               Privacy Policy
             </Link>
             <span className="block w-px h-3 bg-navy/20" />
-            <Link href="#" className="text-navy/55 dark:text-ivory/70 hover:text-orange transition-colors font-medium">
+            <Link href="/terms" className="text-navy/55 dark:text-ivory/70 hover:text-orange transition-colors font-medium">
               Terms &amp; Conditions
             </Link>
           </div>

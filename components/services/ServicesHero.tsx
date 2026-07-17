@@ -206,9 +206,8 @@ export default function ServicesHero() {
               <div className="group relative rounded-xl bg-white dark:bg-[#12173a] border border-navy/8 dark:border-white/10 px-4 py-3.5 shadow-[0_1px_2px_rgba(15,19,48,0.03),0_18px_36px_-22px_rgba(15,19,48,0.20)] hover:border-navy/15 hover:-translate-y-0.5 transition-all duration-500 ease-editorial">
                 <div className="flex items-start gap-3">
                   <span
-                    className="relative shrink-0 grid place-items-center w-10 h-10 rounded-full text-blue-deep"
+                    className="relative shrink-0 grid place-items-center w-10 h-10 rounded-full text-blue-deep dark:text-[#8FA3FF] bg-[rgba(30,58,186,0.08)] dark:bg-[rgba(143,163,255,0.14)]"
                     style={{
-                      background: "rgba(30,58,186,0.08)",
                       boxShadow:
                         "0 5px 12px -4px rgba(30,58,186,0.22), inset 0 1px 0 rgba(255,255,255,0.7)",
                     }}

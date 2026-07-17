@@ -304,7 +304,7 @@ function PillarCard({
       {/* Big watermark number — the visual anchor (replaces the icon) */}
       <span
         aria-hidden
-        className="absolute top-3 right-4 font-display text-[64px] sm:text-[76px] leading-none font-black tracking-[-0.06em] pointer-events-none select-none transition-all duration-500 group-hover:scale-105 text-orange/[0.07] dark:text-orange/25"
+        className="absolute top-2 right-3 font-display text-[40px] sm:text-[46px] leading-none font-black tracking-[-0.06em] pointer-events-none select-none transition-all duration-500 group-hover:scale-105 text-orange/[0.08] dark:text-orange/25"
       >
         {num}
       </span>
@@ -330,7 +330,7 @@ function PillarCard({
         aria-hidden
         className="relative mt-3.5 block w-8 h-[2px] rounded-full bg-orange/30 origin-left transition-all duration-500 ease-editorial group-hover:w-12 group-hover:bg-orange/60"
       />
-      <p className="relative mt-3.5 text-[14.5px] leading-[1.7] text-navy/60 dark:text-ivory/72">
+      <p className="relative mt-3.5 text-[14.5px] leading-[1.7] text-navy/60 dark:text-ivory/85">
         {p.body}
       </p>
     </div>

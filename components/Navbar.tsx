@@ -21,14 +21,46 @@ export default function Navbar() {
   // On the contact page the "Book a call" CTA would just link back here, so hide it.
   const isContact = pathname === "/contact";
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    let lastY = window.scrollY;
+    let stopTimer: ReturnType<typeof setTimeout>;
+
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 24);
+
+      // Near the very top: always show.
+      if (y < 80) {
+        setHidden(false);
+      } else if (y > lastY + 6) {
+        // Scrolling down → hide.
+        setHidden(true);
+      } else if (y < lastY - 6) {
+        // Scrolling up → show.
+        setHidden(false);
+      }
+      lastY = y;
+
+      // When scrolling stops, bring the navbar back.
+      clearTimeout(stopTimer);
+      stopTimer = setTimeout(() => setHidden(false), 220);
+    };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      clearTimeout(stopTimer);
+    };
   }, []);
+
+  // Keep the menu open state from leaving a hidden navbar inaccessible.
+  useEffect(() => {
+    if (open) setHidden(false);
+  }, [open]);
 
   useEffect(() => {
     setOpen(false);
@@ -37,9 +69,9 @@ export default function Navbar() {
   return (
     <motion.header
       initial={{ y: -24, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease }}
-      className="fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-editorial py-3"
+      animate={{ y: hidden ? "-130%" : 0, opacity: 1 }}
+      transition={{ duration: hidden ? 0.4 : 0.55, ease }}
+      className="fixed top-0 inset-x-0 z-50 py-3"
     >
       <div className="container-wide">
         <div

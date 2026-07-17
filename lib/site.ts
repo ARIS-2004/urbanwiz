@@ -6,48 +6,51 @@
  * (see Frontend/.env) with a sensible fallback. Change a value in .env,
  * rebuild, and it updates EVERYWHERE across the site automatically.
  *
- * NOTE: these are used inside client components, so they MUST be prefixed
- * with NEXT_PUBLIC_ to be available in the browser.
+ * IMPORTANT: each NEXT_PUBLIC_* var must be referenced as a *direct literal*
+ * `process.env.NEXT_PUBLIC_X` so Next.js can inline it into the browser
+ * bundle at build time. Do NOT alias `process.env` to a variable — that
+ * breaks the inlining and throws "process is not defined" in the browser.
  * ─────────────────────────────────────────────────────────────────────
  */
 
-const env = process.env;
-
 // Raw phone (with country code, spaces allowed) → used for display.
-const phoneDisplay = env.NEXT_PUBLIC_BRAND_PHONE || "+91 90388 16866";
+const phoneDisplay = process.env.NEXT_PUBLIC_BRAND_PHONE || "+91 90388 16866";
 // Same number, digits only → used for tel: links.
 const phoneTel = "+" + phoneDisplay.replace(/[^\d]/g, "");
 
+const email = process.env.NEXT_PUBLIC_BRAND_EMAIL || "info@urbanwiz.co.in";
+
 export const site = {
-  name: env.NEXT_PUBLIC_BRAND_NAME || "Urbanwiz",
-  tagline: env.NEXT_PUBLIC_BRAND_TAGLINE || "People. Process. Progress.",
+  name: process.env.NEXT_PUBLIC_BRAND_NAME || "Urbanwiz",
+  tagline: process.env.NEXT_PUBLIC_BRAND_TAGLINE || "People. Process. Progress.",
 
   // ── Email ──
-  email: env.NEXT_PUBLIC_BRAND_EMAIL || "info@urbanwiz.co.in",
-  emailHref: `mailto:${env.NEXT_PUBLIC_BRAND_EMAIL || "info@urbanwiz.co.in"}`,
+  email,
+  emailHref: `mailto:${email}`,
 
   // ── Phone ──
   phone: phoneDisplay, // "+91 90388 16866"
   phoneHref: `tel:${phoneTel}`, // "tel:+919038816866"
 
   // ── Address ──
-  addressLine1: env.NEXT_PUBLIC_BRAND_ADDRESS_LINE1 || "Ecospace Business Park",
+  addressLine1:
+    process.env.NEXT_PUBLIC_BRAND_ADDRESS_LINE1 || "Ecospace Business Park",
   addressLine2:
-    env.NEXT_PUBLIC_BRAND_ADDRESS_LINE2 || "New Town, Kolkata 700160",
+    process.env.NEXT_PUBLIC_BRAND_ADDRESS_LINE2 || "New Town, Kolkata 700160",
   addressFull:
-    env.NEXT_PUBLIC_BRAND_ADDRESS ||
+    process.env.NEXT_PUBLIC_BRAND_ADDRESS ||
     "Ecospace Business Park, Action Area II, New Town, Kolkata 700160",
-  city: env.NEXT_PUBLIC_BRAND_CITY || "Kolkata",
-  area: env.NEXT_PUBLIC_BRAND_AREA || "New Town",
+  city: process.env.NEXT_PUBLIC_BRAND_CITY || "Kolkata",
+  area: process.env.NEXT_PUBLIC_BRAND_AREA || "New Town",
 
   // ── Website / maps ──
-  website: env.NEXT_PUBLIC_BRAND_WEBSITE || "https://urbanwiz.co.in",
+  website: process.env.NEXT_PUBLIC_BRAND_WEBSITE || "https://urbanwiz.co.in",
   mapsLink:
-    env.NEXT_PUBLIC_BRAND_MAPS_LINK ||
+    process.env.NEXT_PUBLIC_BRAND_MAPS_LINK ||
     "https://www.google.com/maps/place/Ecospace+Business+Park,+Action+Area+II,+Newtown,+Kolkata",
 
   // ── Backend API ──
-  apiUrl: env.NEXT_PUBLIC_API_URL || "http://localhost:5000",
+  apiUrl: process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000",
 } as const;
 
 /** Convenience: a mailto with a prefilled subject. */
