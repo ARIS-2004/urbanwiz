@@ -28,7 +28,9 @@ export const metadata: Metadata = {
   title: "Urbanwiz — Operations that move business forward",
   description:
     "Urbanwiz is a business process outsourcing partner delivering customer support, finance operations and IT-enabled services for businesses that value reliability.",
-  metadataBase: new URL("https://urbanwiz.co.in"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_BRAND_WEBSITE || "https://urbanwiz.co.in"
+  ),
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",

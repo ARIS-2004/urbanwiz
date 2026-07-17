@@ -92,7 +92,7 @@ export default function AboutIntro() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.8, delay: 0.2, ease }}
-              className="mt-6 max-w-xl text-[15px] sm:text-[16px] leading-[1.8] text-navy/65 dark:text-ivory/75"
+              className="mt-6 max-w-xl text-[15px] sm:text-[16px] leading-[1.8] text-navy/65 dark:text-ivory/85"
             >
               <span className="text-navy dark:text-ivory font-semibold">
                 Urbanwiz is a people-first business solutions company
@@ -105,7 +105,7 @@ export default function AboutIntro() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.8, delay: 0.3, ease }}
-              className="mt-5 max-w-xl text-[15px] sm:text-[16px] leading-[1.8] text-navy/60 dark:text-ivory/72"
+              className="mt-5 max-w-xl text-[15px] sm:text-[16px] leading-[1.8] text-navy/60 dark:text-ivory/85"
             >
               As we evolve, we&apos;re expanding into IT, AI/ML, FinTech, Legal
               Process Services, and next-generation business solutions to

@@ -304,7 +304,7 @@ function PillarCard({
       {/* Big watermark number — the visual anchor (replaces the icon) */}
       <span
         aria-hidden
-        className="absolute -top-4 right-2 font-display text-[88px] sm:text-[104px] leading-none font-black tracking-[-0.06em] pointer-events-none select-none transition-all duration-500 group-hover:scale-105 text-orange/[0.07] dark:text-orange/25"
+        className="absolute top-3 right-4 font-display text-[64px] sm:text-[76px] leading-none font-black tracking-[-0.06em] pointer-events-none select-none transition-all duration-500 group-hover:scale-105 text-orange/[0.07] dark:text-orange/25"
       >
         {num}
       </span>

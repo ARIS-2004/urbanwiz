@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import Logo from "./Logo";
+import { site } from "@/lib/site";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -78,6 +80,8 @@ const reveal = (delay = 0) => ({
 });
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isContact = pathname === "/contact";
   return (
     <footer
       className="relative overflow-hidden pt-2 pb-6 bg-[#F1F2F5] dark:bg-[#080B1C] transition-colors duration-300"
@@ -133,7 +137,7 @@ export default function Footer() {
               <div className="lg:col-span-4 lg:pr-8">
                 <Logo size="lg" />
                 <p className="mt-2.5 text-[12.5px] tracking-[0.02em] text-navy/50 dark:text-ivory/80 font-medium">
-                  People. Performance. Progress.
+                  {site.tagline}
                 </p>
                 <p className="mt-4 max-w-xs text-[15px] leading-[1.6] text-navy/60 dark:text-ivory/85">
                   We partner with ambitious businesses to build, scale, and
@@ -142,30 +146,35 @@ export default function Footer() {
 
                 {/* contact rows */}
                 <div className="mt-5 space-y-3">
-                  <div className="flex items-start gap-3">
-                    <span className="grid place-items-center w-9 h-9 rounded-full bg-navy/[0.04] text-orange shrink-0">
+                  <a
+                    href={site.mapsLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-start gap-3"
+                  >
+                    <span className="grid place-items-center w-9 h-9 rounded-full bg-navy/[0.04] text-orange shrink-0 group-hover:bg-orange group-hover:text-ivory transition-colors">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
                         <path d="M12 21c4-4 6-7 6-10a6 6 0 10-12 0c0 3 2 6 6 10z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
                         <circle cx="12" cy="11" r="2.2" stroke="currentColor" strokeWidth="1.6" />
                       </svg>
                     </span>
-                    <p className="text-[15px] leading-[1.5] text-navy/75 dark:text-ivory/85 font-medium mt-1">
-                      Ecospace Business Park,
+                    <p className="text-[15px] leading-[1.5] text-navy/75 dark:text-ivory/85 font-medium mt-1 group-hover:text-orange transition-colors">
+                      {site.addressLine1},
                       <br />
-                      New Town, Kolkata 700160
+                      {site.addressLine2}
                     </p>
-                  </div>
-                  <a href="tel:+919038816866" className="group flex items-center gap-3">
+                  </a>
+                  <a href={site.phoneHref} className="group flex items-center gap-3">
                     <span className="grid place-items-center w-9 h-9 rounded-full bg-navy/[0.04] text-orange shrink-0 group-hover:bg-orange group-hover:text-ivory transition-colors">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
                         <path d="M6 4h2.6L10.6 8 8.4 9.6c1.4 2.5 3.5 4.6 6 6L16 13.4 20 15.4V18c0 .8-.7 1.5-1.5 1.5-8.6 0-15.5-6.9-15.5-15.5C3 3.7 3.7 3 4.5 3z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
                       </svg>
                     </span>
                     <span className="text-[13.5px] text-navy/75 dark:text-ivory/85 font-medium tabular-nums group-hover:text-orange transition-colors">
-                      +91 90388 16866
+                      {site.phone}
                     </span>
                   </a>
-                  <a href="mailto:urbanwiz@info.co.in" className="group flex items-center gap-3">
+                  <a href={site.emailHref} className="group flex items-center gap-3">
                     <span className="grid place-items-center w-9 h-9 rounded-full bg-navy/[0.04] text-orange shrink-0 group-hover:bg-orange group-hover:text-ivory transition-colors">
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
                         <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.6" />
@@ -173,7 +182,7 @@ export default function Footer() {
                       </svg>
                     </span>
                     <span className="text-[13.5px] text-navy/75 dark:text-ivory/85 font-medium group-hover:text-orange transition-colors">
-                      urbanwiz@info.co.in
+                      {site.email}
                     </span>
                   </a>
                 </div>
@@ -245,16 +254,18 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-3 rounded-xl bg-navy text-ivory pl-6 pr-6 py-3.5 text-[12.5px] uppercase tracking-[0.2em] font-bold transition-colors duration-300 hover:bg-orange shrink-0"
-              style={{ boxShadow: "0 14px 30px -14px rgba(15,19,48,0.5)" }}
-            >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-orange group-hover:text-ivory transition-colors group-hover:translate-x-0.5 duration-300">
-                <path d="M3 8h9m0 0L8.5 4.5M12 8l-3.5 3.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              Book a Call
-            </Link>
+            {!isContact && (
+              <Link
+                href="/contact"
+                className="group inline-flex items-center gap-3 rounded-xl bg-navy text-ivory pl-6 pr-6 py-3.5 text-[12.5px] uppercase tracking-[0.2em] font-bold transition-colors duration-300 hover:bg-orange shrink-0"
+                style={{ boxShadow: "0 14px 30px -14px rgba(15,19,48,0.5)" }}
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-orange group-hover:text-ivory transition-colors group-hover:translate-x-0.5 duration-300">
+                  <path d="M3 8h9m0 0L8.5 4.5M12 8l-3.5 3.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                Book a Call
+              </Link>
+            )}
           </div>
         </motion.div>
 

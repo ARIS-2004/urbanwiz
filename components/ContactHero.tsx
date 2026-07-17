@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
+import { site } from "@/lib/site";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -206,7 +207,7 @@ export default function ContactHero() {
                 </span>
               </a>
               <a
-                href="tel:+919038816866"
+                href={site.phoneHref}
                 className="group relative inline-flex items-center justify-center gap-2.5 rounded-xl bg-white dark:bg-[#12173a] border border-navy/15 dark:border-white/15 px-4 py-3 transition-all duration-300 hover:border-orange hover:-translate-y-0.5 shadow-[0_1px_2px_rgba(15,19,48,0.03)]"
               >
                 <span className="grid place-items-center w-6 h-6 rounded-full bg-orange/10 text-orange group-hover:bg-orange group-hover:text-ivory transition-colors">

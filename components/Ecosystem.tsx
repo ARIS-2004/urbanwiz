@@ -226,8 +226,15 @@ export default function Ecosystem() {
                 {/* Header: eyebrow chip */}
                 <div className="relative flex items-center gap-2.5">
                   <span
-                    className={`inline-flex items-center rounded-full px-3 py-1 text-[9.5px] uppercase tracking-[0.24em] font-bold ${a.eyebrowColor}`}
-                    style={{ background: a.wash.includes("255,87,34") ? "rgba(255,87,34,0.10)" : a.wash.includes("30,58,186") ? "rgba(30,58,186,0.09)" : "rgba(15,19,48,0.06)" }}
+                    className={`inline-flex items-center rounded-full px-3 py-1 text-[9.5px] uppercase tracking-[0.24em] font-bold ${a.eyebrowColor} ${phase.accent === "navy" ? "dark:text-ivory" : ""}`}
+                    style={{
+                      background:
+                        phase.accent === "orange"
+                          ? "rgba(255,87,34,0.10)"
+                          : phase.accent === "blue"
+                          ? "rgba(30,58,186,0.09)"
+                          : "rgba(180,190,230,0.14)",
+                    }}
                   >
                     {phase.eyebrow}
                   </span>

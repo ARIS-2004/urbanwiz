@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
+import { emailHrefWithSubject } from "@/lib/site";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -280,7 +281,7 @@ export default function ContactQuote() {
             className="relative mt-7 flex flex-wrap justify-center items-center gap-3"
           >
             <Link
-              href="mailto:urbanwiz@info.co.in?subject=Book%20a%20call"
+              href={emailHrefWithSubject("Book a call")}
               className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-orange text-ivory pl-5 pr-2 py-2 text-[11px] uppercase tracking-[0.22em] font-bold transition-colors duration-300 hover:bg-ivory hover:text-navy"
               style={{
                 boxShadow:

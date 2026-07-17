@@ -72,7 +72,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4, ease }}
-                className="mt-7 text-[15px] sm:text-[16.5px] leading-[1.8] text-navy/65 dark:text-ivory/75"
+                className="mt-7 text-[15px] sm:text-[16.5px] leading-[1.8] text-navy/65 dark:text-ivory/85"
               >
                 <span className="text-navy dark:text-ivory font-semibold">
                   Urbanwiz helps growing businesses build reliable operations
@@ -84,7 +84,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5, ease }}
-                className="mt-5 text-[15px] sm:text-[16.5px] leading-[1.8] text-navy/60 dark:text-ivory/72"
+                className="mt-5 text-[15px] sm:text-[16.5px] leading-[1.8] text-navy/60 dark:text-ivory/85"
               >
                 From customer support to data operations, we become an extension
                 of your team — helping you scale without sacrificing quality.

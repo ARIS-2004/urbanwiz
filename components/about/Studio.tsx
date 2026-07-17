@@ -2,14 +2,14 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { site } from "@/lib/site";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-// Google Maps embed for Ecospace Business Park, Action Area II, New Town, Kolkata
+// Google Maps embed for the office (visual pin only).
 const MAP_EMBED =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.4726!2d88.4614!3d22.5763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sEcospace%20Business%20Park!5e0!3m2!1sen!2sin!4v1700000000000";
-const MAP_LINK =
-  "https://www.google.com/maps/place/Ecospace+Business+Park,+Action+Area+II,+Newtown,+Kolkata";
+const MAP_LINK = site.mapsLink;
 
 export default function Studio() {
   return (
@@ -97,15 +97,11 @@ export default function Studio() {
               </div>
 
               <h3 className="mt-4 font-display text-[24px] sm:text-[28px] tracking-[-0.02em] text-navy font-bold leading-tight">
-                Ecospace Business Park
+                {site.addressLine1}
               </h3>
 
               <address className="mt-4 not-italic text-[15px] text-navy/70 leading-[1.7]">
-                Ecospace Business Park, Action Area II
-                <br />
-                New Town, Kolkata 700160
-                <br />
-                West Bengal, India
+                {site.addressFull}
               </address>
 
               {/* Quick details */}
@@ -123,10 +119,10 @@ export default function Studio() {
                     Phone
                   </div>
                   <Link
-                    href="tel:+919038816866"
+                    href={site.phoneHref}
                     className="mt-1 block text-[12.5px] text-navy font-semibold leading-tight tabular-nums hover:text-orange transition-colors"
                   >
-                    +91 90388 16866
+                    {site.phone}
                   </Link>
                 </div>
               </div>

@@ -355,7 +355,7 @@ function NeuField({
 }) {
   return (
     <label className="block group">
-      <span className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/72 font-semibold mb-2.5 group-focus-within:text-orange transition-colors duration-300">
+      <span className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/85 font-semibold mb-2.5 group-focus-within:text-orange transition-colors duration-300">
         <span
           aria-hidden
           className="block w-1 h-1 rounded-full bg-navy/25 group-focus-within:bg-orange transition-colors duration-300"
@@ -367,7 +367,7 @@ function NeuField({
         type={type}
         required
         placeholder={placeholder}
-        className="w-full h-12 rounded-xl bg-ivory dark:bg-white/[0.06] px-4 text-[14.5px] text-navy dark:text-ivory placeholder:text-navy/30 dark:placeholder:text-ivory/30 focus:outline-none transition-all duration-300"
+        className="w-full h-12 rounded-xl bg-ivory dark:bg-white/[0.06] px-4 text-[14.5px] text-navy dark:text-ivory placeholder:text-navy/30 dark:placeholder:text-ivory/60 focus:outline-none transition-all duration-300"
         style={{ boxShadow: insetShadow }}
         onFocus={(e) => (e.currentTarget.style.boxShadow = insetFocusShadow)}
         onBlur={(e) => (e.currentTarget.style.boxShadow = insetShadow)}
@@ -389,7 +389,7 @@ function NeuSelect({
 }) {
   return (
     <label className="block group">
-      <span className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/72 font-semibold mb-2.5 group-focus-within:text-orange transition-colors duration-300">
+      <span className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/85 font-semibold mb-2.5 group-focus-within:text-orange transition-colors duration-300">
         <span
           aria-hidden
           className="block w-1 h-1 rounded-full bg-navy/25 group-focus-within:bg-orange transition-colors duration-300"
@@ -406,11 +406,11 @@ function NeuSelect({
           onFocus={(e) => (e.currentTarget.style.boxShadow = insetFocusShadow)}
           onBlur={(e) => (e.currentTarget.style.boxShadow = insetShadow)}
         >
-          <option value="" disabled>
+          <option value="" disabled className="text-navy/50 bg-white">
             {placeholder}
           </option>
           {options.map((o) => (
-            <option key={o} value={o}>
+            <option key={o} value={o} className="text-navy bg-white">
               {o}
             </option>
           ))}
@@ -451,7 +451,7 @@ function NeuTextarea({
 }) {
   return (
     <label className="block group">
-      <span className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/72 font-semibold mb-2.5 group-focus-within:text-orange transition-colors duration-300">
+      <span className="flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] text-navy/55 dark:text-ivory/85 font-semibold mb-2.5 group-focus-within:text-orange transition-colors duration-300">
         <span
           aria-hidden
           className="block w-1 h-1 rounded-full bg-navy/25 group-focus-within:bg-orange transition-colors duration-300"
@@ -463,7 +463,7 @@ function NeuTextarea({
         rows={4}
         required
         placeholder={placeholder}
-        className="w-full rounded-xl bg-ivory dark:bg-white/[0.06] px-4 py-3.5 text-[14.5px] text-navy dark:text-ivory placeholder:text-navy/30 dark:placeholder:text-ivory/30 focus:outline-none transition-all duration-300 resize-none"
+        className="w-full rounded-xl bg-ivory dark:bg-white/[0.06] px-4 py-3.5 text-[14.5px] text-navy dark:text-ivory placeholder:text-navy/30 dark:placeholder:text-ivory/60 focus:outline-none transition-all duration-300 resize-none"
         style={{ boxShadow: insetShadow }}
         onFocus={(e) => (e.currentTarget.style.boxShadow = insetFocusShadow)}
         onBlur={(e) => (e.currentTarget.style.boxShadow = insetShadow)}

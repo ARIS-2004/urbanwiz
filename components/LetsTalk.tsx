@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { emailHrefWithSubject } from "@/lib/site";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -79,7 +80,7 @@ export default function LetsTalk() {
 
             {/* Right — CTA */}
             <Link
-              href="mailto:urbanwiz@info.co.in?subject=Book%20a%20call"
+              href={emailHrefWithSubject("Book a call")}
               className="group shrink-0 inline-flex items-center justify-center gap-2 rounded-full bg-navy text-ivory px-5 py-2.5 text-[11px] uppercase tracking-[0.22em] font-semibold hover:bg-orange transition-colors duration-300 w-fit"
               style={{
                 boxShadow:

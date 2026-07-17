@@ -286,8 +286,8 @@ function ServiceBlock({
             {/* Big editorial watermark number */}
             <span
               aria-hidden
-              className="absolute -bottom-7 -right-1 font-display text-[150px] sm:text-[190px] leading-none font-black tracking-[-0.05em] text-ivory pointer-events-none select-none"
-              style={{ opacity: 0.12 }}
+              className="absolute bottom-3 right-4 font-display text-[130px] sm:text-[160px] leading-none font-black tracking-[-0.05em] text-ivory pointer-events-none select-none"
+              style={{ opacity: 0.26 }}
             >
               {s.n}
             </span>
@@ -316,7 +316,7 @@ function ServiceBlock({
           </FadeUp>
 
           <FadeUp delay={0.1}>
-            <p className="mt-4 text-[14.5px] leading-[1.7] text-navy/60 dark:text-ivory/72 max-w-xl">
+            <p className="mt-4 text-[14.5px] leading-[1.7] text-navy/60 dark:text-ivory/85 max-w-xl">
               {s.lead}
             </p>
           </FadeUp>
@@ -327,7 +327,7 @@ function ServiceBlock({
               {s.features.map((f, idx) => (
                 <div
                   key={f.t}
-                  className={`group/feat py-4 border-t border-navy/8 ${
+                  className={`group/feat py-4 border-t border-navy/8 dark:border-white/12 ${
                     idx < 2 ? "sm:border-t" : ""
                   }`}
                 >
@@ -339,7 +339,7 @@ function ServiceBlock({
                       <div className="text-[15.5px] font-bold text-navy dark:text-ivory leading-tight tracking-[-0.01em]">
                         {f.t}
                       </div>
-                      <div className="mt-1.5 text-[14px] leading-[1.65] leading-[1.6] text-navy/60 dark:text-ivory/72">
+                      <div className="mt-1.5 text-[14px] leading-[1.6] text-navy/60 dark:text-ivory/85">
                         {f.b}
                       </div>
                     </div>

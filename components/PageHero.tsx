@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { site } from "@/lib/site";
 import {
   motion,
   useMotionValue,
@@ -246,7 +247,7 @@ export default function PageHero({
               className="mt-7 pt-5 border-t border-navy/8 flex flex-wrap items-center gap-x-4 gap-y-2.5 text-[12.5px] text-navy/75"
             >
               <a
-                href="mailto:urbanwiz@info.co.in"
+                href={site.emailHref}
                 className="group inline-flex items-center gap-2 hover:text-orange transition-colors"
               >
                 <span className="grid place-items-center w-6 h-6 rounded-full bg-orange/10 text-orange group-hover:bg-orange group-hover:text-ivory transition-colors">
@@ -255,11 +256,11 @@ export default function PageHero({
                     <path d="M3 5l5 3.5L13 5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
-                urbanwiz@info.co.in
+                {site.email}
               </a>
               <span className="block w-px h-3.5 bg-navy/15" />
               <a
-                href="tel:+919038816866"
+                href={site.phoneHref}
                 className="group inline-flex items-center gap-2 hover:text-orange transition-colors tabular-nums"
               >
                 <span className="grid place-items-center w-6 h-6 rounded-full bg-orange/10 text-orange group-hover:bg-orange group-hover:text-ivory transition-colors">
@@ -272,7 +273,7 @@ export default function PageHero({
                     />
                   </svg>
                 </span>
-                +91 90388 16866
+                {site.phone}
               </a>
             </motion.div>
           </div>

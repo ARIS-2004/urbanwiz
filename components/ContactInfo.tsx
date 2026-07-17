@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { site } from "@/lib/site";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -17,8 +18,8 @@ const items: {
 }[] = [
   {
     label: "Email",
-    value: "urbanwiz@info.co.in",
-    href: "mailto:urbanwiz@info.co.in",
+    value: site.email,
+    href: site.emailHref,
     cta: "Send",
     variant: "tintOrange",
     icon: (
@@ -30,8 +31,8 @@ const items: {
   },
   {
     label: "Phone",
-    value: "+91 90388 16866",
-    href: "tel:+919038816866",
+    value: site.phone,
+    href: site.phoneHref,
     cta: "Call now",
     variant: "fillNavy",
     icon: (

@@ -659,7 +659,7 @@ export default function Leadership() {
   return (
     <section
       id="leadership"
-      className="relative overflow-hidden py-20 lg:py-28 bg-[#FAF8F6] dark:bg-[#0E1230] transition-colors duration-300"
+      className="relative overflow-hidden pt-10 lg:pt-14 pb-20 lg:pb-28 bg-[#FAF8F6] dark:bg-[#0E1230] transition-colors duration-300"
     >
       <div
         aria-hidden

@@ -8,4 +8,4 @@ Inquiry form, three office locations and a discovery-call CTA.
 - Bengaluru — Delivery hub · 8th Floor, Prestige Atrium, MG Road
 
 ## Direct lines
-- urbanwiz@info.co.in
+- info@urbanwiz.co.in
