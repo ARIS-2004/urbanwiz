@@ -16,8 +16,8 @@ const wordItem: Variants = {
   show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.7, ease } },
 };
 
-const lineOne = "We're not a vendor.".split(" ");
-const lineTwoLead = "We're a".split(" ");
+const lineOne = "Relationships Before Results.".split(" ");
+const lineTwoLead = "Results Because of".split(" ");
 
 export default function ContactQuote() {
   return (
@@ -242,7 +242,7 @@ export default function ContactQuote() {
                 }}
                 className="inline-block text-orange mx-[0.11em]"
               >
-                partner.
+                Relationships.
               </motion.span>
             </motion.div>
           </motion.div>

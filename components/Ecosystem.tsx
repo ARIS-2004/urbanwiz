@@ -270,7 +270,13 @@ export default function Ecosystem() {
                       className="group/row flex items-baseline gap-3.5 py-3 border-b border-navy/8 dark:border-white/10 last:border-b-0"
                     >
                       <span
-                        className={`shrink-0 font-display text-[11px] font-bold tabular-nums leading-none ${a.eyebrowColor} opacity-45 group-hover/row:opacity-90 transition-opacity duration-300`}
+                        className={`shrink-0 font-display text-[11px] font-bold tabular-nums leading-none ${a.eyebrowColor} ${
+                          phase.accent === "orange"
+                            ? "dark:text-[#FF7A4D]"
+                            : phase.accent === "blue"
+                            ? "dark:text-[#8FA3FF]"
+                            : "dark:text-ivory"
+                        } opacity-45 dark:opacity-80 group-hover/row:opacity-90 dark:group-hover/row:opacity-100 transition-opacity duration-300`}
                       >
                         {String(itemIdx + 1).padStart(2, "0")}
                       </span>
