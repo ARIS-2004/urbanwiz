@@ -101,9 +101,9 @@ export default function MissionValues() {
             transition={{ delay: 0.1, duration: 0.85, ease }}
             className="mt-6 font-display text-[30px] sm:text-[44px] xl:text-[52px] tracking-[-0.03em] leading-[1.04] text-navy dark:text-ivory font-bold"
           >
-            This is more than our story.
+            Beyond Business.
             <br />
-            It is our <span className="text-orange">promise</span>.
+            Built on <span className="text-orange">Belief</span>.
           </motion.h2>
 
           {/* Small divider dot */}

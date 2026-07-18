@@ -34,7 +34,7 @@ const leaders: Leader[] = [
     name: "Subhajit Dutta",
     role: "Founder & Managing Director",
     initials: "SD",
-    photo: "/founder-subhajit.jpg",
+    photo: "/subhojit.jpeg",
     accent: "orange",
     quote:
       "Can a business achieve global success without compromising its values?",
@@ -87,7 +87,7 @@ const leaders: Leader[] = [
     name: "Shilanjan Ghosh",
     role: "Co-Founder & Director of Information Systems",
     initials: "SG",
-    photo: "/founder-shilanjan.jpg",
+    photo: "/silanjan.jpeg",
     accent: "blue",
     quote: "Technology should serve people, not the other way around.",
     roots: "Information Systems · B.Tech, IT",
@@ -138,7 +138,7 @@ const leaders: Leader[] = [
     name: "Vineet Pandit",
     role: "Co-Founder & Executive Director",
     initials: "VP",
-    photo: "/founder-vineet.jpg",
+    photo: "/vinnnet.jpeg",
     accent: "navy",
     quote:
       "Behind every successful operation are motivated employees, trusted clients, and leaders who genuinely care about both.",
@@ -357,11 +357,6 @@ function FounderProfile({ leader, forceOpen }: { leader: Leader; forceOpen?: boo
               {/* subtle inner ring */}
               <span aria-hidden className="absolute inset-0 rounded-[20px] ring-1 ring-inset ring-white/10" />
             </div>
-            {/* floating accent dot */}
-            <span
-              aria-hidden
-              className={`absolute -right-1.5 -top-1.5 w-4 h-4 rounded-full ${a.bar} ring-4 ring-white`}
-            />
           </div>
 
           {/* Name + role + quote */}

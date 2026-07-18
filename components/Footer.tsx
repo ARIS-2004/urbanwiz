@@ -84,12 +84,12 @@ export default function Footer() {
   const isContact = pathname === "/contact";
   return (
     <footer
-      className="relative overflow-hidden pt-2 pb-6 bg-[#F1F2F5] dark:bg-[#080B1C] transition-colors duration-300"
+      className="relative overflow-hidden pt-2 pb-6 bg-[#E4E6ED] dark:bg-[#080B1C] transition-colors duration-300"
     >
       <div className="container-wide relative">
         <motion.div
           {...reveal(0)}
-          className="relative rounded-[28px] overflow-hidden border border-navy/8 dark:border-white/10 bg-white dark:bg-[#12173a]"
+          className="relative rounded-[28px] overflow-hidden border border-navy/8 dark:border-white/10 bg-[#F4F5F8] dark:bg-[#12173a]"
           style={{
             boxShadow:
               "0 1px 0 rgba(255,255,255,0.8) inset, 0 1px 2px rgba(15,19,48,0.03), 0 40px 90px -34px rgba(15,19,48,0.22)",
@@ -124,7 +124,10 @@ export default function Footer() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 mt-1">
               {/* Brand column */}
               <div className="lg:col-span-4 lg:pr-8">
-                <Logo size="lg" />
+                {/* Dark chip in light mode so the white logo stays visible */}
+                <span className="inline-flex items-center rounded-2xl bg-navy dark:bg-transparent px-4 py-2.5">
+                  <Logo size="lg" />
+                </span>
                 <p className="mt-2.5 text-[12.5px] tracking-[0.02em] text-navy/50 dark:text-ivory/80 font-medium">
                   {site.tagline}
                 </p>

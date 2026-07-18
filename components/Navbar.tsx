@@ -127,16 +127,17 @@ export default function Navbar() {
               />
             </motion.span>
 
-            {/* Wordmark — hidden at top, revealed on scroll */}
+            {/* Wordmark — hidden at top, revealed on scroll.
+                Sits on a dark chip in light mode so the white logo stays visible. */}
             <motion.span
               aria-hidden
               animate={{
-                width: scrolled ? 160 : 0,
+                width: scrolled ? 184 : 0,
                 opacity: scrolled ? 1 : 0,
                 scale: scrolled ? 1 : 0.9,
               }}
               transition={{ duration: 0.4, ease }}
-              className="relative block h-10 shrink-0 overflow-hidden"
+              className="relative flex items-center h-11 shrink-0 overflow-hidden rounded-xl bg-navy dark:bg-transparent px-3"
             >
               <Image
                 src="/textlogo.png"
@@ -190,7 +191,7 @@ export default function Navbar() {
             <ThemeToggle />
             {!isContact && (
               <>
-                <span className="hidden xl:block w-px h-6 bg-navy/10" />
+                <span className="hidden xl:block w-px h-6 bg-navy/10 dark:bg-white/15" />
                 <Link
                   href="/contact"
                   className="group relative inline-flex h-[56px] items-center gap-3 rounded-2xl bg-navy pl-7 pr-2.5 text-[14.5px] font-semibold text-ivory transition-colors hover:bg-blue-deep shadow-[0_14px_32px_-10px_rgba(15,19,48,0.6),inset_0_1px_0_rgba(255,255,255,0.12)]"
@@ -222,17 +223,17 @@ export default function Navbar() {
           >
             <span className="relative block w-4 h-3">
               <span
-                className={`absolute left-0 top-0 h-px w-4 bg-navy transition-transform duration-300 ${
+                className={`absolute left-0 top-0 h-px w-4 bg-navy dark:bg-ivory transition-transform duration-300 ${
                   open ? "translate-y-[6px] rotate-45" : ""
                 }`}
               />
               <span
-                className={`absolute left-0 top-[6px] h-px w-4 bg-navy transition-opacity duration-300 ${
+                className={`absolute left-0 top-[6px] h-px w-4 bg-navy dark:bg-ivory transition-opacity duration-300 ${
                   open ? "opacity-0" : ""
                 }`}
               />
               <span
-                className={`absolute left-0 bottom-0 h-px w-4 bg-navy transition-transform duration-300 ${
+                className={`absolute left-0 bottom-0 h-px w-4 bg-navy dark:bg-ivory transition-transform duration-300 ${
                   open ? "-translate-y-[6px] -rotate-45" : ""
                 }`}
               />

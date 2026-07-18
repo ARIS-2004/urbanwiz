@@ -151,7 +151,7 @@ export default function ContactQuote() {
           >
             <span className="block w-7 h-[2px] bg-orange" />
             <span className="text-[10.5px] uppercase tracking-[0.3em] text-orange font-semibold">
-              A note from the founder
+              A note from the founders
             </span>
             <span className="block w-7 h-[2px] bg-orange" />
           </motion.div>

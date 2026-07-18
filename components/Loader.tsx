@@ -163,7 +163,7 @@ export default function Loader() {
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8, ease }}
-                className="relative overflow-hidden inline-block"
+                className="relative overflow-hidden inline-flex items-center justify-center rounded-[28px] bg-navy px-12 py-9 sm:px-16 sm:py-11 shadow-[0_30px_70px_-24px_rgba(15,19,48,0.5)]"
                 aria-label="Urbanwiz"
               >
                 <Image
@@ -174,13 +174,13 @@ export default function Loader() {
                   priority
                   className="block h-[112px] sm:h-[144px] lg:h-[184px] w-auto"
                 />
-                {/* White curtain panel slides off to the right */}
+                {/* Curtain panel slides off to the right (matches the dark chip) */}
                 <motion.span
                   aria-hidden
                   initial={{ x: "0%" }}
                   animate={{ x: "101%" }}
                   transition={{ delay: 0.75, duration: 1.0, ease: [0.76, 0, 0.24, 1] }}
-                  className="absolute inset-0 bg-white"
+                  className="absolute inset-0 bg-navy"
                 />
               </motion.div>
             </div>
