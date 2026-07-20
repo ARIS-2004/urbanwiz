@@ -15,7 +15,7 @@ export default function OriginStory() {
   return (
     <section
       id="story"
-      className="relative overflow-hidden py-20 lg:py-28 bg-[#F7F7F8] dark:bg-[#0B0E24] transition-colors duration-300"
+      className="relative overflow-hidden pt-20 lg:pt-28 pb-4 lg:pb-5 bg-[#F7F7F8] dark:bg-[#0B0E24] transition-colors duration-300"
       style={{
         backgroundImage:
           "radial-gradient(circle at top center, rgba(255,87,34,0.04), transparent 45%)",
