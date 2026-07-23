@@ -43,7 +43,7 @@ export default function Navbar() {
     >
       <div className="container-wide">
         <div
-          className={`relative flex items-center justify-between rounded-[22px] h-[80px] pl-8 pr-4 transition-all duration-500 ease-editorial overflow-hidden dark:border-white/10 ${
+          className={`relative flex items-center justify-between gap-2 rounded-[22px] h-[72px] sm:h-[80px] pl-4 sm:pl-8 pr-3 sm:pr-4 transition-all duration-500 ease-editorial overflow-hidden dark:border-white/10 ${
             scrolled
               ? "bg-white/90 dark:bg-[#12173a]/90 backdrop-blur-xl border border-navy/10 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset,0_20px_48px_-16px_rgba(15,19,48,0.26)] dark:shadow-[0_1px_0_rgba(255,255,255,0.06)_inset,0_20px_48px_-16px_rgba(0,0,0,0.5)]"
               : "bg-white/80 dark:bg-[#12173a]/80 backdrop-blur-xl border border-navy/10 shadow-[0_1px_0_rgba(255,255,255,0.9)_inset,0_16px_40px_-18px_rgba(15,19,48,0.22)] dark:shadow-[0_1px_0_rgba(255,255,255,0.06)_inset,0_16px_40px_-18px_rgba(0,0,0,0.45)]"
