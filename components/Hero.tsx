@@ -48,7 +48,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 14, filter: "blur(6px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.9, delay: 0.2, ease }}
-                className="mt-6 font-display text-[34px] sm:text-[52px] xl:text-[60px] tracking-[-0.032em] leading-[1.0] sm:leading-[0.98] text-navy dark:text-ivory font-bold"
+                className="mt-6 font-display fluid-display tracking-[-0.032em] text-navy dark:text-ivory font-bold"
               >
                 Operational
                 <br />

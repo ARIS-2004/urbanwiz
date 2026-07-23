@@ -96,16 +96,19 @@ export default function Navbar() {
             </motion.span>
 
             {/* Wordmark — hidden at top, revealed on scroll.
-                Sits on a dark chip in light mode so the white logo stays visible. */}
+                Sits on a dark chip in light mode so the white logo stays visible.
+                Width/height scale down on small screens to avoid overflow. */}
             <motion.span
               aria-hidden
               animate={{
-                width: scrolled ? 220 : 0,
                 opacity: scrolled ? 1 : 0,
                 scale: scrolled ? 1 : 0.9,
+                maxWidth: scrolled ? 240 : 0,
               }}
               transition={{ duration: 0.4, ease }}
-              className="relative flex items-center h-14 shrink-0 overflow-hidden rounded-xl bg-navy dark:bg-transparent px-3.5"
+              className={`relative flex items-center h-10 sm:h-12 shrink-0 overflow-hidden rounded-lg sm:rounded-xl bg-navy dark:bg-transparent transition-[padding,margin] duration-400 ease-editorial ${
+                scrolled ? "px-2.5 sm:px-3.5 ml-1" : "px-0 ml-0"
+              }`}
             >
               <Image
                 src="/textlogo.png"
@@ -113,7 +116,7 @@ export default function Navbar() {
                 width={200}
                 height={75}
                 priority
-                className="h-12 sm:h-[52px] w-auto max-w-none object-contain object-left"
+                className="h-7 sm:h-9 w-auto max-w-none object-contain object-left"
               />
             </motion.span>
           </Link>
